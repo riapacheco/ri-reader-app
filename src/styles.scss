@@ -1,5 +1,5 @@
-@import '~@riapacheco/yutes/main.scss';
-@import '~@riapacheco/yutes/season/two.scss';
+@import '/node_modules/@riapacheco/yutes/main.scss';
+@import '/node_modules/@riapacheco/yutes/season/two.scss';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import '../src/scss/mixins.scss';
 
@@ -27,10 +27,18 @@ body {
   font-weight: 400;
 }
 
-/* ----------------------------- GLOBAL CHANGES ----------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                        GLOBAL CHANGES FROM VIEWPORT                        */
+/* -------------------------------------------------------------------------- */
 .view {
   &.mobile {
+
+    /* ------------------------ Standard Text Adjustments ----------------------- */
     @include mobile-text('body');
+    h1 { @include mobile-text('h1'); }
+    h2 { @include mobile-text('h2'); }
+    h3 { @include mobile-text('h3'); }
+    h4 { @include mobile-text('h4'); }
   }
 }
 
@@ -40,3 +48,8 @@ body {
   width: 100%;
   -webkit-font-smoothing: antialiased !important;
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                   Z-INDEX                                  */
+/* -------------------------------------------------------------------------- */
+app-root { z-index: 1; }
