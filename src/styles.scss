@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@riapacheco/yutes/main.scss';
+@import '~@riapacheco/yutes/season/two.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import '../src/scss/mixins.scss';
+
+* {
+  -webkit-font-smoothing: antialiased !important;
+  box-sizing: border-box !important;
+  &::-webkit-scrollbar { display: none !important; }
+}
+
+html, body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+  background-image: linear-gradient(to bottom right, #101013, $midnight-dark);
+  background-attachment: fixed;
+  color: $steel-regular;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+/* ----------------------------- GLOBAL CHANGES ----------------------------- */
+.view {
+  &.mobile {
+    @include mobile-text('body');
+  }
+}
+
+/* --------------------------------- SPECIAL -------------------------------- */
+// Wrapper on elements with innerHTML directive
+.inner-html-wrapper {
+  width: 100%;
+  -webkit-font-smoothing: antialiased !important;
+}

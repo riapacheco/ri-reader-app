@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* -------------------------- RESPONSIVE CENTERING -------------------------- */
+$desktop-content-width: 85%;
+$mobile-content-width: 90%;
+@mixin auto-width {
+  width: calc($desktop-content-width);
+  margin: auto;
+}
+@mixin auto-width-mobile {
+  width: calc($mobile-content-width);
+  margin: auto;
+}
+
+/* --------------------------------- SPECIAL -------------------------------- */
+@mixin remove-selection {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               MOBILE HEADINGS                              */
+/* -------------------------------------------------------------------------- */
+
+
+@mixin mobile-text($textElement) {
+  @if $textElement == 'body' {
+    font-size: 1.35rem;
+    line-height: 1.85;
+  }
+
+  @if $textElement == 'h1' {
+    font-family: "Inter", sans-serif;
+    letter-spacing: -0.09rem;
+    font-size: 2.92rem;
+    line-height: 1.2;
+  }
+
+  @if $textElement == 'h2' {
+    font-family: "Inter", sans-serif;
+    font-size: 2.3rem;
+    line-height: 1.2;
+  }
+
+  @if $textElement == 'h3' {
+    font-family: "Inter", sans-serif;
+    font-size: 2.05rem;
+  }
+
+  @if $textElement == 'h4' {
+    font-family: "Inter", sans-serif;
+    font-size: 1.8rem;
+  }
+}
