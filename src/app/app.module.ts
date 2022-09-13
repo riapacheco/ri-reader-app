@@ -10,6 +10,8 @@ import { OutsideClickDirective } from './directives/outside-click.directive';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FilterAllPipe } from './pipes/filter-all.pipe';
 import { VerticalResizeDirective } from './directives/vertical-resize.directive';
+import { LoginRegisterComponent } from './views/login-register/login-register.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { VerticalResizeDirective } from './directives/vertical-resize.directive'
     OutsideClickDirective,
     FilterPipe,
     FilterAllPipe,
-    VerticalResizeDirective
+    VerticalResizeDirective,
+    LoginRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { VerticalResizeDirective } from './directives/vertical-resize.directive'
       provide: LocationStrategy,
       useClass: HashLocationStrategy
     },
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
