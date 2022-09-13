@@ -1,10 +1,34 @@
-import { Component } from '@angular/core';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { BREAKPOINT_VALUE } from './enums/breakpoint.enums';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'ri-reader';
+export class AppComponent implements OnInit {
+
+  // Mobile or not based on viewport [breakpoint.enums file]
+  isMobile!: boolean;
+
+  // Subscription utility
+  private sub = new Subscription();
+
+  constructor(
+    private observer: BreakpointObserver
+  ) {}
+
+  ngOnInit(): void {
+    this.sub.add(this.observeLayout());
+  }
+
+  /* ------------------------ Check Device via Observer ----------------------- */
+  private observeLayout() {
+    this.observer.observe([BREAKPOINT_VALUE.mobile]).subscribe((state: BreakpointState) => {
+      if (state.breakpoints[BREAKPOINT_VALUE.mobile]) { this.isMobile = true; }
+      else { this.isMobile = false; }
+    })
+  }
 }

@@ -7,11 +7,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { OutsideClickDirective } from './directives/outside-click.directive';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FilterAllPipe } from './pipes/filter-all.pipe';
+import { VerticalResizeDirective } from './directives/vertical-resize.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OutsideClickDirective
+    OutsideClickDirective,
+    FilterPipe,
+    FilterAllPipe,
+    VerticalResizeDirective
   ],
   imports: [
     BrowserModule,
