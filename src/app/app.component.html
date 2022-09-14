@@ -1,1 +1,4 @@
-<app-menu></app-menu>
+<app-menu
+  (leftButtonClick)="onMenuClick($event)"
+  [showsMobileMenu]="showsMobileMenu">
+</app-menu>

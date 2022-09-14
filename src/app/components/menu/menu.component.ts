@@ -1,14 +1,25 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { menuSlideOut } from 'src/app/constants/animation.constants';
 import { BREAKPOINT_VALUE } from 'src/app/enums/breakpoint.enums';
+
+export interface IMenuOptions {
+  label: string;
+  icon?: string;
+  routerLink?: string;
+  externalLink?: string;
+}
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  styleUrls: ['./menu.component.scss'],
+  animations: [ menuSlideOut ]
 })
 export class MenuComponent implements OnInit {
+
+  /* --------------------------------- Toolbar -------------------------------- */
   @Output() leftButtonClick: EventEmitter<any> = new EventEmitter<any>();
   @Output() rightButtonClick: EventEmitter<any> = new EventEmitter<any>();
   @Output() titleClick: EventEmitter<any> = new EventEmitter<any>();
@@ -31,6 +42,35 @@ export class MenuComponent implements OnInit {
       target: 'triggerRight'
     }
   };
+
+  /* ------------------------------ Menu Options ------------------------------ */
+  @Input() menuOptions: IMenuOptions[] = [
+    {
+      label: 'Library',
+      icon: 'library_books',
+      routerLink: '',
+      externalLink: ''
+    },
+    {
+      label: 'Passages',
+      icon: 'bookmarks',
+      routerLink: '',
+      externalLink: ''
+    },
+    {
+      label: 'Insights',
+      icon: 'auto_graph',
+      routerLink: '',
+      externalLink: ''
+    },
+    {
+      label: 'Favorites',
+      icon: 'favorite',
+      routerLink: '',
+      externalLink: ''
+    }
+  ];
+  @Input() showsMobileMenu = true;
 
   isMobile!: boolean;
   private sub = new Subscription();

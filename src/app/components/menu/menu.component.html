@@ -31,6 +31,36 @@
       </div>
     </ng-container>
   </div>
+
+  <div class="mobile-menu-wrapper" [@menuTrigger]="showsMobileMenu ? 'open' : 'close'">
+    <div class="top-block">
+      <div class="top-block-content">
+        <h1>
+          Navigate
+        </h1>
+
+        <a (click)="showsMobileMenu = !showsMobileMenu">
+          <i class="material-icons">close</i>
+        </a>
+      </div>
+    </div>
+    
+    <div class="options-list">
+      <ng-container *ngFor="let option of menuOptions">
+        <a class="menu-option">
+          <ng-container *ngIf="option.icon">
+            <div class="icon">
+              <i class="material-icons">
+                {{ option.icon }}
+              </i>
+            </div>
+          </ng-container>
+          
+          <h2>{{ option.label }}</h2>
+        </a>
+      </ng-container>
+    </div>
+  </div>
 </ng-container>
 
 <ng-template #desktopMenu>

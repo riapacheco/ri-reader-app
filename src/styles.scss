@@ -77,3 +77,8 @@ app-menu,
 .mobile-toolbar-wrapper {
   z-index: calc($base-index * 2);
 }
+
+
+.mobile-menu-wrapper {
+  z-index: calc($base-index * 3);
+}

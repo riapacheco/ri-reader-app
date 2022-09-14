@@ -10,6 +10,10 @@ import { BREAKPOINT_VALUE } from './enums/breakpoint.enums';
 })
 export class AppComponent implements OnInit {
 
+  /* ----------------------------- MENU PROPERTIES ---------------------------- */
+  showsMobileMenu = false;
+
+
   // Mobile or not based on viewport [breakpoint.enums file]
   isMobile!: boolean;
 
@@ -30,5 +34,10 @@ export class AppComponent implements OnInit {
       if (state.breakpoints[BREAKPOINT_VALUE.mobile]) { this.isMobile = true; }
       else { this.isMobile = false; }
     })
+  }
+
+  /* ------------------------------- MOBILE MENU ------------------------------ */
+  public onMenuClick(data: any) {
+    if (data && !this.showsMobileMenu) { this.showsMobileMenu = true; }
   }
 }

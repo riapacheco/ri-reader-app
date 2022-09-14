@@ -13,6 +13,7 @@ import { VerticalResizeDirective } from './directives/vertical-resize.directive'
 import { LoginRegisterComponent } from './views/login-register/login-register.component';
 import { AuthService } from './services/auth.service';
 import { MenuComponent } from './components/menu/menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MenuComponent } from './components/menu/menu.component';
     CommonModule,
     FormsModule,
     LayoutModule,
+    BrowserAnimationsModule
   ],
   providers: [
     { 
