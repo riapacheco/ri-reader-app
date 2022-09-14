@@ -1,15 +1,13 @@
-<ng-container *ngIf="(auth.authUser$ | async);else signInUpBlock">
-  <app-menu
-    (titleClick)="onTopBarTitleClick($event)"
-    (leftButtonClick)="onLeftButtonClick($event)"
-    (rightButtonClick)="onRightButtonClick($event)"
-    (closeClick)="onMenuClose($event)"
-    [showsMobileMenu]="showsMobileMenu"
-    [config]="mobileMenuConfig"
-    >
-  </app-menu>
-</ng-container>
-
-<ng-template #signInUpBlock>
-  <app-login-register></app-login-register>
-</ng-template>
+<div [ngClass]="(theme.isDark$ | async) ? 'wrapper is-dark' : 'wrapper'">
+  <ng-container *ngIf="!(auth.authUser$ | async);else signInUpBlock">
+    <app-top-bar></app-top-bar>
+    <router-outlet></router-outlet>
+    <ng-container *ngIf="isMobile"> <!--Add auth to this later-->
+      <app-bottom-bar></app-bottom-bar>
+    </ng-container>
+  </ng-container>
+  
+  <ng-template #signInUpBlock>
+    <app-login-register></app-login-register>
+  </ng-template>
+</div>

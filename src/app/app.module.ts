@@ -12,11 +12,14 @@ import { FilterAllPipe } from './pipes/filter-all.pipe';
 import { VerticalResizeDirective } from './directives/vertical-resize.directive';
 import { LoginRegisterComponent } from './views/login-register/login-register.component';
 import { AuthService } from './services/auth.service';
-import { MenuComponent } from './components/menu/menu.component';
+
 import { AngularFireModule } from '@angular/fire/compat';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from 'src/environments/environment';
 import { FireAuthService } from './services/fire-auth.service';
+import { ThemeService } from './services/theme.service';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { FireAuthService } from './services/fire-auth.service';
     FilterAllPipe,
     VerticalResizeDirective,
     LoginRegisterComponent,
-    MenuComponent
+    TopBarComponent,
+    BottomBarComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,8 @@ import { FireAuthService } from './services/fire-auth.service';
       useClass: HashLocationStrategy
     },
     AuthService,
-    FireAuthService
+    FireAuthService,
+    ThemeService
   ],
   bootstrap: [AppComponent]
 })

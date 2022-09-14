@@ -1,0 +1,74 @@
+@import 'node_modules/@riapacheco/yutes/season/two.scss';
+@import '../../../scss/colors.scss';
+
+
+:host { -webkit-font-smoothing: antialiased !important; }
+
+$bar-height: 70px;
+$bar-width: 100vw;
+$action-width: 80px;
+$side-width: calc(($bar-width / 2) - ($action-width / 2));
+
+.bottom-bar-wrapper {
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: $bar-height;
+  width: $bar-width;
+  background-image: linear-gradient(to bottom right, white, $steel-light, $steel-medium);
+
+  .bar-content {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    .left-content,
+    .right-content {
+      display: flex;
+      flex-flow: row nowrap;
+
+      a {
+        &.option {
+          height: $bar-height;
+          width: calc($side-width/2.5);
+          .material-icons {
+            font-size: 1.8rem;
+            color: $steel-dark;
+          }
+          &.placeholder {
+            pointer-events: none;
+          }
+        }
+      }
+    }
+
+    .left-content { margin-left: 5%; }
+    .right-content { margin-right: 5%; }
+    a {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: center;
+      &.action-button {
+        position: absolute;
+        border-radius: $action-width;
+        width: $action-width;
+        height: $action-width;
+
+        left: $side-width;
+        margin-top: -2.2rem;
+        background-image: linear-gradient(to bottom right, white, #F5F5F5);
+        box-shadow: 2px 4px 22px $steel-medium;
+        border: 7px solid white;
+
+        .material-icons {
+          color: $blood-orange-regular;
+          font-size: 2.8rem;
+        }
+      }
+    }
+  }
+}

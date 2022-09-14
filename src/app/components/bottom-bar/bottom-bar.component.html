@@ -1,0 +1,29 @@
+<div class="bottom-bar-wrapper">
+  <div class="bar-content">
+    <div class="left-content">
+      <a
+        (click)="(!option.routerLink) ? onOptionClick(option.target) : onRouteActivate(option.routerLink)"
+        *ngFor="let option of leftOptions; let i = index;"
+        [ngClass]="!option.routerLink && !option.target ? 'option placeholder' : 'option'">
+        <i class="material-icons">{{ option.routerLink || option.target ? option.icon : '' }}</i>
+      </a>
+    </div>
+
+    <a
+      (click)="mainOption.routerLink ? onActionClick(mainOption.routerLink) : onActionClick(mainOption.target)"
+      class="action-button">
+      <i class="material-icons">
+        {{ mainOption.icon }}
+      </i>
+    </a>
+
+    <div class="right-content">
+      <a
+        (click)="(!option.routerLink) ? onOptionClick(option.target) : onRouteActivate(option.routerLink)"
+        [ngClass]="!option.routerLink && !option.target ? 'option placeholder' : 'option'"
+        *ngFor="let option of rightOptions; let i = index;">
+        <i class="material-icons">{{ option.routerLink || option.target ? option.icon : '' }}</i>
+      </a>
+    </div>
+  </div>
+</div>

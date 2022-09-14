@@ -12,11 +12,8 @@
 html, body {
   font-family: "Inter", sans-serif;
   line-height: 1.7;
-  background-color: $midnight-dark; // fallback
-  background-image: linear-gradient(to bottom right, #101013, $midnight-dark);
-  background-attachment: fixed;
-  color: $steel-regular;
   -webkit-font-smoothing: antialiased !important;
+
 }
 
 html {
@@ -27,7 +24,14 @@ body {
   font-size: 1.6rem;
   font-weight: 400;
 }
-
+.wrapper {
+  background-color: #F5F5F5;
+  background-image: linear-gradient(to bottom right, #F5F5F5, white);
+  background-attachment: fixed;
+  &.is-dark {
+    background-image: linear-gradient(to bottom right, black, $midnight-dark);
+  }
+}
 /* -------------------------------------------------------------------------- */
 /*                        GLOBAL CHANGES FROM VIEWPORT                        */
 /* -------------------------------------------------------------------------- */
@@ -50,6 +54,7 @@ body {
   -webkit-font-smoothing: antialiased !important;
 
   &.mobile-toolbar-title { // menu component
+    color: $blood-orange-regular;
     h1 {
       font-size: 2.9rem;
       letter-spacing: -0.15rem;
@@ -65,6 +70,12 @@ body {
   }
 }
 
+.form-group {
+  input {
+    background-color: $blood-orange-medium;
+  }
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                   Z-INDEX                                  */
 /* -------------------------------------------------------------------------- */
@@ -73,12 +84,7 @@ $base-index: 2;
 
 app-root { z-index: calc($base-index / 2); }
 
-app-menu,
-.mobile-toolbar-wrapper {
-  z-index: calc($base-index * 2);
-}
-
-
-.mobile-menu-wrapper {
+app-top-bar,
+app-bottom-bar {
   z-index: calc($base-index * 3);
 }
