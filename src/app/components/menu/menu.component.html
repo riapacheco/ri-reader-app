@@ -49,19 +49,44 @@
       </div>
     </div>
     
+    <!--NAVIGATION OPTIONS-->
     <div class="options-list">
       <ng-container *ngFor="let option of menuOptions">
-        <a class="menu-option">
-          <ng-container *ngIf="option.icon">
-            <div class="icon">
-              <i class="material-icons">
-                {{ option.icon }}
-              </i>
-            </div>
-          </ng-container>
-          
-          <h2>{{ option.label }}</h2>
-        </a>
+
+        <!--If RouterLink-->
+        <ng-container *ngIf="option.routerLink">
+          <a
+            (click)="onMenuOptionClick('routerLink', option.routerLink)"
+            class="menu-option">
+            <ng-container *ngIf="option.icon">
+              <div class="icon">
+                <i class="material-icons">
+                  {{ option.icon }}
+                </i>
+              </div>
+            </ng-container>
+            
+            <h2>{{ option.label }}</h2>
+          </a>          
+        </ng-container>
+
+        <!--If external link-->
+        <ng-container *ngIf="option.externalLink">
+          <a
+            (click)="onMenuOptionClick('external link', option.externalLink)"
+            class="menu-option">
+            <ng-container *ngIf="option.icon">
+              <div class="icon">
+                <i class="material-icons">
+                  {{ option.icon }}
+                </i>
+              </div>
+            </ng-container>
+            
+            <h2>{{ option.label }}</h2>
+          </a>
+        </ng-container>
+
       </ng-container>
     </div>
   </div>

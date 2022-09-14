@@ -1,5 +1,6 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { menuSlideOut } from 'src/app/constants/animation.constants';
 import { BREAKPOINT_VALUE } from 'src/app/enums/breakpoint.enums';
@@ -49,25 +50,25 @@ export class MenuComponent implements OnInit {
     {
       label: 'Library',
       icon: 'library_books',
-      routerLink: '',
+      routerLink: '/library',
       externalLink: ''
     },
     {
       label: 'Passages',
       icon: 'bookmarks',
-      routerLink: '',
+      routerLink: '/passages',
       externalLink: ''
     },
     {
       label: 'Insights',
       icon: 'auto_graph',
-      routerLink: '',
+      routerLink: '/insights',
       externalLink: ''
     },
     {
       label: 'Favorites',
       icon: 'favorite',
-      routerLink: '',
+      routerLink: '/favorites',
       externalLink: ''
     }
   ];
@@ -76,7 +77,8 @@ export class MenuComponent implements OnInit {
   isMobile!: boolean;
   private sub = new Subscription();
   constructor(
-    private observer: BreakpointObserver
+    private observer: BreakpointObserver,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -110,5 +112,16 @@ export class MenuComponent implements OnInit {
 
   onCloseClick(e: any) {
     if (e) { this.closeClick.emit(e);}
+  }
+
+  onMenuOptionClick(type: string, targetString: string) {
+    switch (true) {
+      case type == 'routerLink':
+        this.router.navigateByUrl(targetString);
+      break;
+      case type == 'external link':
+        window.open(targetString);
+      break;
+    }
   }
 }
