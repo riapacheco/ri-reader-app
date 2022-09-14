@@ -12,6 +12,7 @@ import { FilterAllPipe } from './pipes/filter-all.pipe';
 import { VerticalResizeDirective } from './directives/vertical-resize.directive';
 import { LoginRegisterComponent } from './views/login-register/login-register.component';
 import { AuthService } from './services/auth.service';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AuthService } from './services/auth.service';
     FilterPipe,
     FilterAllPipe,
     VerticalResizeDirective,
-    LoginRegisterComponent
+    LoginRegisterComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

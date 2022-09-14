@@ -12,6 +12,7 @@
 html, body {
   font-family: "Inter", sans-serif;
   line-height: 1.7;
+  background-color: $midnight-dark; // fallback
   background-image: linear-gradient(to bottom right, #101013, $midnight-dark);
   background-attachment: fixed;
   color: $steel-regular;

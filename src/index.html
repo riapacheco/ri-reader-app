@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>RiReader</title>
+  <title>RiReader App</title>
 
 
   <!-- -------------------------------- ICONS -------------------------------- -->
@@ -25,7 +25,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
+<body ontouchmove="BlockMove(event)">
   <app-root></app-root>
+
+  <script>
+    function BlockMove(event) { event.preventDefault(); }
+  </script>
 </body>
 </html>
