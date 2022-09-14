@@ -1,4 +1,15 @@
-<app-menu
-  (leftButtonClick)="onMenuClick($event)"
-  [showsMobileMenu]="showsMobileMenu">
-</app-menu>
+<ng-container *ngIf="(auth.authUser$ | async);else signInUpBlock">
+  <app-menu
+    (titleClick)="onTopBarTitleClick($event)"
+    (leftButtonClick)="onLeftButtonClick($event)"
+    (rightButtonClick)="onRightButtonClick($event)"
+    (closeClick)="onMenuClose($event)"
+    [showsMobileMenu]="showsMobileMenu"
+    [config]="mobileMenuConfig"
+    >
+  </app-menu>
+</ng-container>
+
+<ng-template #signInUpBlock>
+  <app-login-register></app-login-register>
+</ng-template>

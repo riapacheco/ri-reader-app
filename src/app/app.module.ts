@@ -13,7 +13,10 @@ import { VerticalResizeDirective } from './directives/vertical-resize.directive'
 import { LoginRegisterComponent } from './views/login-register/login-register.component';
 import { AuthService } from './services/auth.service';
 import { MenuComponent } from './components/menu/menu.component';
+import { AngularFireModule } from '@angular/fire/compat';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { environment } from 'src/environments/environment';
+import { FireAuthService } from './services/fire-auth.service';
 
 @NgModule({
   declarations: [
@@ -31,14 +34,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CommonModule,
     FormsModule,
     LayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [
     { 
       provide: LocationStrategy,
       useClass: HashLocationStrategy
     },
-    AuthService
+    AuthService,
+    FireAuthService
   ],
   bootstrap: [AppComponent]
 })

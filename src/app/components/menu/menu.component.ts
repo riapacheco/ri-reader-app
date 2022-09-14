@@ -23,6 +23,7 @@ export class MenuComponent implements OnInit {
   @Output() leftButtonClick: EventEmitter<any> = new EventEmitter<any>();
   @Output() rightButtonClick: EventEmitter<any> = new EventEmitter<any>();
   @Output() titleClick: EventEmitter<any> = new EventEmitter<any>();
+  @Output() closeClick: EventEmitter<any> = new EventEmitter<any>();
   @Input() config = {
     title: {
       text: `<h1>RiReader</h1>`,
@@ -105,5 +106,9 @@ export class MenuComponent implements OnInit {
   onRightClick(targetString: string) {
     if (targetString && this.config.rightButton.target) { this.rightButtonClick.emit(targetString); }
     else { console.warn('Right button may not have a target'); }
+  }
+
+  onCloseClick(e: any) {
+    if (e) { this.closeClick.emit(e);}
   }
 }

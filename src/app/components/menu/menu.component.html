@@ -2,7 +2,9 @@
   <div class="mobile-toolbar-wrapper">
     <ng-container *ngIf="config.leftButton.target">
       <div class="action">
-        <a (click)="onLeftClick(config.leftButton.target)">
+        <a
+          (click)="onLeftClick(config.leftButton.target)"
+          (ontouchstart)="onLeftClick(config.leftButton.target)">
           <i class="material-icons">
             {{ config.leftButton.icon }}
           </i> 
@@ -23,7 +25,9 @@
 
     <ng-container *ngIf="config.rightButton.target">
       <div class="action">
-        <a (click)="onRightClick(config.rightButton.target)">
+        <a
+          (click)="onRightClick(config.rightButton.target)"
+          (ontouchstart)="onRightClick(config.rightButton.target)">
           <i class="material-icons">
             {{ config.rightButton.icon }}
           </i>
@@ -39,7 +43,7 @@
           Navigate
         </h1>
 
-        <a (click)="showsMobileMenu = !showsMobileMenu">
+        <a (click)="onCloseClick($event)">
           <i class="material-icons">close</i>
         </a>
       </div>
