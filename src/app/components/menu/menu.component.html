@@ -1,6 +1,35 @@
 <ng-container *ngIf="isMobile;else desktopMenu">
-  <div class="mobile-nav">
-    sldkfj
+  <div class="mobile-toolbar-wrapper">
+    <ng-container *ngIf="config.leftButton.target">
+      <div class="action">
+        <a (click)="onLeftClick(config.leftButton.target)">
+          <i class="material-icons">
+            {{ config.leftButton.icon }}
+          </i> 
+        </a>
+      </div>
+    </ng-container>
+
+    <a
+      [ngClass]="config.title.canClick ? 'title inner-html-wrapper mobile-toolbar-title' : 'title inner-html-wrapper mobile-toolbar-title no-click'"
+      (click)="onTitleClick(config.title.clickTarget)"> <!--impacted by styles.scss: inner-html-wrapper-->
+      <ng-container *ngIf="config.title.icon">
+        <i class="material-icons">
+          {{ config.title.icon }}
+        </i>
+      </ng-container>
+      <div [innerHTML]="config.title.text"></div>
+    </a>
+
+    <ng-container *ngIf="config.rightButton.target">
+      <div class="action">
+        <a (click)="onRightClick(config.rightButton.target)">
+          <i class="material-icons">
+            {{ config.rightButton.icon }}
+          </i>
+        </a>
+      </div>
+    </ng-container>
   </div>
 </ng-container>
 

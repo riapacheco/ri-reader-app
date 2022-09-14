@@ -1,0 +1,71 @@
+@import 'node_modules/@riapacheco/yutes/season/two.scss';
+@import '../../../scss/mixins.scss';
+
+
+/* -------------------------------------------------------------------------- */
+/*                               MOBILE TOOLBAR                               */
+/* -------------------------------------------------------------------------- */
+/* ---------------------------------- VARS ---------------------------------- */
+$toolbar-height: 72px;
+$button-width: 60px;
+$toolbar-width: 100vw;
+
+/* --------------------------------- WRAPPER -------------------------------- */
+.mobile-toolbar-wrapper {
+  background-image: linear-gradient(to bottom right, black, rgba(0, 0, 0, 0.379));
+  min-height: $toolbar-height;
+  max-height: $toolbar-height;
+  height: $toolbar-height;
+  width: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  @include remove-selection;  
+
+  /* ------------------------------ BOTH BUTTONS ------------------------------ */
+  .action {
+    height: inherit;
+    width: $button-width;
+    height: $toolbar-height;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+
+    .material-icons {
+      line-height: $toolbar-height;
+      display: inline-block;
+      height: fit-content;
+      width: fit-content;
+
+      color: $midnight-medium;
+      color: $soot-grey-dark;
+    }
+
+    &:active {
+      .material-icons {
+        color: $cbt-teal;
+      }
+    }
+  }
+
+  /* ------------------------------- MAIN TITLE ------------------------------- */
+  .title {
+    width: calc($toolbar-width - ($button-width*2));
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    line-height: $toolbar-height;
+
+    pointer-events: auto;
+
+    &.no-click {
+      pointer-events: none;
+    }
+  }
+}

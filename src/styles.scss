@@ -48,9 +48,32 @@ body {
 .inner-html-wrapper {
   width: 100%;
   -webkit-font-smoothing: antialiased !important;
+
+  &.mobile-toolbar-title { // menu component
+    h1 {
+      font-size: 2.9rem;
+      letter-spacing: -0.15rem;
+      font-weight: 600;
+    }
+    display: flex;
+    flex-flow: row nowrap !important;
+
+    .material-icons {
+      font-size: 2.95rem;
+      margin-right: 1.3rem;
+    }
+  }
 }
 
 /* -------------------------------------------------------------------------- */
 /*                                   Z-INDEX                                  */
 /* -------------------------------------------------------------------------- */
-app-root { z-index: 1; }
+
+$base-index: 2;
+
+app-root { z-index: calc($base-index / 2); }
+
+app-menu,
+.mobile-toolbar-wrapper {
+  z-index: calc($base-index * 2);
+}
