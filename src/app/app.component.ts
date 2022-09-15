@@ -13,6 +13,8 @@ import { ThemeService } from './services/theme.service';
 })
 export class AppComponent implements OnInit {
 
+
+  showsMobileMenu = false;
   // Mobile or not based on viewport [breakpoint.enums file]
   isMobile!: boolean;
 
@@ -36,5 +38,12 @@ export class AppComponent implements OnInit {
       if (state.breakpoints[BREAKPOINT_VALUE.mobile]) { this.isMobile = true; }
       else { this.isMobile = false; }
     })
-  } 
+  }
+
+  onMenuOpen(value: any) {
+    if (value) { this.showsMobileMenu = true; }
+  }
+  onMenuClose(value: any) {
+    if (value) { this.showsMobileMenu = false; }
+  }
 }

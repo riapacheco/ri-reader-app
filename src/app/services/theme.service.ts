@@ -11,4 +11,9 @@ export class ThemeService {
   constructor() { }
 
   setDarkThemeTo(newTheme: boolean) { this._isDark$.next(newTheme); }
+
+  toggleTheme() {
+    if (this.isDark$) { this._isDark$.next(false); }
+    else { this._isDark$.next(true); }
+  }
 }

@@ -20,6 +20,8 @@ import { FireAuthService } from './services/fire-auth.service';
 import { ThemeService } from './services/theme.service';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component';
+import { DrawerMenuComponent } from './components/drawer-menu/drawer-menu.component';
+import { ToggleComponent } from './components/controls/toggle/toggle.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component
     LoginRegisterComponent,
     TopBarComponent,
     BottomBarComponent,
+    DrawerMenuComponent,
+    ToggleComponent,
     
   ],
   imports: [

@@ -74,6 +74,12 @@ $side-width: calc(($bar-width / 2) - ($action-width / 2));
           color: $blood-orange-regular;
           font-size: 2.8rem;
         }
+
+        &:active {
+          background-image: linear-gradient(to top left, white, #F5F5F5);
+          border: 2px solid white;
+          .material-icons { color: $blood-orange-medium; }
+        }
       }
     }
   }
@@ -117,7 +123,7 @@ $side-width: calc(($bar-width / 2) - ($action-width / 2));
         background-image: linear-gradient(to top left, $gunmetal-dark, #090a0b );
         box-shadow: 3px 3px 25px black,
                     -3px -3px 20px rgba(255, 255, 255, 0.11);
-
+        border: 2px solid $midnight-dark;
         .material-icons {
           color: $blood-orange-dark;
         }

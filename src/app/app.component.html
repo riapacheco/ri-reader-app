@@ -3,57 +3,25 @@
   <!-- --------------------------- MOBILE TOP BAR ---------------------------- -->
   <ng-container *ngIf="!(auth.authUser$ | async);else signInUpBlock">
     <ng-container *ngIf="isMobile">
-      <app-top-bar></app-top-bar>
+      <app-drawer-menu
+        [showsMenu]="showsMobileMenu"
+        (closeClick)="onMenuClose($event)"
+        >
+      </app-drawer-menu>
+      <app-top-bar
+        (menuClick)="onMenuOpen($event)"
+        >
+      </app-top-bar>
       <div class="height-bar pt-6" ></div>
     </ng-container>
 
     <!-- -------------------------------- VIEW --------------------------------- -->
     <!-- <router-outlet></router-outlet> -->
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
-    </div>
 
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
-    </div>
-
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
-    </div>
-
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
-    </div>
-
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
-    </div>
     <!-- -------------------------- MOBILE BOTTOM BAR -------------------------- -->
-    <!-- <ng-container *ngIf="isMobile"> 
+    <ng-container *ngIf="isMobile">
       <app-bottom-bar></app-bottom-bar>
-    </ng-container> -->
-    <app-bottom-bar></app-bottom-bar>
+    </ng-container>
 
   </ng-container>
   

@@ -1,0 +1,30 @@
+<div
+  [@menuTrigger]="showsMenu ? 'open' : 'close'"
+  [ngClass]="(theme.isDark$ | async) ? 'drawer-wrapper is-dark' : 'drawer-wrapper'">
+  <div class="drawer-content">
+    <div class="title-area">
+      <h1>Navigate</h1>
+
+      <a (click)="onCloseClick($event)">
+        <i class="material-icons">close</i>
+      </a>
+    </div>
+
+    <div class="menu-area">
+      Menu items go here
+    </div>
+
+    <!-- <div class="divider"></div> -->
+    <div class="toggle-area">
+      
+      <div class="toggle-group">
+        <i class="material-icons light">light_mode</i>
+        <app-toggle
+          [toggleOff]="toggleOff"
+          (toggledOn)="onToggleSwitch($event)"
+          ></app-toggle>
+        <i class="material-icons dark">dark_mode</i>
+      </div>
+    </div>
+  </div>
+</div>

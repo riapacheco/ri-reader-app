@@ -92,7 +92,7 @@ $content-width: 90vw;
 }
 
 .top-bar-wrapper.is-dark {
-  color: $steel-medium;
+  color: $steel-light;
   a {
     .material-icons {
       color: $blood-orange-medium;
@@ -102,17 +102,6 @@ $content-width: 90vw;
       .material-icons {
         color: $steel-light;
       }
-
-      &.right {
-        .material-icons {
-
-
-        }
-      }
-    }
-
-    &.title {
-      // color: $blood-orange-medium;
     }
   }
 }

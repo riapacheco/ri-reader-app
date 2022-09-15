@@ -30,6 +30,7 @@ body {
   background-attachment: fixed;
   &.is-dark {
     background-image: linear-gradient(to bottom right, black, $midnight-dark);
+    color: $steel-light;
   }
 }
 /* -------------------------------------------------------------------------- */
@@ -76,6 +77,12 @@ body {
   }
 }
 
+.divider {
+  width: 100%;
+  height: 5px;
+  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.294);
+  border-radius: 4px;
+}
 /* -------------------------------------------------------------------------- */
 /*                                   Z-INDEX                                  */
 /* -------------------------------------------------------------------------- */
@@ -87,4 +94,9 @@ app-root { z-index: calc($base-index / 2); }
 app-top-bar,
 app-bottom-bar {
   z-index: calc($base-index * 3);
+}
+
+app-drawer-menu,
+.drawer-wrapper {
+  z-index: calc($base-index * 5);
 }
