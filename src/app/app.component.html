@@ -1,12 +1,63 @@
 <div [ngClass]="(theme.isDark$ | async) ? 'wrapper is-dark' : 'wrapper'">
+
+  <!-- --------------------------- MOBILE TOP BAR ---------------------------- -->
   <ng-container *ngIf="!(auth.authUser$ | async);else signInUpBlock">
-    <app-top-bar></app-top-bar>
-    <router-outlet></router-outlet>
-    <ng-container *ngIf="isMobile"> <!--Add auth to this later-->
-      <app-bottom-bar></app-bottom-bar>
+    <ng-container *ngIf="isMobile">
+      <app-top-bar></app-top-bar>
+      <div class="height-bar pt-6" ></div>
     </ng-container>
+
+    <!-- -------------------------------- VIEW --------------------------------- -->
+    <!-- <router-outlet></router-outlet> -->
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
+    </div>
+
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
+    </div>
+
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
+    </div>
+
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
+    </div>
+
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil vero accusamus quo recusandae iusto asperiores labore deserunt aspernatur, soluta fuga, minus nisi voluptas quod unde ullam, nostrum beatae rem.
+    </div>
+    <!-- -------------------------- MOBILE BOTTOM BAR -------------------------- -->
+    <!-- <ng-container *ngIf="isMobile"> 
+      <app-bottom-bar></app-bottom-bar>
+    </ng-container> -->
+    <app-bottom-bar></app-bottom-bar>
+
   </ng-container>
   
+  <!-- ---------------------------- SIGN UP VIEW ----------------------------- -->
   <ng-template #signInUpBlock>
     <app-login-register></app-login-register>
   </ng-template>

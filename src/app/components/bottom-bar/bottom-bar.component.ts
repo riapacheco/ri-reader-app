@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { ThemeService } from 'src/app/services/theme.service';
 
 export interface IBottomBarOption {
   icon: string;
@@ -47,7 +48,8 @@ export class BottomBarComponent {
   ];
 
   constructor(
-    private router: Router
+    private router: Router,
+    public theme: ThemeService
   ) { }
 
 

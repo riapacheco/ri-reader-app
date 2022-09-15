@@ -1,1 +1,51 @@
-<p>top-bar works!</p>
+<div
+  [ngClass]="(theme.isDark$ | async) ? 'top-bar-wrapper wrapper is-dark' : 'top-bar-wrapper wrapper'"
+  [ngSwitch]="barStyle">
+
+  <!-- -------------------------- MAIN GREETING BAR -------------------------- -->
+  <ng-container *ngSwitchCase="'main'">
+    <div [ngClass]="(theme.isDark$ | async) ? 'main-wrapper is-dark' : 'main-wrapper'">
+      <div class="title-area">
+        <!--If no mainTitle, diverts to greeting-->
+        <span>
+          {{ mainTitle ? mainTitle : defaultGreeting }}
+        </span>
+      </div>
+
+      <a
+        (ontouchstart)="onMenuClick($event)"
+        (click)="onMenuClick($event)">
+        <i class="material-icons">menu</i>
+      </a>
+    </div>
+  </ng-container>
+
+  <!-- ----------------------------- CONTEXT BAR ----------------------------- -->
+  <ng-container *ngSwitchCase="'context'">
+    <div [ngClass]="(theme.isDark$ | async) ? 'context-wrapper is-dark' : 'context-wrapper'">
+      <div class="content-area">
+        <a
+          (click)="onButtonClick(button.left.target)"
+          class="bar-btn">
+          <i class="material-icons">
+            {{ button.left.icon }}
+          </i>
+        </a>
+
+        <a class="title">
+          {{ contextTitle }}
+        </a>
+
+        <ng-container *ngIf="button.right.target">
+          <a
+            (click)="onButtonClick(button.right.target)"
+            class="bar-btn right">
+            <i class="material-icons">
+              {{ button.right.icon }}
+            </i>
+          </a>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</div>

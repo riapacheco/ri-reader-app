@@ -1,4 +1,4 @@
-<div class="bottom-bar-wrapper">
+<div [ngClass]="(theme.isDark$ | async) ? 'bottom-bar-wrapper is-dark' : 'bottom-bar-wrapper'">
   <div class="bar-content">
     <div class="left-content">
       <a

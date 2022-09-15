@@ -1,5 +1,5 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BREAKPOINT_VALUE } from './enums/breakpoint.enums';
@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.sub.add(this.observeLayout());
+    
   }
 
   /* ------------------------ Check Device via Observer ----------------------- */
@@ -35,6 +36,5 @@ export class AppComponent implements OnInit {
       if (state.breakpoints[BREAKPOINT_VALUE.mobile]) { this.isMobile = true; }
       else { this.isMobile = false; }
     })
-  }
-
+  } 
 }

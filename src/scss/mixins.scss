@@ -23,6 +23,20 @@ $mobile-content-width: 90%;
                                 supported by Chrome, Edge, Opera and Firefox */
 }
 
+@mixin brand-title {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  .material-icons {
+    font-size: 2.7rem;
+    margin-right: 0.8rem;
+  }
+  h1 {
+    font-size: 3rem;
+    // font-weight: 600;
+    letter-spacing: -0.19rem;
+  }
+}
 /* -------------------------------------------------------------------------- */
 /*                               MOBILE HEADINGS                              */
 /* -------------------------------------------------------------------------- */
