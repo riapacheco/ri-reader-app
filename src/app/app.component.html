@@ -6,6 +6,8 @@
       <app-drawer-menu
         [showsMenu]="showsMobileMenu"
         (closeClick)="onMenuClose($event)"
+        [toggleOff]="lightTheme"
+        (themeUpdate)="onThemeChange($event)"
         >
       </app-drawer-menu>
       <app-top-bar

@@ -8,10 +8,11 @@ export const menuSlideOut = trigger('menuTrigger', [
   ])
 ]);
 
-export const toggleRightSlide = trigger('toggleTrigger', [
-  state('on', style({ transform: 'translateX(0%)'})),
-  state('off', style({transform: 'translateX(100%)'})),
+
+export const toggleSlide = trigger('toggleControlTrigger', [
+  state('off', style({ transform: 'translateX(0%)'})),
+  state('on', style({ transform: 'translateX(100%)'})),
   transition('on <=> off', [
     animate('200ms ease-in-out')
   ])
-]);
+])

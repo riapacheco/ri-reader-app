@@ -108,14 +108,12 @@ $side-width: calc(($bar-width / 2) - ($action-width / 2));
     }
     .action-button {
       background-image: linear-gradient(to bottom right, $gunmetal-dark, #090a0b );
-      border: 2px solid $midnight-dark;
-      box-shadow: -3px -3px 20px rgba(255, 255, 255, 0.1),
+      border: 7px solid $midnight-dark;
+      box-shadow: -3px -3px 15px rgba(255, 255, 255, 0.048),
                   3px 3px 25px black;
 
-      // border-radius: 10px;
-
       .material-icons {
-        color: $blood-orange-regular;
+        color: $blood-orange-medium;
         font-size: 2.5rem;
       }
 

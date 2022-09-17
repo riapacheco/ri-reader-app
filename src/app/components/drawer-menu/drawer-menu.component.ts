@@ -8,27 +8,19 @@ import { ThemeService } from 'src/app/services/theme.service';
   styleUrls: ['./drawer-menu.component.scss'],
   animations: [ menuSlideOut ]
 })
-export class DrawerMenuComponent implements OnInit {
+export class DrawerMenuComponent {
 
-  @Input() showsMenu = false;
-  @Output() closeClick: EventEmitter<any> = new EventEmitter<any>();
-
-  // toggle component
-  toggleOff!: boolean;
-
+  @Input() showsMenu = false; // mobile menu
+  @Input() toggleOff!: boolean; // from toggle component, then passed to parent
+  @Output() closeClick: EventEmitter<any> = new EventEmitter<any>(); // to close mobile menu
+  @Output() themeUpdate: EventEmitter<any> = new EventEmitter<any>(); // to update theme
+  
   constructor(
     public theme: ThemeService
   ) { }
 
-  ngOnInit(): void {
-    if (this.theme.isDark$) { this.toggleOff = false; }
-    else { this.toggleOff = true; }
-  }
-
-  onToggleSwitch(toggledOn: boolean) {
-    if (toggledOn) {
-      this.theme.setDarkThemeTo(false);
-    } else { this.theme.setDarkThemeTo(true); }
+  onThemeUpdate(toggleEvent: any) {
+    this.themeUpdate.emit(toggleEvent);
   }
 
   onCloseClick(e: any) {

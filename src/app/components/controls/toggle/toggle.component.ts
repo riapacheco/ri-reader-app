@@ -1,43 +1,31 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { toggleRightSlide } from 'src/app/constants/animation.constants';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { toggleSlide } from 'src/app/constants/animation.constants';
 import { ThemeService } from 'src/app/services/theme.service';
+
+export type TToggleState = 'on' | 'off';
 
 @Component({
   selector: 'app-toggle',
   template: `
   <div [ngClass]="(theme.isDark$ | async) ? 'toggle-wrapper is-dark' : 'toggle-wrapper'">
     <a
-      (click)="onToggle()"
-      [ngClass]="toggleOff ? 'toggle-container on-bg' : 'toggle-container'">
+      (click)="toggle($event)"
+      [ngClass]="toggleOff ? 'toggle-container' : 'toggle-container on-bg'">
       <div
-        [@toggleTrigger]="toggleOff ? 'off' : 'on'"
+        [@toggleControlTrigger]="toggleOff ? 'off' : 'on'"
         class="toggle-handle"></div>
     </a>
   </div>`,
   styleUrls: ['./toggle.component.scss'],
-  animations: [ toggleRightSlide ]
+  animations: [ toggleSlide ]
 })
-export class ToggleComponent implements OnInit {
-
+export class ToggleComponent {
   @Input() toggleOff!: boolean;
-  @Output() toggleClick: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() toggledOn: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() toggleClick: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(
-    public theme: ThemeService
-  ) { }
+  constructor( public theme: ThemeService ) { }
 
-  ngOnInit(): void {
-  }
-
-  onToggle() {
-    if (this.toggleOff) {
-      this.toggleOff = false;
-      this.toggledOn.emit(true);
-    }
-    else {
-      this.toggleOff = true;
-      this.toggledOn.emit(false);
-    }
+  public toggle(e: any) {
+    this.toggleClick.emit(e);
   }
 }
