@@ -13,15 +13,18 @@ import { ThemeService } from './services/theme.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
 
+  /* -------------------------- TEMPORARY PROPS START ------------------------- */
   platformStatus = {
     ios: false,
     android: false,
     web: false,
   }
 
+  printMessage = '';
+  /* --------------------------- TEMPORARY PROPS END -------------------------- */
 
   // States
-  lightTheme!: boolean;
+  lightTheme = true;
   showsMobileMenu = false;
   isMobile!: boolean;
 
@@ -38,6 +41,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.sub.add(this.observeLayout());
     this.sub.add(this.checkPlatform());
+    this.checkTheme();
   }
 
   ngOnDestroy(): void {
@@ -55,6 +59,7 @@ export class AppComponent implements OnInit, OnDestroy {
   /* ---------------------------- THEME MANAGEMENT ---------------------------- */
   private checkPlatform() {
     if (this.platform.IOS) {
+
       this.platformStatus = {
         ios: true,
         android: false,
@@ -84,6 +89,8 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
+  
+
   private checkTheme() {
     const themeState = this.theme.getInitTheme();
 
@@ -93,6 +100,10 @@ export class AppComponent implements OnInit, OnDestroy {
       this.lightTheme = false;
     } else { console.log('Duno'); }
   }
+
+
+
+  // Update theme
   onThemeChange(toggleEvent: any) {
     if (toggleEvent && this.lightTheme) {
       this.lightTheme = false;
@@ -103,7 +114,7 @@ export class AppComponent implements OnInit, OnDestroy {
     }
     setTimeout(() => {
       this.showsMobileMenu = false;
-    }, 700);
+    }, 800);
   }
 
   /* ------------------------------- MOBILE MENU ------------------------------ */
@@ -112,5 +123,15 @@ export class AppComponent implements OnInit, OnDestroy {
   }
   onMenuClose(value: any) {
     if (value) { this.showsMobileMenu = false; }
+  }
+
+  /* ------------------------- BOTTOM MOBILE MENU BAR ------------------------- */
+  onActionButtonClick(value: any) {
+    console.log(value);
+    this.printMessage = 'Add Book Passage!';
+
+    setTimeout(() => {
+      this.printMessage = '';
+    }, 1500);
   }
 }

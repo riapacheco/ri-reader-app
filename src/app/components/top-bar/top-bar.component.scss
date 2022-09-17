@@ -7,14 +7,18 @@
 
 $bar-height: 60px;
 $bar-width: 100vw;
+$top-padding: 40px;
 $content-width: 90vw;
 
 .top-bar-wrapper {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
-  height: $bar-height;
+  height: calc($bar-height + $top-padding);
+  padding-top: $top-padding;
+  // padding-top: 40px;
+  @include background-gradient($light: true);
   
   /* --------------------------- MAIN WRAPPER STYLE --------------------------- */
   .main-wrapper {
@@ -94,6 +98,7 @@ $content-width: 90vw;
 
 .top-bar-wrapper.is-dark {
   color: $steel-light;
+  @include background-gradient($light: false);
   a {
     .material-icons {
       color: $blood-orange-medium;
@@ -102,6 +107,12 @@ $content-width: 90vw;
     &.bar-btn {
       .material-icons {
         color: $steel-light;
+      }
+    }
+
+    &:active {
+      .material-icons {
+        color: $blood-orange-light;
       }
     }
   }

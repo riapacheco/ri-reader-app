@@ -1,5 +1,5 @@
 <div
-  [ngClass]="(theme.isDark$ | async) ? 'top-bar-wrapper wrapper is-dark pt-3' : 'top-bar-wrapper wrapper pt-3'"
+  [ngClass]="(theme.isDark$ | async) ? 'top-bar-wrapper wrapper is-dark' : 'top-bar-wrapper wrapper'"
   [ngSwitch]="barStyle">
 
   <!-- -------------------------- MAIN GREETING BAR -------------------------- -->
@@ -13,10 +13,8 @@
       </div>
 
       <a
-        (ontouchstart)="onMenuClick($event)"
         (click)="onMenuClick($event)">
-        <i class="material-icons"
-        #menuButton>menu</i>
+        <i class="material-icons">menu</i>
       </a>
     </div>
   </ng-container>

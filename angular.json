@@ -39,6 +39,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "rxjs-compat",
+              "cross-fetch",
+              "websocket"
+            ],
             "outputPath": "dist/ri-reader",
             "index": "src/index.html",
             "main": "src/main.ts",

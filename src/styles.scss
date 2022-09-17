@@ -92,12 +92,12 @@ $base-index: 2;
 app-root { z-index: calc($base-index / 2); }
 
 app-top-bar,
-app-bottom-bar {
+app-bottom-bar,
+app-menu-bar-top,
+.menu-bar-top {
   z-index: calc($base-index * 3);
 }
-#menuButton {
-  z-index: calc($base-index * 4);
-}
+
 app-drawer-menu,
 .drawer-wrapper {
   z-index: calc($base-index * 5);

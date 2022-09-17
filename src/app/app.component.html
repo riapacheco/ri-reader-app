@@ -1,7 +1,7 @@
 <ng-container *ngIf="isMobile">
-  <div style="height: 30px;
+  <!-- <div style="height: 30px;
               display: block;">
-            </div>
+            </div> -->
 </ng-container>
 
 <div [ngClass]="(theme.isDark$ | async) ? 'wrapper is-dark' : 'wrapper'">
@@ -9,6 +9,10 @@
   <!-- --------------------------- MOBILE TOP BAR ---------------------------- -->
   <ng-container *ngIf="!(auth.authUser$ | async);else signInUpBlock">
     <ng-container *ngIf="isMobile">
+      <app-top-bar
+        (menuClick)="onMenuOpen($event)"
+        >
+      </app-top-bar>
       <app-drawer-menu
         [showsMenu]="showsMobileMenu"
         (closeClick)="onMenuClose($event)"
@@ -16,16 +20,15 @@
         (themeUpdate)="onThemeChange($event)"
         >
       </app-drawer-menu>
-      <app-top-bar
-        (menuClick)="onMenuOpen($event)"
-        >
-      </app-top-bar>
-      <div class="height-bar pt-6" ></div>
     </ng-container>
 
     <!-- -------------------------------- VIEW --------------------------------- -->
-
-    <ul class="list-unstyled pl-2 pt-2">
+    <!-- <div style="padding-top: 40px;"></div> -->
+    <router-outlet></router-outlet>
+    <ul 
+      class="list-unstyled pl-2 pt-2 pb-3"
+      style="font-weight: 500"
+      >
       <li>
         iOS: {{ platformStatus.ios }}
       </li>
@@ -37,11 +40,23 @@
       </li>
     </ul>
 
-    <router-outlet></router-outlet>
+    <ul
+      *ngIf="printMessage" 
+      class="list-unstyled mx-auto-250px"
+      >
+      <li>
+        <h1>
+          {{ printMessage }}
+        </h1>
+      </li>
+    </ul>
 
     <!-- -------------------------- MOBILE BOTTOM BAR -------------------------- -->
     <ng-container *ngIf="isMobile">
-      <app-bottom-bar></app-bottom-bar>
+      <app-bottom-bar
+        (actionClick)="onActionButtonClick($event)"
+        >
+      </app-bottom-bar>
     </ng-container>
 
   </ng-container>

@@ -71,3 +71,13 @@ $mobile-content-width: 90%;
     font-size: 1.8rem;
   }
 }
+@mixin background-gradient($light: true) {
+  @if $light {
+    background-image: linear-gradient(to bottom right, #F5F5F5, white);
+    background-attachment: fixed;
+  } @else {
+    background-image: linear-gradient(to bottom right, black, $midnight-dark);
+    background-attachment: fixed;
+    color: $steel-light;
+  }
+}

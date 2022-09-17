@@ -1,4 +1,5 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { Platform } from '@angular/cdk/platform';
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { BREAKPOINT_VALUE } from 'src/app/enums/breakpoint.enums';
@@ -41,12 +42,16 @@ export class TopBarComponent implements OnInit, OnDestroy {
 
   /* -------------------------------- Structure ------------------------------- */
   isMobile!: boolean;
+  isIOS!: boolean;
+  isAndroid!: boolean;
+  isWeb!: boolean;
 
   private sub = new Subscription();
 
   constructor(
     public theme: ThemeService,
-    private observer: BreakpointObserver
+    private observer: BreakpointObserver,
+    private platform: Platform
   ) { }
 
   ngOnInit(): void {
@@ -62,7 +67,16 @@ export class TopBarComponent implements OnInit, OnDestroy {
     this.observer.observe([BREAKPOINT_VALUE.mobile]).subscribe((state: BreakpointState) => {
       if (state.breakpoints[BREAKPOINT_VALUE.mobile]) { this.isMobile = true; }
       else { this.isMobile = false; }
-    })
+    });
+
+    if (this.platform.IOS) { this.isIOS = true; }
+    else { this.isIOS = false; }
+
+    if (this.platform.ANDROID) { this.isAndroid = true; }
+    else { this.isAndroid = false; }
+
+    if (this.platform.isBrowser) { this.isWeb = true; }
+    else { this.isWeb = false; }
   }
   // check time
   private checkTime() {

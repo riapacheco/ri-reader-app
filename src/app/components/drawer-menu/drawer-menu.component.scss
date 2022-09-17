@@ -10,7 +10,6 @@ h1 {
   font-size: 2.8rem;
   letter-spacing: -0.13rem;
 }
-
 $width: 100vw;
 $height: 100vh;
 $statusBarHeight: 30px;
@@ -20,6 +19,7 @@ $statusBarHeight: 30px;
   left: 0;
   right: 0;
   bottom: 0;
+  padding-top: $statusBarHeight;
 
   overflow-x: hidden;
   overflow-y: scroll; 
@@ -43,10 +43,9 @@ $statusBarHeight: 30px;
       flex-flow: row nowrap;
       align-items: flex-start;
       justify-content: space-between;
-
+      // Close btn
       a {
         .material-icons {
-          // color: $soot-grey-dark;
           opacity: 0.4;
         }
 

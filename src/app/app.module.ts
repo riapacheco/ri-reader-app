@@ -23,6 +23,7 @@ import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component
 import { DrawerMenuComponent } from './components/drawer-menu/drawer-menu.component';
 import { ToggleComponent } from './components/controls/toggle/toggle.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { ToggleComponent } from './components/controls/toggle/toggle.component';
     BottomBarComponent,
     DrawerMenuComponent,
     ToggleComponent,
+    
     
   ],
   imports: [
