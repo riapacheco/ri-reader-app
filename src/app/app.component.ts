@@ -5,6 +5,8 @@ import { Subscription } from 'rxjs';
 import { BREAKPOINT_VALUE } from './enums/breakpoint.enums';
 import { FireAuthService } from './services/fire-auth.service';
 import { ThemeService } from './services/theme.service';
+import { Meta } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-root',
@@ -35,13 +37,15 @@ export class AppComponent implements OnInit, OnDestroy {
     private observer: BreakpointObserver,
     public theme: ThemeService,
     public auth: FireAuthService,
-    private platform: Platform
+    private platform: Platform,
+    private meta: Meta
   ) {}
 
   ngOnInit(): void {
     this.sub.add(this.observeLayout());
     this.sub.add(this.checkPlatform());
     this.checkTheme();
+    // this.meta.addTag({ name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' });
   }
 
   ngOnDestroy(): void {

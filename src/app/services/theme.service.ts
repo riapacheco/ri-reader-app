@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Meta } from '@angular/platform-browser';
 
 export type TTheme = 'lightTheme' | 'darkTheme';
 
@@ -15,7 +16,9 @@ export class ThemeService {
   valueLightTheme = 'lightTheme';
   valueDarkTheme = 'darkTheme';
 
-  constructor() { }
+  constructor(
+    private meta: Meta
+  ) { }
 
   /* ----------------- GET LOCAL STORAGE THEME AND UPDATE APP ----------------- */
   // Check local theme and update service variable to match
@@ -40,6 +43,7 @@ export class ThemeService {
   public updateTheme(themeRequest: TTheme) {
     this.updateServiceState(themeRequest);
     this.updateLocalState(themeRequest);
+    this.updateStatusBar(themeRequest);
   }
 
   /* ----------------------------- PRIVATE HELPERS ---------------------------- */
@@ -53,6 +57,13 @@ export class ThemeService {
   private updateLocalState(themeRequest: TTheme) {
     if (themeRequest == 'darkTheme') { localStorage.setItem(this.stateKey, this.valueDarkTheme); }
     else if (themeRequest == 'lightTheme') { localStorage.setItem(this.stateKey, this.valueLightTheme); }
+  }
+
+  // Add meta tag to index.html file to change mobile statusbar
+  private updateStatusBar(themeRequest: TTheme) {
+    if (themeRequest == 'darkTheme') { this.meta.addTag({ name: 'apple-mobile-web-app-status-bar-style', content: 'white' }) }
+    else if (themeRequest == 'lightTheme') { this.meta.addTag({ name: 'apple-mobile-web-app-status-bar-style', content: 'black' }) }
+    else { this.meta.addTag({ name: 'apple-mobile-web-app-status-bar-style', content: 'black' }) };
   }
 
 }
