@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { TitleStrategy } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 export type TTheme = 'lightTheme' | 'darkTheme';

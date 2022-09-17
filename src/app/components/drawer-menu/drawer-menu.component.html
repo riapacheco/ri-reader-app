@@ -1,11 +1,14 @@
 <div
   [@menuTrigger]="showsMenu ? 'open' : 'close'"
   [ngClass]="(theme.isDark$ | async) ? 'drawer-wrapper is-dark' : 'drawer-wrapper'">
-  <div class="drawer-content">
+  <div [ngClass]="isMobile ? 'drawer-content pt-3':'drawer-content'">
     <div class="title-area">
       <h1>Navigate</h1>
 
-      <a (click)="onCloseClick($event)">
+      <a
+        (click)="onCloseClick($event)"
+        (ontouchstart)="onCloseClick($event)"
+        >
         <i class="material-icons">close</i>
       </a>
     </div>

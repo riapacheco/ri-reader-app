@@ -95,7 +95,9 @@ app-top-bar,
 app-bottom-bar {
   z-index: calc($base-index * 3);
 }
-
+#menuButton {
+  z-index: calc($base-index * 4);
+}
 app-drawer-menu,
 .drawer-wrapper {
   z-index: calc($base-index * 5);

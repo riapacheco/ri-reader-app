@@ -12,7 +12,8 @@ h1 {
 }
 
 $width: 100vw;
-$hight: 100vh;
+$height: 100vh;
+$statusBarHeight: 30px;
 .drawer-wrapper {
   position: absolute;
   top: 0;
@@ -27,7 +28,7 @@ $hight: 100vh;
   backdrop-filter: blur(4px);
 
   .drawer-content {
-    height: $hight;
+    height: calc($height - $statusBarHeight);
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;

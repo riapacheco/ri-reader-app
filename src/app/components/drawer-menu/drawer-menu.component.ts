@@ -1,5 +1,8 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { menuSlideOut } from 'src/app/constants/animation.constants';
+import { BREAKPOINT_VALUE } from 'src/app/enums/breakpoint.enums';
 import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
@@ -8,16 +11,36 @@ import { ThemeService } from 'src/app/services/theme.service';
   styleUrls: ['./drawer-menu.component.scss'],
   animations: [ menuSlideOut ]
 })
-export class DrawerMenuComponent {
+export class DrawerMenuComponent implements OnInit, OnDestroy {
 
   @Input() showsMenu = false; // mobile menu
   @Input() toggleOff!: boolean; // from toggle component, then passed to parent
   @Output() closeClick: EventEmitter<any> = new EventEmitter<any>(); // to close mobile menu
   @Output() themeUpdate: EventEmitter<any> = new EventEmitter<any>(); // to update theme
   
+  isMobile!: boolean;
+  private sub = new Subscription();
+
   constructor(
-    public theme: ThemeService
+    public theme: ThemeService,
+    private observer: BreakpointObserver
   ) { }
+
+  ngOnInit(): void {
+    this.sub.add(this.checkDeviceView());
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
+
+  // check device viewport
+  private checkDeviceView() {
+    this.observer.observe([BREAKPOINT_VALUE.mobile]).subscribe((state: BreakpointState) => {
+      if (state.breakpoints[BREAKPOINT_VALUE.mobile]) { this.isMobile = true; }
+      else { this.isMobile = false; }
+    })
+  }
 
   onThemeUpdate(toggleEvent: any) {
     this.themeUpdate.emit(toggleEvent);

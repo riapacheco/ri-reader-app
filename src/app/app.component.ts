@@ -1,5 +1,6 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
+import { Platform } from '@angular/cdk/platform';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { BREAKPOINT_VALUE } from './enums/breakpoint.enums';
 import { FireAuthService } from './services/fire-auth.service';
@@ -10,7 +11,14 @@ import { ThemeService } from './services/theme.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
+
+  platformStatus = {
+    ios: false,
+    android: false,
+    web: false,
+  }
+
 
   // States
   lightTheme!: boolean;
@@ -23,12 +31,17 @@ export class AppComponent implements OnInit {
   constructor(
     private observer: BreakpointObserver,
     public theme: ThemeService,
-    public auth: FireAuthService
+    public auth: FireAuthService,
+    private platform: Platform
   ) {}
 
   ngOnInit(): void {
     this.sub.add(this.observeLayout());
-    this.sub.add(this.checkTheme());
+    this.sub.add(this.checkPlatform());
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 
   /* --------------------------- VIEWPORT MANAGEMENT -------------------------- */
@@ -40,6 +53,37 @@ export class AppComponent implements OnInit {
   }
 
   /* ---------------------------- THEME MANAGEMENT ---------------------------- */
+  private checkPlatform() {
+    if (this.platform.IOS) {
+      this.platformStatus = {
+        ios: true,
+        android: false,
+        web: false,
+      }
+    }
+    else if (this.platform.ANDROID) {
+      this.platformStatus = {
+        ios: false,
+        android: true,
+        web: false,
+      }
+    }
+    else if (this.platform.isBrowser) {
+      this.platformStatus = {
+        ios: false,
+        android: false,
+        web: true,
+      }
+    }
+    else {
+      this.platformStatus = {
+        ios: false,
+        android: false,
+        web: false,
+      }
+    }
+  }
+
   private checkTheme() {
     const themeState = this.theme.getInitTheme();
 
@@ -59,7 +103,7 @@ export class AppComponent implements OnInit {
     }
     setTimeout(() => {
       this.showsMobileMenu = false;
-    }, 550);
+    }, 700);
   }
 
   /* ------------------------------- MOBILE MENU ------------------------------ */
