@@ -44,12 +44,16 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
 
-  /* ---------------------------- ROUTE ACTIVATION ---------------------------- */
+  /**
+   * On activation, scrolls to top since
+   */
   onRouteActivation() {
     this.scrollToTopDiv.nativeElement.scrollIntoView();
   }
 
-  /* --------------------------- VIEWPORT MANAGEMENT -------------------------- */
+  /**
+   * Observe layout populates 
+   */
   private observeLayout() {
     this.observer.observe([BREAKPOINT_VALUE.mobile]).subscribe((state: BreakpointState) => {
       if (state.breakpoints[BREAKPOINT_VALUE.mobile]) { this.isMobile = true; }
@@ -57,11 +61,12 @@ export class AppComponent implements OnInit, OnDestroy {
     })
   }
 
-  /* ---------------------------- THEME MANAGEMENT ---------------------------- */
-
+  /**
+   * Calls {@link ThemeService} to check user's localStorage for theme reference
+   * If none, defaults to light theme
+   */
   private checkTheme() {
     const themeState = this.theme.getInitTheme();
-
     if (themeState == 'lightTheme') {
       this.lightTheme = true;
     } else if (themeState == 'darkTheme') {
@@ -69,9 +74,11 @@ export class AppComponent implements OnInit, OnDestroy {
     } else { console.log('Duno'); }
   }
 
-
-
-  // Update theme
+  /**
+   * 
+   * @param toggleEvent Simply tracks the actual click event and uses localStorage to manage state
+   * 
+   */
   onThemeChange(toggleEvent: any) {
     if (toggleEvent && this.lightTheme) {
       this.lightTheme = false;
@@ -85,15 +92,27 @@ export class AppComponent implements OnInit, OnDestroy {
     }, 800);
   }
 
-  /* ------------------------------- MOBILE MENU ------------------------------ */
+  /**
+   * 
+   * @param value event that signals that the user has clicked the menuOpen button
+   */
   onMenuOpen(value: any) {
     if (value) { this.showsMobileMenu = true; }
   }
+  /**
+   * 
+   * @param value event that signals that the user has clicked the close button
+   */
   onMenuClose(value: any) {
     if (value) { this.showsMobileMenu = false; }
   }
 
   /* ------------------------- BOTTOM MOBILE MENU BAR ------------------------- */
+  /**
+   * 
+   * @param value Signals that the main (center) Action Button on the mobile bottom bar has been clicked
+   *              This param passes through the value of whatever the specified target is from its data source
+   */
   onActionButtonClick(value: any) {
     console.log(value);
   }

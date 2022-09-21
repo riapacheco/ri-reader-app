@@ -1,0 +1,164 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ri-reader documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">ri-reader documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="rireader">RiReader</h1>
+<p>RiReader is an application offered on Web, iOS, and Android, which enables a user to both consume and retain data they&#39;ve read from a physical book. </p>
+<hr>
+<h2 id="product-marketing">Product Marketing</h2>
+<h3 id="boilerplate-statement">Boilerplate Statement</h3>
+<p>RiReader is a neural net powered application, for avid readers of physical books, that want to record key ideas with the least effort possible, build out thinking frameworks with a better intuitive understanding of what they&#39;re reading in the first place, and want to ensure that what they look at is useful.</p>
+<h3 id="value-propositions">Value Propositions</h3>
+<h4 id="maximize-reading-flow-efficiency-with-effortless-note-taking">Maximize Reading Flow Efficiency with Effortless Note-Taking</h4>
+<p>Keep your reading session uninterrupted and capture notes (&quot;passages&quot;) with ease with a neural net based OCR engine that captures text from your physical books right to the app even under relatively low-lit conditions.</p>
+<h4 id="capture-key-ideas-intuitively">Capture Key Ideas Intuitively</h4>
+<p>Store passages, along with contextual notes and tags, to easily review important ideas and refresh each idea&#39;s impact every time you open the app.</p>
+<h4 id="think-bigger-with-weighted-scoring">Think Bigger with Weighted Scoring</h4>
+<p>Find out what&#39;s most important to <em>you</em> with weighted book scoring you can adjust, covering the author&#39;s content organization, use of citations, use of emotion, and any other aspects that might impact the experience.</p>
+<hr>
+<h1 id="generated-documentation-view">Generated Documentation View</h1>
+<p>This repo generates documentation through a locally run <code>compodoc</code> view. To view:</p>
+<ol>
+<li>Download the repo</li>
+<li>Run <code>npm install</code> to install all dependencies required</li>
+<li>Run <code>npm run docs</code> to both generate documentation from inline comments and serve the documentation site</li>
+</ol>
+<hr>
+<h3 id="feature-list">Feature List</h3>
+<ol>
+<li>Camera to text reader</li>
+<li>Scoring categories</li>
+<li>Weighted scoring</li>
+<li>Graphing tools / visuals for summary metrics</li>
+<li>Track multiple books concurrently</li>
+</ol>
+<hr>
+<h3 id="user-stories">User Stories</h3>
+<h4 id="v1">V1</h4>
+<ol>
+<li>As a user, I want to <strong>record physical book passages (1 - 5 sentences) from my smartphone&#39;s camera to the app</strong>, so that my reading flow isn&#39;t disrupted from physical note-taking</li>
+<li>As a user, I want my recorded book passages to <strong>include their specific page numbers</strong> so that I can refer to passages years into the future</li>
+<li>As a user, I want to <strong>edit the book passages</strong> that are saved from my smartphone&#39;s camera so that I can correct any errors from the OCR engine not identifying lines / blobs correctly</li>
+<li>As a user, I want to <strong>add contextual notes to any saved book passages I store in the app</strong>, so that I can jog my memory on why it was significant and how I felt about it</li>
+<li>As a user, I want to <strong>apply overall scores (performance grades) to a book</strong> so that I can more organically understand my own reading preferences and make it so I&#39;m more likely to retain important information</li>
+<li>As a user, I want to <strong>enable book scoring at any time (during my reading a book AND when it&#39;s finished)</strong>, so that I don&#39;t lose my train of thought on a book and can read multiple books at once</li>
+<li>As a user, I want to optionally <strong>record completion progress of a book in a light way</strong> that doesn&#39;t force itself into my reading workflow, so that I can prioritize which book to continue reading when I decide it&#39;s important</li>
+<li>As a user, I want to score books based on <strong>10 unique (and app suggested) categories that best reflect my personality and individual preferences</strong> so that I can build an intuitive mental repository of ideas (and the concepts that enabled them)</li>
+<li>As a user, I want to <strong>change the scoring categories provided by the app (and have additionally suggested categories alongside those completely from scratch)</strong> so that I can explore what metrics make the most sense for my personality or end-goal</li>
+<li>As a user, I want to <strong>add varied weights to each scoring category</strong> so that I can fine tune which categories are more important to my personal style</li>
+<li>As a user, I want the <strong>scoring process to feel natural and impermanent</strong> so that it&#39;s done often and consistently reminds me what&#39;s important to my consumption of material</li>
+</ol>
+<h4 id="v2">V2+</h4>
+<ol>
+<li>As a user, I want to <strong>change the weighting of scoring categories from book to book</strong> so that I&#39;m able to create a higher level thinking framework during the reading process and retain highly diverse information</li>
+<li>As a user, I want to <strong>connect ideas from one book passage idea to another book</strong> so that I can begin graphing concepts and ideas from different time periods, disciplines, and industries</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

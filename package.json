@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "compodoc": "npx compodoc -p tsconfig.doc.json",
+    "doc": "compodoc -s",
+    "docs": "npx compodoc -p tsconfig.doc.json -s"
   },
   "private": true,
   "dependencies": {
@@ -35,6 +38,7 @@
     "@angular/cli": "~14.1.0",
     "@angular/compiler-cli": "^14.1.0",
     "@capacitor/cli": "^4.2.0",
+    "@compodoc/compodoc": "^1.1.19",
     "@types/jasmine": "~4.0.0",
     "jasmine-core": "~4.2.0",
     "karma": "~6.4.0",

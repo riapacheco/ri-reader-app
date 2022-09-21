@@ -1,0 +1,1446 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ri-reader documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ri-reader documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  TopBarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/mobile/top-bar/top-bar.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-top-bar</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./top-bar.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./top-bar.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#defaultGreeting" >defaultGreeting</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#device" >device</a>
+                            </li>
+                            <li>
+                                <a href="#greetings" >greetings</a>
+                            </li>
+                            <li>
+                                <a href="#hour" >hour</a>
+                            </li>
+                            <li>
+                                <a href="#isAndroid" >isAndroid</a>
+                            </li>
+                            <li>
+                                <a href="#isIOS" >isIOS</a>
+                            </li>
+                            <li>
+                                <a href="#isMobile" >isMobile</a>
+                            </li>
+                            <li>
+                                <a href="#isWeb" >isWeb</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#sub" >sub</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#theme" >theme</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#checkBreakpoints" >checkBreakpoints</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#checkTime" >checkTime</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onButtonClick" >onButtonClick</a>
+                            </li>
+                            <li>
+                                <a href="#onMenuClick" >onMenuClick</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#barStyle" >barStyle</a>
+                            </li>
+                            <li>
+                                <a href="#button" >button</a>
+                            </li>
+                            <li>
+                                <a href="#contextTitle" >contextTitle</a>
+                            </li>
+                            <li>
+                                <a href="#mainTitle" >mainTitle</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#buttonClick" >buttonClick</a>
+                            </li>
+                            <li>
+                                <a href="#menuClick" >menuClick</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(theme: <a href="../injectables/ThemeService.html" target="_self">ThemeService</a>, observer: BreakpointObserver, device: <a href="../injectables/DeviceOsService.html" target="_self">DeviceOsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:49</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>theme</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ThemeService.html" target="_self" >ThemeService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>observer</td>
+                                                  
+                                                        <td>
+                                                                    <code>BreakpointObserver</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>device</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DeviceOsService.html" target="_self" >DeviceOsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="barStyle"></a>
+                        <b>barStyle</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#TBarStyle" target="_self" >TBarStyle</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;main&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:18</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="button"></a>
+                        <b>button</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>{ left: { icon: string; target: string; }; right: { icon: string; target: string; }; }</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    left: {
+      icon: &#x27;west&#x27;,
+      target: &#x27;targetBack&#x27;
+    },
+    right: {
+      icon: &#x27;settings&#x27;,
+      target: &#x27;&#x27;
+    }
+  }</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:25</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="contextTitle"></a>
+                        <b>contextTitle</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Preview&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:36</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mainTitle"></a>
+                        <b>mainTitle</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:19</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="buttonClick"></a>
+                        <b>buttonClick</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:35</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="menuClick"></a>
+                        <b>menuClick</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:22</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkBreakpoints"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>checkBreakpoints</b></span>
+                        <a href="#checkBreakpoints"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkBreakpoints()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:67</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkTime"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>checkTime</b></span>
+                        <a href="#checkTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkTime()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:75</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onButtonClick"></a>
+                    <span class="name">
+                        <span ><b>onButtonClick</b></span>
+                        <a href="#onButtonClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onButtonClick(targetValue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:86</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>targetValue</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onMenuClick"></a>
+                    <span class="name">
+                        <span ><b>onMenuClick</b></span>
+                        <a href="#onMenuClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onMenuClick(e: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:82</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="defaultGreeting"></a>
+                    <span class="name">
+                        <span ><b>defaultGreeting</b></span>
+                        <a href="#defaultGreeting"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="device"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>device</b></span>
+                        <a href="#device"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/DeviceOsService.html" target="_self" >DeviceOsService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="greetings"></a>
+                    <span class="name">
+                        <span ><b>greetings</b></span>
+                        <a href="#greetings"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;Good Morning&#x27;, &#x27;Good Afternoon&#x27;, &#x27;Good Evening&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hour"></a>
+                    <span class="name">
+                        <span ><b>hour</b></span>
+                        <a href="#hour"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date().getHours()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAndroid"></a>
+                    <span class="name">
+                        <span ><b>isAndroid</b></span>
+                        <a href="#isAndroid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isIOS"></a>
+                    <span class="name">
+                        <span ><b>isIOS</b></span>
+                        <a href="#isIOS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isMobile"></a>
+                    <span class="name">
+                        <span ><b>isMobile</b></span>
+                        <a href="#isMobile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isWeb"></a>
+                    <span class="name">
+                        <span ><b>isWeb</b></span>
+                        <a href="#isWeb"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sub"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>sub</b></span>
+                        <a href="#sub"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subscription()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="theme"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>theme</b></span>
+                        <a href="#theme"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/ThemeService.html" target="_self" >ThemeService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/components/mobile/top-bar/top-bar.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BreakpointObserver, BreakpointState } from &#x27;@angular/cdk/layout&#x27;;
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from &#x27;@angular/core&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { BREAKPOINT_VALUE } from &#x27;src/app/enums/breakpoint.enums&#x27;;
+import { DeviceOsService } from &#x27;src/app/services/device-os.service&#x27;;
+import { ThemeService } from &#x27;src/app/services/theme.service&#x27;;
+
+export type TBarStyle &#x3D; &#x27;main&#x27; | &#x27;context&#x27; | &#x27;none&#x27; | &#x27;&#x27; ;
+
+@Component({
+  selector: &#x27;app-top-bar&#x27;,
+  templateUrl: &#x27;./top-bar.component.html&#x27;,
+  styleUrls: [&#x27;./top-bar.component.scss&#x27;]
+})
+export class TopBarComponent implements OnInit, OnDestroy {
+
+  /* ------------------------------- BOTH STYLES ------------------------------ */
+  @Input() barStyle: TBarStyle &#x3D; &#x27;main&#x27;;
+  @Input() mainTitle &#x3D; &#x27;&#x27;;
+
+  /* ------------------------------- Main Style ------------------------------- */
+  @Output() menuClick: EventEmitter&lt;any&gt; &#x3D; new EventEmitter&lt;any&gt;();
+
+  /* ------------------------------ Context Style ----------------------------- */
+  @Input() button &#x3D; {
+    left: {
+      icon: &#x27;west&#x27;,
+      target: &#x27;targetBack&#x27;
+    },
+    right: {
+      icon: &#x27;settings&#x27;,
+      target: &#x27;&#x27;
+    }
+  }
+  @Output() buttonClick: EventEmitter&lt;any&gt; &#x3D; new EventEmitter&lt;any&gt;();
+  @Input() contextTitle &#x3D; &#x27;Preview&#x27;;
+
+  /* ----------------------------- Greeting Props ----------------------------- */
+  defaultGreeting &#x3D; &#x27;&#x27;;
+  hour &#x3D; new Date().getHours();
+  greetings &#x3D; [&#x27;Good Morning&#x27;, &#x27;Good Afternoon&#x27;, &#x27;Good Evening&#x27;];
+
+  /* -------------------------------- Structure ------------------------------- */
+  isMobile!: boolean;
+  isIOS!: boolean;
+  isAndroid!: boolean;
+  isWeb!: boolean;
+
+  private sub &#x3D; new Subscription();
+
+  constructor(
+    public theme: ThemeService,
+    private observer: BreakpointObserver,
+    public device: DeviceOsService
+  ) { }
+
+  ngOnInit(): void {
+    this.sub.add(this.checkBreakpoints());
+    this.checkTime();
+    this.device.runPlatformMonitor();
+  }
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
+
+  // breakpoints
+  private checkBreakpoints() {
+    this.observer.observe([BREAKPOINT_VALUE.mobile]).subscribe((state: BreakpointState) &#x3D;&gt; {
+      if (state.breakpoints[BREAKPOINT_VALUE.mobile]) { this.isMobile &#x3D; true; }
+      else { this.isMobile &#x3D; false; }
+    });
+  }
+  
+  // check time
+  private checkTime() {
+    if (this.hour &lt; 12) { this.defaultGreeting &#x3D; this.greetings[0]; }
+    else if (this.hour &lt; 18) { this.defaultGreeting &#x3D; this.greetings[1]; }
+    else { this.defaultGreeting &#x3D; this.greetings[2]; }
+  }
+
+  /* ----------------------------- User Controlsx ----------------------------- */
+  onMenuClick(e: any) {
+    if (e) { this.menuClick.emit(e); }
+  }
+
+  onButtonClick(targetValue: string) {
+    if (targetValue) { this.buttonClick.emit(targetValue); }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div
+  [ngClass]&#x3D;&quot;(theme.isDark$ | async) ? &#x27;top-bar-wrapper wrapper is-dark&#x27; : &#x27;top-bar-wrapper wrapper&#x27;&quot;
+  [ngSwitch]&#x3D;&quot;barStyle&quot;&gt;
+
+  &lt;!-- -------------------------- MAIN GREETING BAR -------------------------- --&gt;
+  &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;main&#x27;&quot;&gt;
+    &lt;div [ngClass]&#x3D;&quot;(theme.isDark$ | async) ? &#x27;main-wrapper is-dark&#x27; : &#x27;main-wrapper&#x27;&quot;&gt;
+      &lt;div class&#x3D;&quot;title-area&quot;&gt;
+        &lt;!--If no mainTitle, diverts to greeting--&gt;
+        &lt;span&gt;
+          {{ mainTitle ? mainTitle : defaultGreeting }}
+        &lt;/span&gt;
+      &lt;/div&gt;
+
+      &lt;a
+        (click)&#x3D;&quot;onMenuClick($event)&quot;&gt;
+        &lt;i class&#x3D;&quot;material-icons&quot;&gt;menu&lt;/i&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/ng-container&gt;
+
+  &lt;!-- ----------------------------- CONTEXT BAR ----------------------------- --&gt;
+  &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;context&#x27;&quot;&gt;
+    &lt;div [ngClass]&#x3D;&quot;(theme.isDark$ | async) ? &#x27;context-wrapper is-dark&#x27; : &#x27;context-wrapper&#x27;&quot;&gt;
+      &lt;div class&#x3D;&quot;content-area&quot;&gt;
+        &lt;a
+          (click)&#x3D;&quot;onButtonClick(button.left.target)&quot;
+          (ontouchstart)&#x3D;&quot;onButtonClick(button.left.target)&quot;
+          class&#x3D;&quot;bar-btn&quot;&gt;
+          &lt;i class&#x3D;&quot;material-icons&quot;&gt;
+            {{ button.left.icon }}
+          &lt;/i&gt;
+        &lt;/a&gt;
+
+        &lt;a class&#x3D;&quot;title&quot;&gt;
+          {{ contextTitle }}
+        &lt;/a&gt;
+
+        &lt;ng-container *ngIf&#x3D;&quot;button.right.target&quot;&gt;
+          &lt;a
+            (click)&#x3D;&quot;onButtonClick(button.right.target)&quot;
+            (ontouchstart)&#x3D;&quot;onButtonClick(button.right.target)&quot;
+            class&#x3D;&quot;bar-btn right&quot;&gt;
+            &lt;i class&#x3D;&quot;material-icons&quot;&gt;
+              {{ button.right.icon }}
+            &lt;/i&gt;
+          &lt;/a&gt;
+        &lt;/ng-container&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/ng-container&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./top-bar.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;node_modules/@riapacheco/yutes/season/two.scss&#x27;;
+@import &#x27;../../../../scss/colors.scss&#x27;;
+@import &#x27;../../../../scss/mixins.scss&#x27;;
+
+:host { -webkit-font-smoothing: antialiased !important; }
+
+
+$bar-height: 60px;
+$bar-width: 100vw;
+$top-padding: 40px;
+$content-width: 90vw;
+
+.top-bar-wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc($bar-height + $top-padding);
+
+  // padding-top: 40px;
+  @include background-gradient($light: true);
+  
+  /* --------------------------- MAIN WRAPPER STYLE --------------------------- */
+  .main-wrapper {
+    height: $bar-height;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    .title-area {
+      span {
+        height: $bar-height;
+        display: inline-flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: -0.1rem;
+        padding-top: 0.5rem;
+      }
+    }
+    a {
+      height: $bar-height;
+      display: inline-flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: center;
+
+      &amp;:active {
+        color: $blood-orange-medium;
+      }
+    }
+  }
+
+  .context-wrapper {
+    height: $bar-height;
+    width: $bar-width;
+    .content-area {
+      height: $bar-height;
+      width: $bar-width;
+      margin: auto;
+      position: relative;
+      .bar-btn {
+        height: $bar-height;
+        width: $bar-height;
+        display: inline-flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+
+        .material-icons { font-size: 1.8rem; }
+
+        &amp;.right {
+          color: $accent-grey;
+        }
+        &amp;:active {
+          .material-icons {
+            color: $blood-orange-regular;
+          }
+        }
+      }
+      .title {
+        display: inline-flex;
+        font-size: 2.4rem;
+        font-weight: 600;
+        width: calc($bar-width - ($bar-height * 2));
+
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.top-bar-wrapper.is-dark {
+  color: $steel-light;
+  @include background-gradient($light: false);
+  a {
+    .material-icons {
+      color: $blood-orange-medium;
+    }
+
+    &amp;.bar-btn {
+      .material-icons {
+        color: $steel-light;
+      }
+    }
+
+    &amp;:active {
+      .material-icons {
+        color: $blood-orange-light;
+      }
+    }
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div  [ngClass]="(theme.isDark$ | async) ? \'top-bar-wrapper wrapper is-dark\' : \'top-bar-wrapper wrapper\'"  [ngSwitch]="barStyle">  <!-- -------------------------- MAIN GREETING BAR -------------------------- -->  <ng-container *ngSwitchCase="\'main\'">    <div [ngClass]="(theme.isDark$ | async) ? \'main-wrapper is-dark\' : \'main-wrapper\'">      <div class="title-area">        <!--If no mainTitle, diverts to greeting-->        <span>          {{ mainTitle ? mainTitle : defaultGreeting }}        </span>      </div>      <a        (click)="onMenuClick($event)">        <i class="material-icons">menu</i>      </a>    </div>  </ng-container>  <!-- ----------------------------- CONTEXT BAR ----------------------------- -->  <ng-container *ngSwitchCase="\'context\'">    <div [ngClass]="(theme.isDark$ | async) ? \'context-wrapper is-dark\' : \'context-wrapper\'">      <div class="content-area">        <a          (click)="onButtonClick(button.left.target)"          (ontouchstart)="onButtonClick(button.left.target)"          class="bar-btn">          <i class="material-icons">            {{ button.left.icon }}          </i>        </a>        <a class="title">          {{ contextTitle }}        </a>        <ng-container *ngIf="button.right.target">          <a            (click)="onButtonClick(button.right.target)"            (ontouchstart)="onButtonClick(button.right.target)"            class="bar-btn right">            <i class="material-icons">              {{ button.right.icon }}            </i>          </a>        </ng-container>      </div>    </div>  </ng-container></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppStatusBarComponent', 'selector': 'app-app-status-bar'},{'name': 'BottomBarComponent', 'selector': 'app-bottom-bar'},{'name': 'CaptureImageComponent', 'selector': 'app-capture-image'},{'name': 'DrawerMenuComponent', 'selector': 'app-drawer-menu'},{'name': 'ListComponent', 'selector': 'app-list'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'ToggleComponent', 'selector': 'app-toggle'},{'name': 'TopBarComponent', 'selector': 'app-top-bar'}];
+    var DIRECTIVES = [{'name': 'OutsideClickDirective', 'selector': '[appOutsideClick]'},{'name': 'VerticalResizeDirective', 'selector': '[appVerticalResize]'}];
+    var ACTUAL_COMPONENT = {'name': 'TopBarComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TopBarComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

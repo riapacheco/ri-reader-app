@@ -1,6 +1,31 @@
 # RiReader
-Since I read too many books to track, I wanted to build myself an app that could help me take notes (via image-to-text conversion aka OCR) 
-and would allow me to create and apply a weighted scoring system. Figured I'd build it for both web and iOS (and maybe android).
+RiReader is an application offered on Web, iOS, and Android, which enables a user to both consume and retain data they've read from a physical book. 
+
+---
+
+## Product Marketing
+
+### Boilerplate Statement
+RiReader is a neural net powered application, for avid readers of physical books, that want to record key ideas with the least effort possible, build out thinking frameworks with a better intuitive understanding of what they're reading in the first place, and want to ensure that what they look at is useful.
+
+
+### Value Propositions
+#### Maximize Reading Flow Efficiency with Effortless Note-Taking
+Keep your reading session uninterrupted and capture notes ("passages") with ease with a neural net based OCR engine that captures text from your physical books right to the app even under relatively low-lit conditions.
+
+#### Capture Key Ideas Intuitively
+Store passages, along with contextual notes and tags, to easily review important ideas and refresh each idea's impact every time you open the app.
+
+#### Think Bigger with Weighted Scoring
+Find out what's most important to _you_ with weighted book scoring you can adjust, covering the author's content organization, use of citations, use of emotion, and any other aspects that might impact the experience.
+
+---
+
+# Generated Documentation View
+This repo generates documentation through a locally run `compodoc` view. To view:
+1. Download the repo
+2. Run `npm install` to install all dependencies required
+3. Run `npm run docs` to both generate documentation from inline comments and serve the documentation site
 
 ---
 
