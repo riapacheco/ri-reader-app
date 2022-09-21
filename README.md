@@ -9,7 +9,7 @@ RiReader is an application offered on Web, iOS, and Android, which enables a use
 **RiReader** is a neural net powered real-world helper app, designed for fans of physical books 
 that want to (1) record key ideas with minimal effort, (2) intuitively understand the content they're reading 
 in a way that helps them fine-tune their own thinking framework; and (3) enables a confident understanding of 
-what makes a good read "good", through a weighted scoring system that reflects their evolving preferences over time.
+what makes a good read "good" through a weighted scoring system that reflects their evolving preferences over time.
 
 
 ### Value Propositions
