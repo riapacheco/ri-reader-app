@@ -1,5 +1,6 @@
+<app-app-status-bar></app-app-status-bar>
+<div #scrollToTopDiv></div>
 <div [ngClass]="(theme.isDark$ | async) ? 'wrapper is-dark' : 'wrapper'">
-
   <!-- --------------------------- MOBILE TOP BAR ---------------------------- -->
   <ng-container *ngIf="!(auth.authUser$ | async);else signInUpBlock">
     <ng-container *ngIf="isMobile">
@@ -18,32 +19,21 @@
 
     <!-- -------------------------------- VIEW --------------------------------- -->
     <!-- <div style="padding-top: 40px;"></div> -->
-    <router-outlet></router-outlet>
-    <ul 
-      class="list-unstyled pl-2 pt-2 pb-3"
-      style="font-weight: 500"
+    <router-outlet
+      (activate)="onRouteActivation()"
       >
-      <li>
-        iOS: {{ platformStatus.ios }}
-      </li>
-      <li>
-        android: {{ platformStatus.android }}
-      </li>
-      <li>
-        web: {{ platformStatus.web }}
-      </li>
-    </ul>
-
-    <ul
-      *ngIf="printMessage" 
-      class="list-unstyled mx-auto-250px"
-      >
-      <li>
-        <h1>
-          {{ printMessage }}
-        </h1>
-      </li>
-    </ul>
+    </router-outlet>
+    <div class="mx-auto-300px">
+      <ng-container *ngIf="(device.iosPlatform$ | async)">
+        <h3>iPhone IOS</h3>
+      </ng-container>
+      <ng-container *ngIf="(device.androidPlatform$ | async)">
+        <h3>Android</h3>
+      </ng-container>
+      <ng-container *ngIf="(device.webPlatform$ | async)">
+        <h3>Web Browser</h3>
+      </ng-container>
+    </div>
 
     <!-- -------------------------- MOBILE BOTTOM BAR -------------------------- -->
     <ng-container *ngIf="isMobile">
@@ -52,7 +42,6 @@
         >
       </app-bottom-bar>
     </ng-container>
-
   </ng-container>
   
   <!-- ---------------------------- SIGN UP VIEW ----------------------------- -->

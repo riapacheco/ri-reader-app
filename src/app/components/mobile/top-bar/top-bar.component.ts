@@ -1,8 +1,8 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { Platform } from '@angular/cdk/platform';
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { BREAKPOINT_VALUE } from 'src/app/enums/breakpoint.enums';
+import { DeviceOsService } from 'src/app/services/device-os.service';
 import { ThemeService } from 'src/app/services/theme.service';
 
 export type TBarStyle = 'main' | 'context' | 'none' | '' ;
@@ -51,12 +51,13 @@ export class TopBarComponent implements OnInit, OnDestroy {
   constructor(
     public theme: ThemeService,
     private observer: BreakpointObserver,
-    private platform: Platform
+    public device: DeviceOsService
   ) { }
 
   ngOnInit(): void {
     this.sub.add(this.checkBreakpoints());
     this.checkTime();
+    this.device.runPlatformMonitor();
   }
   ngOnDestroy(): void {
     this.sub.unsubscribe();
@@ -68,16 +69,8 @@ export class TopBarComponent implements OnInit, OnDestroy {
       if (state.breakpoints[BREAKPOINT_VALUE.mobile]) { this.isMobile = true; }
       else { this.isMobile = false; }
     });
-
-    if (this.platform.IOS) { this.isIOS = true; }
-    else { this.isIOS = false; }
-
-    if (this.platform.ANDROID) { this.isAndroid = true; }
-    else { this.isAndroid = false; }
-
-    if (this.platform.isBrowser) { this.isWeb = true; }
-    else { this.isWeb = false; }
   }
+  
   // check time
   private checkTime() {
     if (this.hour < 12) { this.defaultGreeting = this.greetings[0]; }

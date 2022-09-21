@@ -1,6 +1,6 @@
 @import 'node_modules/@riapacheco/yutes/season/two.scss';
-@import '../../../scss/colors.scss';
-@import '../../../scss/mixins.scss';
+@import '../../../../scss/colors.scss';
+@import '../../../../scss/mixins.scss';
 
 :host {
   -webkit-font-smoothing: antialiased !important;
@@ -19,7 +19,7 @@ $statusBarHeight: 30px;
   left: 0;
   right: 0;
   bottom: 0;
-  padding-top: $statusBarHeight;
+  // padding-top: $statusBarHeight;
 
   overflow-x: hidden;
   overflow-y: scroll; 
@@ -46,12 +46,13 @@ $statusBarHeight: 30px;
       // Close btn
       a {
         .material-icons {
-          opacity: 0.4;
+          font-size: 2.8rem;
+          color: $blood-orange-regular;
         }
 
         &:active {
           .material-icons {
-            color: $blood-orange-regular;
+            color: black;
           }
         }
       }
@@ -72,7 +73,6 @@ $statusBarHeight: 30px;
       border-radius: 6px;
       box-shadow: -3px -3px 10px white,
                   3px 3px 12px rgba(0, 0, 0, 0.129);
-                  margin-bottom: 3rem;
       
       .toggle-group {
         width: fit-content;

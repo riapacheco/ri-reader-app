@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { Subscription } from 'rxjs';
 import { menuSlideOut } from 'src/app/constants/animation.constants';
 import { BREAKPOINT_VALUE } from 'src/app/enums/breakpoint.enums';
+import { DeviceOsService } from 'src/app/services/device-os.service';
 import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
@@ -23,7 +24,8 @@ export class DrawerMenuComponent implements OnInit, OnDestroy {
 
   constructor(
     public theme: ThemeService,
-    private observer: BreakpointObserver
+    private observer: BreakpointObserver,
+    public device: DeviceOsService
   ) { }
 
   ngOnInit(): void {

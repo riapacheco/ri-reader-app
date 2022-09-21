@@ -1,7 +1,7 @@
 <div
   [@menuTrigger]="showsMenu ? 'open' : 'close'"
   [ngClass]="(theme.isDark$ | async) ? 'drawer-wrapper is-dark' : 'drawer-wrapper'">
-  <div [ngClass]="isMobile ? 'drawer-content pt-3':'drawer-content'">
+  <div [ngClass]="isMobile ? 'drawer-content':'drawer-content'">
     <div class="title-area">
       <h1>Navigate</h1>
 

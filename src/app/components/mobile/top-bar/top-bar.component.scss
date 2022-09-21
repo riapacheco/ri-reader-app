@@ -1,6 +1,6 @@
 @import 'node_modules/@riapacheco/yutes/season/two.scss';
-@import '../../../scss/colors.scss';
-@import '../../../scss/mixins.scss';
+@import '../../../../scss/colors.scss';
+@import '../../../../scss/mixins.scss';
 
 :host { -webkit-font-smoothing: antialiased !important; }
 
@@ -16,7 +16,7 @@ $content-width: 90vw;
   left: 0;
   right: 0;
   height: calc($bar-height + $top-padding);
-  padding-top: $top-padding;
+
   // padding-top: 40px;
   @include background-gradient($light: true);
   

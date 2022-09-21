@@ -18,10 +18,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from 'src/environments/environment';
 import { FireAuthService } from './services/fire-auth.service';
 import { ThemeService } from './services/theme.service';
-import { TopBarComponent } from './components/top-bar/top-bar.component';
-import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component';
-import { DrawerMenuComponent } from './components/drawer-menu/drawer-menu.component';
+import { TopBarComponent } from './components/mobile/top-bar/top-bar.component';
+import { BottomBarComponent } from './components/mobile/bottom-bar/bottom-bar.component';
+import { DrawerMenuComponent } from './components/mobile/drawer-menu/drawer-menu.component';
 import { ToggleComponent } from './components/controls/toggle/toggle.component';
+import { DeviceOsService } from './services/device-os.service';
+import { AppStatusBarComponent } from './components/mobile/app-status-bar/app-status-bar.component';
 
 
 @NgModule({
@@ -36,8 +38,7 @@ import { ToggleComponent } from './components/controls/toggle/toggle.component';
     BottomBarComponent,
     DrawerMenuComponent,
     ToggleComponent,
-    
-    
+    AppStatusBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +56,8 @@ import { ToggleComponent } from './components/controls/toggle/toggle.component';
     },
     AuthService,
     FireAuthService,
-    ThemeService
+    ThemeService,
+    DeviceOsService
   ],
   bootstrap: [AppComponent]
 })

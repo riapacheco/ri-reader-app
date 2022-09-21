@@ -1,0 +1,14 @@
+@import 'node_modules/@riapacheco/yutes/season/two.scss';
+@import '../../../../scss/variables.scss';
+
+.app-status-bar {
+  display: block;
+  height: $status-bar-height;
+  background-color: #F5F5F5;
+  background-image: linear-gradient(to bottom right, #F5F5F5, white);
+  background-attachment: fixed;
+  &.is-dark {
+    background-image: linear-gradient(to bottom right, black, $midnight-dark);
+    color: $steel-light;
+  }
+}
