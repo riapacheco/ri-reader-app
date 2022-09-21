@@ -6,18 +6,25 @@ RiReader is an application offered on Web, iOS, and Android, which enables a use
 ## Product Marketing
 
 ### Boilerplate Statement
-RiReader is a neural net powered application, for avid readers of physical books, that want to record key ideas with the least effort possible, build out thinking frameworks with a better intuitive understanding of what they're reading in the first place, and want to ensure that what they look at is useful.
+**RiReader** is a neural net powered real-world helper app, designed for fans of physical books 
+that want to (1) record key ideas with minimal effort, (2) intuitively understand the content they're reading 
+in a way that helps them fine-tune their own thinking framework; and (3) enables a confident understanding of 
+what makes a good read "good", through a weighted scoring system that reflects their evolving preferences over time.
 
 
 ### Value Propositions
 #### Maximize Reading Flow Efficiency with Effortless Note-Taking
-Keep your reading session uninterrupted and capture notes ("passages") with ease with a neural net based OCR engine that captures text from your physical books right to the app even under relatively low-lit conditions.
+Keep your reading sessions uninterrupted by storing multi-line passages from your favorite books & research papers, captured by 
+your smartphone's camera and the power of a neural net OCR engine that's been continuously fine-tuned (under Google's sponsorship) 
+for over the past 27 years!
 
 #### Capture Key Ideas Intuitively
-Store passages, along with contextual notes and tags, to easily review important ideas and refresh each idea's impact every time you open the app.
+Store contextual notes, tags, and details with every book passage you capture, to easily review important ideas 
+and refresh each idea's impact on the bigger picture every time you open the app.
 
 #### Think Bigger with Weighted Scoring
-Find out what's most important to _you_ with weighted book scoring you can adjust, covering the author's content organization, use of citations, use of emotion, and any other aspects that might impact the experience.
+Get to know what's important to _you_ with a weighted and flexible book scoring system, covering criteria that includes the author's organization of content, 
+their use of examples, and much more. 
 
 ---
 
