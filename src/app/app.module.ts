@@ -12,6 +12,7 @@ import { FilterAllPipe } from './pipes/filter-all.pipe';
 import { VerticalResizeDirective } from './directives/vertical-resize.directive';
 import { LoginRegisterComponent } from './views/login-register/login-register.component';
 import { AuthService } from './services/auth.service';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,6 +26,7 @@ import { ToggleComponent } from './components/controls/toggle/toggle.component';
 import { DeviceOsService } from './services/device-os.service';
 import { AppStatusBarComponent } from './components/mobile/app-status-bar/app-status-bar.component';
 import { CaptureImageComponent } from './components/capture-image/capture-image.component';
+import { ListComponent } from './components/mobile/list/list.component';
 
 
 @NgModule({
@@ -41,6 +43,7 @@ import { CaptureImageComponent } from './components/capture-image/capture-image.
     ToggleComponent,
     AppStatusBarComponent,
     CaptureImageComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,7 @@ import { CaptureImageComponent } from './components/capture-image/capture-image.
     LayoutModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    DragDropModule
   ],
   providers: [
     { 
