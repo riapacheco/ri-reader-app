@@ -24,6 +24,7 @@ import { DrawerMenuComponent } from './components/mobile/drawer-menu/drawer-menu
 import { ToggleComponent } from './components/controls/toggle/toggle.component';
 import { DeviceOsService } from './services/device-os.service';
 import { AppStatusBarComponent } from './components/mobile/app-status-bar/app-status-bar.component';
+import { CaptureImageComponent } from './components/capture-image/capture-image.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { AppStatusBarComponent } from './components/mobile/app-status-bar/app-st
     DrawerMenuComponent,
     ToggleComponent,
     AppStatusBarComponent,
+    CaptureImageComponent,
   ],
   imports: [
     BrowserModule,

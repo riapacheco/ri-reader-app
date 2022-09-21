@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
     "@capacitor/android": "^4.2.0",
+    "@capacitor/camera": "^4.1.1",
     "@capacitor/core": "^4.2.0",
     "@capacitor/ios": "^4.2.0",
     "@riapacheco/yutes": "^4.1.7",

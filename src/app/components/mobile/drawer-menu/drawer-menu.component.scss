@@ -2,6 +2,10 @@
 @import '../../../../scss/colors.scss';
 @import '../../../../scss/mixins.scss';
 
+app-app-status-bar {
+  border: 1px solid red;
+}
+
 :host {
   -webkit-font-smoothing: antialiased !important;
 }
@@ -19,7 +23,6 @@ $statusBarHeight: 30px;
   left: 0;
   right: 0;
   bottom: 0;
-  // padding-top: $statusBarHeight;
 
   overflow-x: hidden;
   overflow-y: scroll; 

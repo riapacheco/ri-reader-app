@@ -18,12 +18,12 @@
     </ng-container>
 
     <!-- -------------------------------- VIEW --------------------------------- -->
-    <!-- <div style="padding-top: 40px;"></div> -->
-    <router-outlet
+    <app-capture-image></app-capture-image>
+    <!-- <router-outlet
       (activate)="onRouteActivation()"
       >
-    </router-outlet>
-    <div class="mx-auto-300px">
+    </router-outlet> -->
+    <!-- <div class="mx-auto-300px">
       <ng-container *ngIf="(device.iosPlatform$ | async)">
         <h3>iPhone IOS</h3>
       </ng-container>
@@ -33,7 +33,7 @@
       <ng-container *ngIf="(device.webPlatform$ | async)">
         <h3>Web Browser</h3>
       </ng-container>
-    </div>
+    </div> -->
 
     <!-- -------------------------- MOBILE BOTTOM BAR -------------------------- -->
     <ng-container *ngIf="isMobile">

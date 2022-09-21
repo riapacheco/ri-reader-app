@@ -30,6 +30,7 @@ export class DrawerMenuComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.sub.add(this.checkDeviceView());
+    this.device.runPlatformMonitor();
   }
 
   ngOnDestroy(): void {

@@ -1,7 +1,10 @@
+
 <div
   [@menuTrigger]="showsMenu ? 'open' : 'close'"
   [ngClass]="(theme.isDark$ | async) ? 'drawer-wrapper is-dark' : 'drawer-wrapper'">
+  <ng-container *ngIf="(device.androidPlatform$ | async) || (device.iosPlatform$ | async)">.</ng-container>
   <div [ngClass]="isMobile ? 'drawer-content':'drawer-content'">
+    
     <div class="title-area">
       <h1>Navigate</h1>
 
