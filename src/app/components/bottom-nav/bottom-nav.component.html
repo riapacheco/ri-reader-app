@@ -1,0 +1,21 @@
+<div class="bottom-nav">
+  <div class="bottom-nav-content">
+    <div class="buttons-wrapper">
+      <div *ngFor="let button of buttons" class="button-wrapper">
+        <a
+          [ngClass]="button.isActive ? 'is-active' : '' "
+          >
+          <i class="material-icons">
+            {{ button.icon }}
+          </i>
+          <ng-container *ngIf="button.isActive">
+            <span>
+              {{ button.label | titlecase }}
+            </span>
+          </ng-container>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</div>

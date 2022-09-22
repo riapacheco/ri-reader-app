@@ -74,8 +74,24 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+import { BooksComponent } from &#x27;./views/books/books.component&#x27;;
+import { DashboardComponent } from &#x27;./views/dashboard/dashboard.component&#x27;;
+import { PassagesComponent } from &#x27;./views/passages/passages.component&#x27;;
 
-const routes: Routes &#x3D; [];
+const routes: Routes &#x3D; [
+  {
+    path: &#x27;&#x27;,
+    component: BooksComponent
+  },
+  {
+    path: &#x27;passages&#x27;,
+    component: PassagesComponent
+  },
+  {
+    path: &#x27;dashboard&#x27;,
+    component: DashboardComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

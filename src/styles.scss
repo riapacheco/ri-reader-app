@@ -48,6 +48,7 @@ body {
   }
 }
 
+
 /* --------------------------------- SPECIAL -------------------------------- */
 // Wrapper on elements with innerHTML directive
 .inner-html-wrapper {
@@ -73,8 +74,12 @@ body {
 
 .form-group {
   input {
-    background-color: $blood-orange-medium;
+    max-height: 40px;
+    height: 40px;
   }
+}
+input::placeholder {
+  color: $steel-regular;
 }
 
 .divider {
@@ -83,18 +88,24 @@ body {
   box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.294);
   border-radius: 4px;
 }
+
+
+
+
 /* -------------------------------------------------------------------------- */
 /*                                   Z-INDEX                                  */
 /* -------------------------------------------------------------------------- */
 
 $base-index: 2;
 
-app-root, app-app-status-bar, .app-status-bar { z-index: calc($base-index / 2); }
+app-root, 
+app-app-status-bar, 
+.app-status-bar { z-index: calc($base-index / 2); }
 
-app-top-bar,
-app-bottom-bar,
-app-menu-bar-top,
-.menu-bar-top {
+app-top-nav,
+.top-nav,
+app-bottom-nav,
+.bottom-nav {
   z-index: calc($base-index * 3);
 }
 

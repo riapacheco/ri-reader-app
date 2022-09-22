@@ -19,14 +19,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from 'src/environments/environment';
 import { FireAuthService } from './services/fire-auth.service';
 import { ThemeService } from './services/theme.service';
-import { TopBarComponent } from './components/mobile/top-bar/top-bar.component';
-import { BottomBarComponent } from './components/mobile/bottom-bar/bottom-bar.component';
-import { DrawerMenuComponent } from './components/mobile/drawer-menu/drawer-menu.component';
-import { ToggleComponent } from './components/controls/toggle/toggle.component';
+
 import { DeviceOsService } from './services/device-os.service';
-import { AppStatusBarComponent } from './components/mobile/app-status-bar/app-status-bar.component';
-import { CaptureImageComponent } from './components/capture-image/capture-image.component';
-import { ListComponent } from './components/mobile/list/list.component';
+import { BooksComponent } from './views/books/books.component';
+import { PassagesComponent } from './views/passages/passages.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { TopNavComponent } from './components/top-nav/top-nav.component';
+import { BottomNavComponent } from './components/bottom-nav/bottom-nav.component';
+import { StatusBarComponent } from './components/status-bar/status-bar.component';
+import { CapsPipe } from './pipes/caps.pipe';
+
 
 
 @NgModule({
@@ -37,13 +39,13 @@ import { ListComponent } from './components/mobile/list/list.component';
     FilterAllPipe,
     VerticalResizeDirective,
     LoginRegisterComponent,
-    TopBarComponent,
-    BottomBarComponent,
-    DrawerMenuComponent,
-    ToggleComponent,
-    AppStatusBarComponent,
-    CaptureImageComponent,
-    ListComponent,
+    BooksComponent,
+    PassagesComponent,
+    DashboardComponent,
+    TopNavComponent,
+    BottomNavComponent,
+    StatusBarComponent,
+    CapsPipe,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,1255 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ri-reader documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ri-reader documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  TopNavComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/top-nav/top-nav.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-top-nav</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./top-nav.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./top-nav.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#greetings" >greetings</a>
+                            </li>
+                            <li>
+                                <a href="#inputFocused" >inputFocused</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onActionClick" >onActionClick</a>
+                            </li>
+                            <li>
+                                <a href="#onAvatarClick" >onAvatarClick</a>
+                            </li>
+                            <li>
+                                <a href="#onEnter" >onEnter</a>
+                            </li>
+                            <li>
+                                <a href="#onInputFocusToggle" >onInputFocusToggle</a>
+                            </li>
+                            <li>
+                                <a href="#updateGreeting" >updateGreeting</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actionButton" >actionButton</a>
+                            </li>
+                            <li>
+                                <a href="#badge" >badge</a>
+                            </li>
+                            <li>
+                                <a href="#input" >input</a>
+                            </li>
+                            <li>
+                                <a href="#titleText" >titleText</a>
+                            </li>
+                            <li>
+                                <a href="#userImage" >userImage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actionButtonClick" >actionButtonClick</a>
+                            </li>
+                            <li>
+                                <a href="#avatarClick" >avatarClick</a>
+                            </li>
+                            <li>
+                                <a href="#enterDown" >enterDown</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="actionButton"></a>
+                        <b>actionButton</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>{ icon: string; target: string; }</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ icon: &#x27;bookmark_add&#x27;, target: &#x27;&#x27; }</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:10</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="badge"></a>
+                        <b>badge</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>{ state: string; }</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ state: &#x27;success&#x27; }</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:13</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="input"></a>
+                        <b>input</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>{ placeholder: string; boundedString: string; prefixIcon: string; }</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ placeholder: &#x27;Search&#x27;, boundedString: &#x27;&#x27;, prefixIcon: &#x27;search&#x27; }</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:12</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="titleText"></a>
+                        <b>titleText</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:11</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userImage"></a>
+                        <b>userImage</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;https://ik.imagekit.io/fuc9k9ckt2b/IMG_0632_copy_a_RDINYPh.JPG?ik-sdk-version&#x3D;javascript-1.4.3&amp;updatedAt&#x3D;1657595086839&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:9</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="actionButtonClick"></a>
+                        <b>actionButtonClick</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:15</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="avatarClick"></a>
+                        <b>avatarClick</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:14</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="enterDown"></a>
+                        <b>enterDown</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:16</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:27</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onActionClick"></a>
+                    <span class="name">
+                        <span ><b>onActionClick</b></span>
+                        <a href="#onActionClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onActionClick(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, data: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:54</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onAvatarClick"></a>
+                    <span class="name">
+                        <span ><b>onAvatarClick</b></span>
+                        <a href="#onAvatarClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onAvatarClick(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onEnter"></a>
+                    <span class="name">
+                        <span ><b>onEnter</b></span>
+                        <a href="#onEnter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onEnter()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onInputFocusToggle"></a>
+                    <span class="name">
+                        <span ><b>onInputFocusToggle</b></span>
+                        <a href="#onInputFocusToggle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onInputFocusToggle(inputState: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>inputState</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateGreeting"></a>
+                    <span class="name">
+                        <span ><b>updateGreeting</b></span>
+                        <a href="#updateGreeting"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateGreeting()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="greetings"></a>
+                    <span class="name">
+                        <span ><b>greetings</b></span>
+                        <a href="#greetings"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    &#x27;Good morning&#x27;,
+    &#x27;Good afternoon&#x27;,
+    &#x27;Good evening&#x27;
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inputFocused"></a>
+                    <span class="name">
+                        <span ><b>inputFocused</b></span>
+                        <a href="#inputFocused"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, Input, OnInit, Output } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-top-nav&#x27;,
+  templateUrl: &#x27;./top-nav.component.html&#x27;,
+  styleUrls: [&#x27;./top-nav.component.scss&#x27;]
+})
+export class TopNavComponent implements OnInit {
+  @Input() userImage &#x3D; &#x27;https://ik.imagekit.io/fuc9k9ckt2b/IMG_0632_copy_a_RDINYPh.JPG?ik-sdk-version&#x3D;javascript-1.4.3&amp;updatedAt&#x3D;1657595086839&#x27;;
+  @Input() actionButton &#x3D; { icon: &#x27;bookmark_add&#x27;, target: &#x27;&#x27; };
+  @Input() titleText &#x3D; &#x27;&#x27;;
+  @Input() input &#x3D; { placeholder: &#x27;Search&#x27;, boundedString: &#x27;&#x27;, prefixIcon: &#x27;search&#x27; };
+  @Input() badge &#x3D; { state: &#x27;success&#x27; }
+  @Output() avatarClick: EventEmitter&lt;any&gt; &#x3D; new EventEmitter&lt;any&gt;();
+  @Output() actionButtonClick: EventEmitter&lt;any&gt; &#x3D; new EventEmitter&lt;any&gt;();
+  @Output() enterDown: EventEmitter&lt;any&gt; &#x3D; new EventEmitter&lt;any&gt;();
+
+  inputFocused!: boolean;
+
+  greetings &#x3D; [
+    &#x27;Good morning&#x27;,
+    &#x27;Good afternoon&#x27;,
+    &#x27;Good evening&#x27;
+  ];
+  constructor() { }
+
+  ngOnInit(): void {
+    this.updateGreeting();
+  }
+
+  // Greeting based on time of day
+  updateGreeting() {
+    const hour &#x3D; new Date().getHours();
+    if (hour &lt; 12) {
+      this.titleText &#x3D; this.greetings[0];
+    }
+    else if (hour &lt; 18) {
+      this.titleText &#x3D; this.greetings[1];
+    }
+    else {
+      this.titleText &#x3D; this.greetings[2];
+    }
+  }
+  onInputFocusToggle(inputState: string) {
+    if (inputState &#x3D;&#x3D; &#x27;typing&#x27;) { this.inputFocused &#x3D; true; }
+    else if (inputState &#x3D;&#x3D; &#x27;done&#x27;) { this.inputFocused &#x3D; false; }
+    else { this.inputFocused &#x3D; false; }
+  }
+
+  // Methods
+  onAvatarClick(event: any) {
+    this.avatarClick.emit(event);
+  }
+  onActionClick(event: any, data: string) {
+    if (event) { this.actionButtonClick.emit(data); }
+  }
+  onEnter() {
+    this.enterDown.emit(this.input.boundedString);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;top-nav&quot;&gt;
+  &lt;div class&#x3D;&quot;top-nav-content&quot;&gt;
+    &lt;!-- -------------------- USER AVATAR AND &quot;ADD&quot; BUTTON --------------------- --&gt;
+    &lt;div class&#x3D;&quot;user-action-block&quot;&gt;
+      &lt;a
+        (click)&#x3D;&quot;onAvatarClick($event)&quot;
+        class&#x3D;&quot;user-avatar&quot;&gt;
+        &lt;img [src]&#x3D;&quot;userImage&quot; alt&#x3D;&quot;&quot;&gt;
+
+        &lt;ng-container *ngIf&#x3D;&quot;badge.state&quot;&gt;
+          &lt;div class&#x3D;&quot;badge&quot;&gt;&lt;/div&gt;
+        &lt;/ng-container&gt;
+      &lt;/a&gt;
+
+      &lt;div class&#x3D;&quot;action-button&quot;&gt;
+        &lt;a (click)&#x3D;&quot;onActionClick($event, actionButton.target)&quot;&gt;
+          &lt;i class&#x3D;&quot;material-icons&quot;&gt;
+            {{ actionButton.icon }}
+          &lt;/i&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- ------------------------------ GREETINGS ------------------------------ --&gt;
+    &lt;div class&#x3D;&quot;greeting-block&quot;&gt;
+      &lt;h1&gt;
+        {{ titleText }}
+      &lt;/h1&gt;
+    &lt;/div&gt;
+
+    &lt;!-- ---------------------------- OTHER OPTIONS ---------------------------- --&gt;
+    &lt;div class&#x3D;&quot;other-actions-block&quot;&gt;
+      &lt;div class&#x3D;&quot;input-field-wrapper&quot;&gt;
+
+        &lt;!--Search field--&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+          &lt;div class&#x3D;&quot;prefix-icon&quot;&gt;
+            &lt;i
+              [ngClass]&#x3D;&quot;inputFocused ? &#x27;material-icons focused&#x27; : &#x27;material-icons&#x27;&quot;&gt;
+              {{ input.prefixIcon }}
+            &lt;/i&gt;
+          &lt;/div&gt;
+          &lt;input
+            (keydown.enter)&#x3D;&quot;onEnter()&quot;
+            [(ngModel)]&#x3D;&quot;input.boundedString&quot;
+            [placeholder]&#x3D;&quot;input.placeholder&quot;
+            (focus)&#x3D;&quot;onInputFocusToggle(&#x27;typing&#x27;)&quot;
+            (focusout)&#x3D;&quot;onInputFocusToggle(&#x27;done&#x27;)&quot;
+            type&#x3D;&quot;text&quot;
+            &gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./top-nav.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;node_modules/@riapacheco/yutes/season/two.scss&#x27;;
+@import &#x27;../../../scss/colors.scss&#x27;;
+@import &#x27;../../../scss/mixins.scss&#x27;;
+@import &#x27;../../../scss/variables.scss&#x27;;
+
+:host {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased !important;
+}
+$avatar-height: 40px;
+$action-button-height: 50px;
+$badge-height: 12px;
+$search-field-height: 46px;
+.top-nav {
+  padding-top: 20px;
+  position: sticky;
+  position: -webkit-sticky;
+  padding-bottom: 2rem;
+
+  @include style-bg(&#x27;light&#x27;);
+
+  .top-nav-content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: inherit;
+    @include auto-width-mobile;
+
+    /* -------------------------- AVATAR AND ACTION BTN ------------------------- */
+    .user-action-block {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%; 
+      margin-bottom: 2rem;              // SPACING
+
+      // AVATAR
+      .user-avatar {
+        position: relative;
+        height: $avatar-height;
+        width: $avatar-height;
+        img {
+          width: $avatar-height;
+          border-radius: $avatar-height;
+        }
+
+        .badge {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          height: $badge-height;
+          width: $badge-height;
+          border-radius: $badge-height;
+          background-color: $success;
+          border: 2px solid white;
+        }
+      }
+
+      // ACTION BUTTON
+      .action-button {
+        width: $action-button-height;
+        height: $action-button-height;
+        border-radius: $action-button-height;
+        background-image: linear-gradient(to bottom left, $canary-regular, $canary-medium);
+        // background-color: black;
+        // background-color: $steel-light;
+        // border: 1px solid black;
+        // border: 3px solid $canary-dark;
+
+        
+        a {
+          display: inline-block;
+          width: $action-button-height;
+          height: $action-button-height;
+          display: flex;
+          flex-flow: column nowrap;
+          align-items: center;
+          justify-content: center;
+
+          .material-icons {
+            font-size: 2rem;
+            color: white;
+            // color: black;
+            // color: black;
+            // opacity: 0.6;
+          }
+        }
+      }
+    }
+
+    /* ----------------------------- GREETING BLOCK ----------------------------- */
+    .greeting-block {
+      padding-left: 1rem;
+      
+      height: 4.5rem;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-start;
+
+      margin-bottom: 1.5rem;
+      h1 {
+        @include mobile-text(&#x27;h1&#x27;);
+        font-weight: 600;
+        letter-spacing: -0.13rem;
+      }
+    }
+
+    /* ---------------------- OTHER OPTIONS AKA SEARCH ETC. --------------------- */
+    .other-actions-block {
+      width: 100%;
+      .input-field-wrapper {
+        width: inherit;
+        .form-group {
+          position: relative;
+          input {
+            border-radius: $search-field-height;
+            height: $search-field-height;
+            padding-left: 4rem;
+            font-weight: 500;
+            font-size: 1.6rem !important;
+            letter-spacing: 0rem;
+            -webkit-font-smoothing: antialiased !important;
+
+            &amp;::placeholder {
+              padding-left: 0.5rem;
+            }
+          }
+
+          .prefix-icon {
+            position: absolute;
+            left: 1rem;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            
+
+            .material-icons {
+              display: inline-block;
+              color: $steel-regular;
+
+              &amp;.focused {
+                color: $canary-regular;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  DARK MODE                                 */
+/* -------------------------------------------------------------------------- */
+
+.top-nav.is-dark {
+  @include style-bg(&#x27;dark&#x27;);
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="top-nav">  <div class="top-nav-content">    <!-- -------------------- USER AVATAR AND "ADD" BUTTON --------------------- -->    <div class="user-action-block">      <a        (click)="onAvatarClick($event)"        class="user-avatar">        <img [src]="userImage" alt="">        <ng-container *ngIf="badge.state">          <div class="badge"></div>        </ng-container>      </a>      <div class="action-button">        <a (click)="onActionClick($event, actionButton.target)">          <i class="material-icons">            {{ actionButton.icon }}          </i>        </a>      </div>    </div>    <!-- ------------------------------ GREETINGS ------------------------------ -->    <div class="greeting-block">      <h1>        {{ titleText }}      </h1>    </div>    <!-- ---------------------------- OTHER OPTIONS ---------------------------- -->    <div class="other-actions-block">      <div class="input-field-wrapper">        <!--Search field-->        <div class="form-group">          <div class="prefix-icon">            <i              [ngClass]="inputFocused ? \'material-icons focused\' : \'material-icons\'">              {{ input.prefixIcon }}            </i>          </div>          <input            (keydown.enter)="onEnter()"            [(ngModel)]="input.boundedString"            [placeholder]="input.placeholder"            (focus)="onInputFocusToggle(\'typing\')"            (focusout)="onInputFocusToggle(\'done\')"            type="text"            >        </div>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'StatusBarComponent', 'selector': 'app-status-bar'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
+    var DIRECTIVES = [{'name': 'OutsideClickDirective', 'selector': '[appOutsideClick]'},{'name': 'VerticalResizeDirective', 'selector': '[appVerticalResize]'}];
+    var ACTUAL_COMPONENT = {'name': 'TopNavComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TopNavComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

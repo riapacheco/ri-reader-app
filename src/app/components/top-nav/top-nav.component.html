@@ -1,0 +1,55 @@
+<div class="top-nav">
+  <div class="top-nav-content">
+    <!-- -------------------- USER AVATAR AND "ADD" BUTTON --------------------- -->
+    <div class="user-action-block">
+      <a
+        (click)="onAvatarClick($event)"
+        class="user-avatar">
+        <img [src]="userImage" alt="">
+
+        <ng-container *ngIf="badge.state">
+          <div class="badge"></div>
+        </ng-container>
+      </a>
+
+      <div class="action-button">
+        <a (click)="onActionClick($event, actionButton.target)">
+          <i class="material-icons">
+            {{ actionButton.icon }}
+          </i>
+        </a>
+      </div>
+    </div>
+
+    <!-- ------------------------------ GREETINGS ------------------------------ -->
+    <div class="greeting-block">
+      <h1>
+        {{ titleText }}
+      </h1>
+    </div>
+
+    <!-- ---------------------------- OTHER OPTIONS ---------------------------- -->
+    <div class="other-actions-block">
+      <div class="input-field-wrapper">
+
+        <!--Search field-->
+        <div class="form-group">
+          <div class="prefix-icon">
+            <i
+              [ngClass]="inputFocused ? 'material-icons focused' : 'material-icons'">
+              {{ input.prefixIcon }}
+            </i>
+          </div>
+          <input
+            (keydown.enter)="onEnter()"
+            [(ngModel)]="input.boundedString"
+            [placeholder]="input.placeholder"
+            (focus)="onInputFocusToggle('typing')"
+            (focusout)="onInputFocusToggle('done')"
+            type="text"
+            >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

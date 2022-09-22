@@ -1,0 +1,164 @@
+@import 'node_modules/@riapacheco/yutes/season/two.scss';
+@import '../../../scss/colors.scss';
+@import '../../../scss/mixins.scss';
+@import '../../../scss/variables.scss';
+
+:host {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased !important;
+}
+$avatar-height: 40px;
+$action-button-height: 50px;
+$badge-height: 12px;
+$search-field-height: 46px;
+.top-nav {
+  padding-top: 20px;
+  position: sticky;
+  position: -webkit-sticky;
+  padding-bottom: 2rem;
+
+  @include style-bg('light');
+
+  .top-nav-content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: inherit;
+    @include auto-width-mobile;
+
+    /* -------------------------- AVATAR AND ACTION BTN ------------------------- */
+    .user-action-block {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%; 
+      margin-bottom: 2rem;              // SPACING
+
+      // AVATAR
+      .user-avatar {
+        position: relative;
+        height: $avatar-height;
+        width: $avatar-height;
+        img {
+          width: $avatar-height;
+          border-radius: $avatar-height;
+        }
+
+        .badge {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          height: $badge-height;
+          width: $badge-height;
+          border-radius: $badge-height;
+          background-color: $success;
+          border: 2px solid white;
+        }
+      }
+
+      // ACTION BUTTON
+      .action-button {
+        width: $action-button-height;
+        height: $action-button-height;
+        border-radius: $action-button-height;
+        background-image: linear-gradient(to bottom left, $canary-regular, $canary-medium);
+        // background-color: black;
+        // background-color: $steel-light;
+        // border: 1px solid black;
+        // border: 3px solid $canary-dark;
+
+        
+        a {
+          display: inline-block;
+          width: $action-button-height;
+          height: $action-button-height;
+          display: flex;
+          flex-flow: column nowrap;
+          align-items: center;
+          justify-content: center;
+
+          .material-icons {
+            font-size: 2rem;
+            color: white;
+            // color: black;
+            // color: black;
+            // opacity: 0.6;
+          }
+        }
+      }
+    }
+
+    /* ----------------------------- GREETING BLOCK ----------------------------- */
+    .greeting-block {
+      padding-left: 1rem;
+      
+      height: 4.5rem;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-start;
+
+      margin-bottom: 1.5rem;
+      h1 {
+        @include mobile-text('h1');
+        font-weight: 600;
+        letter-spacing: -0.13rem;
+      }
+    }
+
+    /* ---------------------- OTHER OPTIONS AKA SEARCH ETC. --------------------- */
+    .other-actions-block {
+      width: 100%;
+      .input-field-wrapper {
+        width: inherit;
+        .form-group {
+          position: relative;
+          input {
+            border-radius: $search-field-height;
+            height: $search-field-height;
+            padding-left: 4rem;
+            font-weight: 500;
+            font-size: 1.6rem !important;
+            letter-spacing: 0rem;
+            -webkit-font-smoothing: antialiased !important;
+
+            &::placeholder {
+              padding-left: 0.5rem;
+            }
+          }
+
+          .prefix-icon {
+            position: absolute;
+            left: 1rem;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            
+
+            .material-icons {
+              display: inline-block;
+              color: $steel-regular;
+
+              &.focused {
+                color: $canary-regular;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  DARK MODE                                 */
+/* -------------------------------------------------------------------------- */
+
+.top-nav.is-dark {
+  @include style-bg('dark');
+}

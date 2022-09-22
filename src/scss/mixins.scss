@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* -------------------------- RESPONSIVE CENTERING -------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                           STRUCTURE-BASED MIXINS                           */
+/* -------------------------------------------------------------------------- */
+/* ----------------------- Automatic Width / Centering ---------------------- */
 $desktop-content-width: 85%;
 $mobile-content-width: 90%;
 @mixin auto-width {
@@ -12,36 +15,83 @@ $mobile-content-width: 90%;
   margin: auto;
 }
 
-/* --------------------------------- SPECIAL -------------------------------- */
-@mixin remove-selection {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-     -moz-user-select: none; /* Old versions of Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none; /* Non-prefixed version, currently
-                                supported by Chrome, Edge, Opera and Firefox */
-}
 
-@mixin brand-title {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  .material-icons {
-    font-size: 2.7rem;
-    margin-right: 0.8rem;
-  }
-  h1 {
-    font-size: 3rem;
-    // font-weight: 600;
-    letter-spacing: -0.19rem;
-  }
-}
 /* -------------------------------------------------------------------------- */
-/*                               MOBILE HEADINGS                              */
+/*                              TEXT-BASED MIXINS                             */
 /* -------------------------------------------------------------------------- */
 
+/* --------------------------- Desktop Text Types --------------------------- */
+@mixin text($textEl) {
+  @if $textEl == 'h1' {
+    font-size: 5.6rem;
+    line-height: 5.6rem;
+    letter-spacing: -0.15rem;
+    margin-block-start: -5px;
+    margin-block-end: 5px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased !important;
+  }
 
+  @if $textEl == 'h2' {
+    font-size: 3.6rem;
+    line-height: 3.6rem;
+    letter-spacing: -0.10rem;
+    font-weight: 700;
+    margin-block-start: -3px;
+    margin-block-end: 5px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased !important;
+  }
+  @if $textEl == 'h3' {
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+    letter-spacing: -0.07rem;
+    margin-block-start: -1px;
+    margin-block-end: 3px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased !important;
+  }
+  @if $textEl == 'h4' {
+    font-size: 2.3rem;
+    line-height: 2.3rem;
+    letter-spacing: -0.05rem;
+    font-weight: 600;
+    margin-block-start: -1px;
+    margin-block-end: 2px;
+    margin-inline-start: 0px;
+    margin-inline-end: 1px;
+    -webkit-font-smoothing: antialiased !important;
+  }
+  @if $textEl == 'h5' {
+    font-size: 1.9rem;
+    line-height: 1.9rem;
+    font-weight: 700;
+    margin-block-start: -1px;
+    margin-block-end: 2px;
+    margin-inline-start: 0px;
+    margin-inline-end: 1px;
+    -webkit-font-smoothing: antialiased !important;
+  }
+  @if $textEl == 'h6' {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    letter-spacing: 0.13rem;
+    margin-block-start: 1px;
+    margin-block-end: 2px;
+    margin-inline-start: 1px;
+    margin-inline-end: 1px;
+    -webkit-font-smoothing: antialiased !important;
+  }
+  
+}
+
+/* ---------------------- Mobile Version of Text Types ---------------------- */
 @mixin mobile-text($textElement) {
   @if $textElement == 'body' {
     font-size: 1.35rem;
@@ -81,3 +131,33 @@ $mobile-content-width: 90%;
     color: $steel-light;
   }
 }
+
+/* -------------------------------------------------------------------------- */
+/*                               OVERRIDE MIXINS                              */
+/* -------------------------------------------------------------------------- */
+/* ---------------- Remove Touch and Click Selection on Text ---------------- */
+@mixin remove-selection {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             COLOR-BASED MIXINS                             */
+/* -------------------------------------------------------------------------- */
+/* ----------------------------- Gradient Mixins ---------------------------- */
+@mixin style-bg($mode) {
+  @if $mode == 'light' {
+    background-image: linear-gradient(to bottom right, #F5F5F5, white);
+    background-attachment: fixed;
+  } 
+  @if $mode == 'dark' {
+    background-image: linear-gradient(to bottom right, black, $midnight-dark);
+    background-attachment: fixed;
+  }
+}
+

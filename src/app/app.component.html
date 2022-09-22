@@ -1,54 +1,7 @@
-<app-app-status-bar></app-app-status-bar>
+
 <div #scrollToTopDiv></div>
 <div [ngClass]="(theme.isDark$ | async) ? 'wrapper is-dark' : 'wrapper'">
-  <!-- --------------------------- MOBILE TOP BAR ---------------------------- -->
-  <ng-container *ngIf="!(auth.authUser$ | async);else signInUpBlock">
-    <ng-container *ngIf="isMobile">
-      <app-top-bar
-        (menuClick)="onMenuOpen($event)"
-        >
-      </app-top-bar>
-      <app-drawer-menu
-        [showsMenu]="showsMobileMenu"
-        (closeClick)="onMenuClose($event)"
-        [toggleOff]="lightTheme"
-        (themeUpdate)="onThemeChange($event)"
-        >
-      </app-drawer-menu>
-    </ng-container>
-
-    <!-- -------------------------------- VIEW --------------------------------- -->
-    <div class="mx-auto-350px">
-      <app-list></app-list>
-    </div>
-    <!-- <app-capture-image></app-capture-image> -->
-    <!-- <router-outlet
-      (activate)="onRouteActivation()"
-      >
-    </router-outlet> -->
-    <!-- <div class="mx-auto-300px">
-      <ng-container *ngIf="(device.iosPlatform$ | async)">
-        <h3>iPhone IOS</h3>
-      </ng-container>
-      <ng-container *ngIf="(device.androidPlatform$ | async)">
-        <h3>Android</h3>
-      </ng-container>
-      <ng-container *ngIf="(device.webPlatform$ | async)">
-        <h3>Web Browser</h3>
-      </ng-container>
-    </div> -->
-
-    <!-- -------------------------- MOBILE BOTTOM BAR -------------------------- -->
-    <ng-container *ngIf="isMobile">
-      <app-bottom-bar
-        (actionClick)="onActionButtonClick($event)"
-        >
-      </app-bottom-bar>
-    </ng-container>
-  </ng-container>
-  
-  <!-- ---------------------------- SIGN UP VIEW ----------------------------- -->
-  <ng-template #signInUpBlock>
-    <app-login-register></app-login-register>
-  </ng-template>
+  <app-top-nav></app-top-nav>
+  <router-outlet (activate)="onRouteActivation()"></router-outlet>
+  <app-bottom-nav></app-bottom-nav>
 </div>
