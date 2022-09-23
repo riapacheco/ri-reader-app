@@ -63,3 +63,86 @@ This repo generates documentation through a locally run `compodoc` view. To view
 #### V2+
 1. As a user, I want to **change the weighting of scoring categories from book to book** so that I'm able to create a higher level thinking framework during the reading process and retain highly diverse information
 2. As a user, I want to **connect ideas from one book passage idea to another book** so that I can begin graphing concepts and ideas from different time periods, disciplines, and industries
+
+
+---
+# Planning n' stuff
+
+## Entity Relationship Diagram
+```mermaid
+erDiagram
+    Book {
+        number id PK
+        string title
+        Date createdAt
+        string author       "OPTIONAL"
+        string description  "OPTIONAL"
+    }
+
+    Passage {
+        number id PK
+        number bookId FK "PK from Book table"
+        string body 
+        Date createdAt
+        number pageNumber "OPTIONAL"
+    }
+
+    Book ||--o{ Passage : allows
+
+    BookGenre {
+        number id PK
+        number bookId FK "PK from Book table"
+        Date createdAt
+        string label
+        string target "OPTIONAL"
+        string description "OPTIONAL"    
+    }
+
+    Book ||--o{ BookGenre : allows
+
+    BookScoreTotal {
+        number id PK
+        number bookId FK "PK from Book table"
+        Date createdAt
+        Date updatedAt
+        number pointPool
+        number totalPointCapacity
+        number totalPointValue
+        number percentageScore
+    }
+
+    Book ||--|| BookScoreTotal : has
+
+    BookScoreCategory {
+        number id PK
+        number bookScoreTotalId FK "PK from BookScoreTotal table"
+        Date createdAt
+        Date updatedAt
+        number pointCapacity
+        number pointValue
+    }
+
+    BookScoreTotal ||--|{ BookScoreCategory : has_and_combines_five
+
+    PassageTag {
+        number id PK
+        number passageId FK "PK from Passage table"
+        Date createdAt
+        string label
+        string target "OPTIONAL"
+        string description "OPTIONAL"
+    }
+
+    Passage ||--o{ PassageTag : allows
+
+    PassageNote {
+        number id PK
+        number passageId FK "PK from Passage table"
+        Date createdAt
+        string body
+        string target "OPTIONAL"
+        string description "OPTIONAL"
+    }
+
+    Passage ||--o{ PassageNote : allows
+```
