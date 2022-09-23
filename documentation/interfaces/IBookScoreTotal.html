@@ -47,7 +47,7 @@
   <li>Interfaces</li>
   <li
   >
-  IPassageTag</li>
+  IBookScoreTotal</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -65,7 +65,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/interfaces/passage.interface.ts</code>
+            <code>src/app/interfaces/book.interface.ts</code>
         </p>
 
 
@@ -73,8 +73,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Defines the data types for the <code>PassageTag</code>.</p>
-<p>Enables user filtering / sorting later</p>
+                <p>A <a href="../interfaces/IBookScoreTotal.html">IBookScoreTotal</a> is the total of 5 different <a href="../interfaces/IBookScoreCategory.html">IBookScoreCategory</a>ies combined. It also tracks a pool of (for now) 100 points that the user can distribute among those 5 categories</p>
 
             </p>
 
@@ -92,16 +91,15 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#createdAt" 
+                                        <a href="#bookId" 
 >
-                                            createdAt
+                                            bookId
                                         </a>
                                 </li>
                                 <li>
-                                            <span class="modifier">Optional</span>
-                                        <a href="#description" 
+                                        <a href="#createdAt" 
 >
-                                            description
+                                            createdAt
                                         </a>
                                 </li>
                                 <li>
@@ -111,22 +109,37 @@
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#label" 
+                                            <span class="modifier">Optional</span>
+                                        <a href="#percentageScore" 
 >
-                                            label
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#passageId" 
->
-                                            passageId
+                                            percentageScore
                                         </a>
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#target" 
+                                        <a href="#pointPool" 
 >
-                                            target
+                                            pointPool
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#totalPointCapacity" 
+>
+                                            totalPointCapacity
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#totalPointValue" 
+>
+                                            totalPointValue
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#updatedAt" 
+>
+                                            updatedAt
                                         </a>
                                 </li>
                             </ul>
@@ -140,6 +153,45 @@
 
             <section>
                 <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="bookId"></a>
+                                        <span class="name "><b>bookId</b>
+                                            <a href="#bookId">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>bookId:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Forieng Key related to the <a href="../classes/Book.html">Book</a> it&#39;s related to</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                                 <tr>
@@ -173,51 +225,7 @@
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Date/Time the tag was created</p>
-</div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="description"></a>
-                                        <span class="name "><b>description</b>
-                                            <a href="#description">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>description:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Optional</i>
-                                        </td>
-                                    </tr>
-
-
-
-
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>Optional body string</p>
+                                    <div class="io-description"><p>Date / Time the score total was originally created</p>
 </div>
                                 </td>
                             </tr>
@@ -266,9 +274,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="label"></a>
-                                        <span class="name "><b>label</b>
-                                            <a href="#label">
+                                        <a name="percentageScore"></a>
+                                        <span class="name "><b>percentageScore</b>
+                                            <a href="#percentageScore">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -276,46 +284,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>label:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>The actual user-facing label that defines the &#39;tag&#39; visually</p>
-</div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="passageId"></a>
-                                        <span class="name "><b>passageId</b>
-                                            <a href="#passageId">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>passageId:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                        <code>percentageScore:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -324,45 +293,6 @@
                                     <tr>
                                         <td class="col-md-4">
                                             <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>Foreign Key - References the <a href="../classes/Passage.html">Passage</a> class&#39; Primary Key</p>
-</div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="target"></a>
-                                        <span class="name "><b>target</b>
-                                            <a href="#target">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>target:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
@@ -378,7 +308,178 @@
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Optional extra string</p>
+                                    <div class="io-description"><p>Calculated as a percentage</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="pointPool"></a>
+                                        <span class="name "><b>pointPool</b>
+                                            <a href="#pointPool">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>pointPool:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Total points that can be provided to its related 5 categories - used for calculating and tracking the distribution of points to those categories (since those categories will vary in capacity)</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="totalPointCapacity"></a>
+                                        <span class="name "><b>totalPointCapacity</b>
+                                            <a href="#totalPointCapacity">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>totalPointCapacity:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Total points that can be provided to from its related 5 categories - used to enable calculations for % etc</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="totalPointValue"></a>
+                                        <span class="name "><b>totalPointValue</b>
+                                            <a href="#totalPointValue">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>totalPointValue:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Total of scores assigned from the user, sum of all <code>pointValues</code> from related categories</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="updatedAt"></a>
+                                        <span class="name "><b>updatedAt</b>
+                                            <a href="#updatedAt">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>updatedAt:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Date / Time the book score was last updated or calculated</p>
 </div>
                                 </td>
                             </tr>
@@ -389,57 +490,79 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface IPassage {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface IBook {
   /** Primary Key */
   id: number;
-  /** Foreign Key - References the {@link Book} class&#x27; Primary Key */
+  /** Title of the work, of which the user will rely on for cataloging and searching */
+  title: string;
+  /** Date and time the book was created in the app */
+  createdAt: Date;
+  /** Optional book detail naming who wrote the book */
+  author?: string;
+  /** Extra potential single-line identifier */
+  target?: string;
+  /** Extra potential body text */
+  description?: string;
+}
+
+
+/**
+ * A {@link IBookGenre} is more or less just a category (or tag) that the user can attach to a {@link Book} for better cataloging
+ */
+export interface IBookGenre {
+  /** The primary key */
+  id: number;
+  /** Foreign key related to the {@link Book}&#x27;s PK */
   bookId: number;
-  /** The actual text body that holds information [brought in from the camera] */
-  body: string;
-  /** Date/Time the passage was created */
+  /** Date and time the genre was created in the app */
   createdAt: Date;
-  /** Optional associated page number */
-  pageNumber?: number;
-}
-
-/**
- * Defines the data types for the &#x60;PassageTag&#x60;. 
- * 
- * Enables user filtering / sorting later
- */
-export interface IPassageTag {
-  /** Primary Key */
-  id: number;
-  /** Foreign Key - References the {@link Passage} class&#x27; Primary Key */
-  passageId: number;
-  /** Date/Time the tag was created */
-  createdAt: Date;
-  /** The actual user-facing label that defines the &#x27;tag&#x27; visually */
+  /** The text label that defines the genre */
   label: string;
-  /** Optional extra string */
+  /** Extra single-line identifier string */
   target?: string;
-  /** Optional body string */
+  /** Extra body text string */
   description?: string;
 }
 
 /**
- * Defines the data types for the &#x60;PassageNote&#x60;
- * 
- * Enables the leaving of a longer text string for added context when reviewing a passage in the future
+ * A {@link IBookScoreTotal} is the total of 5 different {@link IBookScoreCategory}ies combined. It also tracks a pool of (for now) 100 points that the user can distribute among those 5 categories
  */
-export interface IPassageNote {
+export interface IBookScoreTotal {
   /** Primary Key */
   id: number;
-  /** Foreign Key - references the {@link Passage} class&#x27; Primary Key */
-  passageId: number;
-  /** Date/Time the note was created */
+  /** Forieng Key related to the {@link Book} it&#x27;s related to */
+  bookId: number;
+  /** Date / Time the score total was originally created */
   createdAt: Date;
-  /** Body text that actually makes up the note itself conceptually */
-  body: string;
-  /** Optional additional string */
-  target?: string;
-  /** Optional additional body string */
-  description?: string;
+  /** Date / Time the book score was last updated or calculated */
+  updatedAt: Date;
+  /** Total points that can be provided to its related 5 categories - used for calculating and tracking the distribution of points to those categories (since those categories will vary in capacity) */
+  pointPool?: number;
+  /** Total points that can be provided to from its related 5 categories - used to enable calculations for % etc */
+  totalPointCapacity?: number;
+  /** Total of scores assigned from the user, sum of all &#x60;pointValues&#x60; from related categories */
+  totalPointValue?: number;
+  /** Calculated as a percentage */
+  percentageScore?: number;
+}
+
+
+/**
+ * A {@link IBookScoreCategory} one of 5 categories (labelled by the user) which is related to a single book. The user is able to apply scores to each categories, but also apply weighting since all scores must total a sum of 100 points
+ */
+export interface IBookScoreCategory {
+  /** Primary key */
+  id: number;
+  /** Foreign Key that references the Primary Key of {@link IBookScoreTotal} */
+  bookScoreTotalId: number;
+  /** Date/Time this book score category was created */
+  createdAt: Date;
+  /** Date/Time this book score category was last updated */
+  updatedAt: Date;
+  /** The total potential points that the category can use - taken from the &#x60;pointPool&#x60; from the {@link IBookScoreTotal} */
+  pointCapacity: number;
+  /** Actual assigned value to the category from the user - combined with its other 4 categories, of which share the same &#x60;bookScoreTotalId&#x60;, makes up the &#x60;totalPointValue&#x60; of the {@link IBookScoreTotal} */
+  pointValue: number;
 }</code></pre>
     </div>
 </div>
@@ -477,7 +600,7 @@ export interface IPassageNote {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'IPassageTag.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'IBookScoreTotal.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

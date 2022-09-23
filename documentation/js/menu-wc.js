@@ -194,9 +194,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/Book.html" data-type="entity-link" >Book</a>
                             </li>
                             <li class="link">
-                                <a href="classes/BookList.html" data-type="entity-link" >BookList</a>
-                            </li>
-                            <li class="link">
                                 <a href="classes/Passage.html" data-type="entity-link" >Passage</a>
                             </li>
                         </ul>
@@ -210,7 +207,28 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
+                                <a href="interfaces/IBook.html" data-type="entity-link" >IBook</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IBookGenre.html" data-type="entity-link" >IBookGenre</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IBookScoreCategory.html" data-type="entity-link" >IBookScoreCategory</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IBookScoreTotal.html" data-type="entity-link" >IBookScoreTotal</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/INavButton.html" data-type="entity-link" >INavButton</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IPassage.html" data-type="entity-link" >IPassage</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IPassageNote.html" data-type="entity-link" >IPassageNote</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IPassageTag.html" data-type="entity-link" >IPassageTag</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IUser.html" data-type="entity-link" >IUser</a>

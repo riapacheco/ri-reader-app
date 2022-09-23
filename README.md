@@ -75,6 +75,7 @@ erDiagram
         number id PK
         string title
         Date createdAt
+        string target       "OPTIONAL"
         string author       "OPTIONAL"
         string description  "OPTIONAL"
     }

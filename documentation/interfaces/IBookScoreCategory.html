@@ -73,7 +73,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Interface that defines the <a href="BookScoreCategory">BookScoreCategory</a> &#39;s data types</p>
+                <p>A <a href="../interfaces/IBookScoreCategory.html">IBookScoreCategory</a> one of 5 categories (labelled by the user) which is related to a single book. The user is able to apply scores to each categories, but also apply weighting since all scores must total a sum of 100 points</p>
 
             </p>
 
@@ -91,10 +91,15 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                            <span class="modifier">Optional</span>
-                                        <a href="#description" 
+                                        <a href="#bookScoreTotalId" 
 >
-                                            description
+                                            bookScoreTotalId
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#createdAt" 
+>
+                                            createdAt
                                         </a>
                                 </li>
                                 <li>
@@ -104,29 +109,21 @@
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#label" 
+                                        <a href="#pointCapacity" 
 >
-                                            label
+                                            pointCapacity
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#potentialPoints" 
+                                        <a href="#pointValue" 
 >
-                                            potentialPoints
+                                            pointValue
                                         </a>
                                 </li>
                                 <li>
-                                            <span class="modifier">Optional</span>
-                                        <a href="#target" 
+                                        <a href="#updatedAt" 
 >
-                                            target
-                                        </a>
-                                </li>
-                                <li>
-                                            <span class="modifier">Optional</span>
-                                        <a href="#value" 
->
-                                            value
+                                            updatedAt
                                         </a>
                                 </li>
                             </ul>
@@ -144,9 +141,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="description"></a>
-                                        <span class="name "><b>description</b>
-                                            <a href="#description">
+                                        <a name="bookScoreTotalId"></a>
+                                        <span class="name "><b>bookScoreTotalId</b>
+                                            <a href="#bookScoreTotalId">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -154,7 +151,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>description:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>bookScoreTotalId:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -162,20 +159,60 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
                                         </td>
                                     </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Foreign Key that references the Primary Key of <a href="../interfaces/IBookScoreTotal.html">IBookScoreTotal</a></p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="createdAt"></a>
+                                        <span class="name "><b>createdAt</b>
+                                            <a href="#createdAt">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>createdAt:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+</code>
+                                    </td>
+                                </tr>
+
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Optional</i>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
                                         </td>
                                     </tr>
 
 
 
 
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Date/Time this book score category was created</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -209,15 +246,21 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Primary key</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="label"></a>
-                                        <span class="name "><b>label</b>
-                                            <a href="#label">
+                                        <a name="pointCapacity"></a>
+                                        <span class="name "><b>pointCapacity</b>
+                                            <a href="#pointCapacity">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -225,40 +268,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>label:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="potentialPoints"></a>
-                                        <span class="name "><b>potentialPoints</b>
-                                            <a href="#potentialPoints">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>potentialPoints:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                        <code>pointCapacity:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -275,15 +285,21 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The total potential points that the category can use - taken from the <code>pointPool</code> from the <a href="../interfaces/IBookScoreTotal.html">IBookScoreTotal</a></p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="target"></a>
-                                        <span class="name "><b>target</b>
-                                            <a href="#target">
+                                        <a name="pointValue"></a>
+                                        <span class="name "><b>pointValue</b>
+                                            <a href="#pointValue">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -291,45 +307,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>target:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Optional</i>
-                                        </td>
-                                    </tr>
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="value"></a>
-                                        <span class="name "><b>value</b>
-                                            <a href="#value">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>value:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                        <code>pointValue:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -342,15 +320,55 @@
                                         </td>
                                     </tr>
 
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Actual assigned value to the category from the user - combined with its other 4 categories, of which share the same <code>bookScoreTotalId</code>, makes up the <code>totalPointValue</code> of the <a href="../interfaces/IBookScoreTotal.html">IBookScoreTotal</a></p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="updatedAt"></a>
+                                        <span class="name "><b>updatedAt</b>
+                                            <a href="#updatedAt">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>updatedAt:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Optional</i>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
                                         </td>
                                     </tr>
 
 
 
 
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Date/Time this book score category was last updated</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -358,70 +376,79 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IPassage } from &quot;./passage.interface&quot;;
-
-/**
- * Interface that defines the {@link Book} object&#x27;s data types
- */
-export interface IBook {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface IBook {
+  /** Primary Key */
   id: number;
+  /** Title of the work, of which the user will rely on for cataloging and searching */
   title: string;
-  passages: IPassage[];
-  bookScores: IBookScoreCategory[];
+  /** Date and time the book was created in the app */
+  createdAt: Date;
+  /** Optional book detail naming who wrote the book */
+  author?: string;
+  /** Extra potential single-line identifier */
+  target?: string;
+  /** Extra potential body text */
+  description?: string;
 }
 
-/**
- * Interface for Ref Table that holds the ID of a {@link Book} 
- * and the ID of an associated {@link Passage}
- * Relationship is 1-to-many
- */
-export interface IBookPassagesRelation {
-  id: number;
-  book: number;
-  passage: number;
-}
 
 /**
- * Interface for Ref Table that holds the ID of a {@link Book} 
- * and the ID of a related {@link BookGenre}
- * Relationship is 1-to-many
- */
-export interface IBookGenresRelation {
-  id: number;
-  book: number;
-  genre: number;
-}
-/**
- * Interface for Ref Table that holds the ID of a {@link Book} 
- * and the ID of a related {@link BookScoreCategory}
- * Relationship is 1-to-5
- */
-export interface IBookScoreCategoriesRelation {
-  id: number;
-  book: number;
-  scoreCategory: number;
-}
-
-/**
- * Interface that defines the {@link BookGenre} &#x27;s data types
+ * A {@link IBookGenre} is more or less just a category (or tag) that the user can attach to a {@link Book} for better cataloging
  */
 export interface IBookGenre {
+  /** The primary key */
   id: number;
+  /** Foreign key related to the {@link Book}&#x27;s PK */
+  bookId: number;
+  /** Date and time the genre was created in the app */
+  createdAt: Date;
+  /** The text label that defines the genre */
   label: string;
+  /** Extra single-line identifier string */
   target?: string;
+  /** Extra body text string */
   description?: string;
 }
 
 /**
- * Interface that defines the {@link BookScoreCategory} &#x27;s data types
+ * A {@link IBookScoreTotal} is the total of 5 different {@link IBookScoreCategory}ies combined. It also tracks a pool of (for now) 100 points that the user can distribute among those 5 categories
+ */
+export interface IBookScoreTotal {
+  /** Primary Key */
+  id: number;
+  /** Forieng Key related to the {@link Book} it&#x27;s related to */
+  bookId: number;
+  /** Date / Time the score total was originally created */
+  createdAt: Date;
+  /** Date / Time the book score was last updated or calculated */
+  updatedAt: Date;
+  /** Total points that can be provided to its related 5 categories - used for calculating and tracking the distribution of points to those categories (since those categories will vary in capacity) */
+  pointPool?: number;
+  /** Total points that can be provided to from its related 5 categories - used to enable calculations for % etc */
+  totalPointCapacity?: number;
+  /** Total of scores assigned from the user, sum of all &#x60;pointValues&#x60; from related categories */
+  totalPointValue?: number;
+  /** Calculated as a percentage */
+  percentageScore?: number;
+}
+
+
+/**
+ * A {@link IBookScoreCategory} one of 5 categories (labelled by the user) which is related to a single book. The user is able to apply scores to each categories, but also apply weighting since all scores must total a sum of 100 points
  */
 export interface IBookScoreCategory {
+  /** Primary key */
   id: number;
-  label: string;
-  potentialPoints: number;
-  value?: number;
-  target?: string;
-  description?: string;
+  /** Foreign Key that references the Primary Key of {@link IBookScoreTotal} */
+  bookScoreTotalId: number;
+  /** Date/Time this book score category was created */
+  createdAt: Date;
+  /** Date/Time this book score category was last updated */
+  updatedAt: Date;
+  /** The total potential points that the category can use - taken from the &#x60;pointPool&#x60; from the {@link IBookScoreTotal} */
+  pointCapacity: number;
+  /** Actual assigned value to the category from the user - combined with its other 4 categories, of which share the same &#x60;bookScoreTotalId&#x60;, makes up the &#x60;totalPointValue&#x60; of the {@link IBookScoreTotal} */
+  pointValue: number;
 }</code></pre>
     </div>
 </div>
