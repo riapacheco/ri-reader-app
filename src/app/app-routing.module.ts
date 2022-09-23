@@ -1,21 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BooksComponent } from './views/books/books.component';
-import { DashboardComponent } from './views/dashboard/dashboard.component';
-import { PassagesComponent } from './views/passages/passages.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: BooksComponent
-  },
-  {
-    path: 'passages',
-    component: PassagesComponent
+    redirectTo: 'dashboard',
+    pathMatch: 'full',
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    loadChildren: () => import('./modules/dashboard/dashboard.module')
+      .then(m => m.DashboardModule)
+  },
+  {
+    path: 'books',
+    loadChildren: () => import('./modules/book/book.module')
+      .then(m => m.BookModule)
+  },
+  {
+    path: 'passages',
+    loadChildren: () => import('./modules/passages/passages.module')
+      .then(m => m.PassagesModule)
   }
 ];
 

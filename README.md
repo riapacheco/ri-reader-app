@@ -66,9 +66,9 @@ This repo generates documentation through a locally run `compodoc` view. To view
 
 
 ---
-# Planning n' stuff
+# Firting with Models
 
-## Entity Relationship Diagram
+## Entity Relationship Diagram [ERD]
 ```mermaid
 erDiagram
     Book {
@@ -143,6 +143,6 @@ erDiagram
         string target "OPTIONAL"
         string description "OPTIONAL"
     }
-
+ 
     Passage ||--o{ PassageNote : allows
 ```

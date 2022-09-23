@@ -706,7 +706,8 @@ export class AppComponent implements OnInit, OnDestroy {
 &lt;div #scrollToTopDiv&gt;&lt;/div&gt;
 &lt;div [ngClass]&#x3D;&quot;(theme.isDark$ | async) ? &#x27;wrapper is-dark&#x27; : &#x27;wrapper&#x27;&quot;&gt;
   &lt;app-top-nav&gt;&lt;/app-top-nav&gt;
-  &lt;router-outlet (activate)&#x3D;&quot;onRouteActivation()&quot;&gt;&lt;/router-outlet&gt;
+  &lt;!-- &lt;router-outlet (activate)&#x3D;&quot;onRouteActivation()&quot;&gt;&lt;/router-outlet&gt; --&gt;
+  &lt;app-books&gt;&lt;/app-books&gt;
   &lt;app-bottom-nav&gt;&lt;/app-bottom-nav&gt;
 &lt;/div&gt;</code></pre>
     </div>
@@ -754,7 +755,7 @@ export class AppComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div #scrollToTopDiv></div><div [ngClass]="(theme.isDark$ | async) ? \'wrapper is-dark\' : \'wrapper\'">  <app-top-nav></app-top-nav>  <router-outlet (activate)="onRouteActivation()"></router-outlet>  <app-bottom-nav></app-bottom-nav></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div #scrollToTopDiv></div><div [ngClass]="(theme.isDark$ | async) ? \'wrapper is-dark\' : \'wrapper\'">  <app-top-nav></app-top-nav>  <!-- <router-outlet (activate)="onRouteActivation()"></router-outlet> -->  <app-books></app-books>  <app-bottom-nav></app-bottom-nav></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'StatusBarComponent', 'selector': 'app-status-bar'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
     var DIRECTIVES = [{'name': 'OutsideClickDirective', 'selector': '[appOutsideClick]'},{'name': 'VerticalResizeDirective', 'selector': '[appVerticalResize]'}];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};

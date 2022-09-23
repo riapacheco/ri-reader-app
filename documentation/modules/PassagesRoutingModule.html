@@ -28,109 +28,83 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content miscellaneous-typealiases">
+               <div class="content module">
                    <div class="content-data">
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <ol class="breadcrumb">
-  <li>Miscellaneous</li>
-  <li>Type aliases</li>
+    <li>Modules</li>
+    <li >PassagesRoutingModule</li>
 </ol>
 
-<section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <ul class="index-list">
-                        <li>
-                            <a href="#TPlatformType" title="src/app/services/device-os.service.ts" ><b>TPlatformType</b>&nbsp;&nbsp;&nbsp;(src/.../device-os.service.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#TSupabaseTable" title="src/app/types/supabase.types.ts" ><b>TSupabaseTable</b>&nbsp;&nbsp;&nbsp;(src/.../supabase.types.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#TTheme" title="src/app/services/theme.service.ts" ><b>TTheme</b>&nbsp;&nbsp;&nbsp;(src/.../theme.service.ts)</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
 
-    <h3>src/app/services/device-os.service.ts</h3>
-    <section>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="TPlatformType"></a>
-                    <span class="name "><b>TPlatformType</b><a href="#TPlatformType"><span class="icon ion-ios-link"></span></a></span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <code>    <code>&quot;ios&quot; | &quot;android&quot; | &quot;web&quot; | &quot;none&quot;</code>
-</code>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>    <h3>src/app/types/supabase.types.ts</h3>
-    <section>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="TSupabaseTable"></a>
-                    <span class="name "><b>TSupabaseTable</b><a href="#TSupabaseTable"><span class="icon ion-ios-link"></span></a></span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <code>    <code>&quot;books&quot; | &quot;passages&quot; | &quot;book_genres&quot; | &quot;book_score_categories&quot; | &quot;passage_notes&quot; | &quot;passage_tags&quot;</code>
-</code>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>    <h3>src/app/services/theme.service.ts</h3>
-    <section>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="TTheme"></a>
-                    <span class="name "><b>TTheme</b><a href="#TTheme"><span class="icon ion-ios-link"></span></a></span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <code>    <code>&quot;lightTheme&quot; | &quot;darkTheme&quot;</code>
-</code>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
+<ul class="nav nav-tabs" role="tablist">
+    <li  class="active" >
+        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+    <li >
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/modules/passages/passages-routing.module.ts</code>
+        </p>
+
+
+
+
+
+        <div class="container-fluid module">
+            <div class="row">
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &quot;@angular/core&quot;;
+import { RouterModule, Routes } from &quot;@angular/router&quot;;
+import { PassagesComponent } from &quot;src/app/views/passages/passages.component&quot;;
+
+const routes: Routes &#x3D; [
+  {
+    path: &#x27;&#x27;,
+    component: PassagesComponent
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class PassagesRoutingModule {}</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                    </div><div class="search-results">
@@ -158,8 +132,8 @@
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-typealiases';
-            var COMPODOC_CURRENT_PAGE_URL = 'typealiases.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
+            var COMPODOC_CURRENT_PAGE_URL = 'PassagesRoutingModule.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

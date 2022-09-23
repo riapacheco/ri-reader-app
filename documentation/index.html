@@ -89,7 +89,84 @@ their use of examples, and much more. </p>
 <li>As a user, I want to <strong>change the weighting of scoring categories from book to book</strong> so that I&#39;m able to create a higher level thinking framework during the reading process and retain highly diverse information</li>
 <li>As a user, I want to <strong>connect ideas from one book passage idea to another book</strong> so that I can begin graphing concepts and ideas from different time periods, disciplines, and industries</li>
 </ol>
+<hr>
+<h1 id="firting-with-models">Firting with Models</h1>
+<h2 id="entity-relationship-diagram-erd">Entity Relationship Diagram [ERD]</h2>
+<div><pre class="line-numbers"><code class="language-mermaid">erDiagram
+    Book {
+        number id PK
+        string title
+        Date createdAt
+        string author       &quot;OPTIONAL&quot;
+        string description  &quot;OPTIONAL&quot;
+    }
 
+    Passage {
+        number id PK
+        number bookId FK &quot;PK from Book table&quot;
+        string body 
+        Date createdAt
+        number pageNumber &quot;OPTIONAL&quot;
+    }
+
+    Book ||--o{ Passage : allows
+
+    BookGenre {
+        number id PK
+        number bookId FK &quot;PK from Book table&quot;
+        Date createdAt
+        string label
+        string target &quot;OPTIONAL&quot;
+        string description &quot;OPTIONAL&quot;    
+    }
+
+    Book ||--o{ BookGenre : allows
+
+    BookScoreTotal {
+        number id PK
+        number bookId FK &quot;PK from Book table&quot;
+        Date createdAt
+        Date updatedAt
+        number pointPool
+        number totalPointCapacity
+        number totalPointValue
+        number percentageScore
+    }
+
+    Book ||--|| BookScoreTotal : has
+
+    BookScoreCategory {
+        number id PK
+        number bookScoreTotalId FK &quot;PK from BookScoreTotal table&quot;
+        Date createdAt
+        Date updatedAt
+        number pointCapacity
+        number pointValue
+    }
+
+    BookScoreTotal ||--|{ BookScoreCategory : has_and_combines_five
+
+    PassageTag {
+        number id PK
+        number passageId FK &quot;PK from Passage table&quot;
+        Date createdAt
+        string label
+        string target &quot;OPTIONAL&quot;
+        string description &quot;OPTIONAL&quot;
+    }
+
+    Passage ||--o{ PassageTag : allows
+
+    PassageNote {
+        number id PK
+        number passageId FK &quot;PK from Passage table&quot;
+        Date createdAt
+        string body
+        string target &quot;OPTIONAL&quot;
+        string description &quot;OPTIONAL&quot;
+    }
+ 
+    Passage ||--o{ PassageNote : allows</code></pre></div>
 
 
 
