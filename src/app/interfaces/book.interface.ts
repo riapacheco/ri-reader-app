@@ -6,8 +6,9 @@ import { IPassage } from "./passage.interface";
 export interface IBook {
   id: number;
   title: string;
-  passages: IPassage[];
-  bookScores: IBookScoreCategory[];
+  passages?: IPassage[];
+  genres?: IBookGenre[];
+  bookScores?: IBookScoreCategory[];
 }
 
 /**
