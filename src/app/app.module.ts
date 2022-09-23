@@ -28,6 +28,8 @@ import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { BottomNavComponent } from './components/bottom-nav/bottom-nav.component';
 import { StatusBarComponent } from './components/status-bar/status-bar.component';
 import { CapsPipe } from './pipes/caps.pipe';
+import { SupabaseService } from './services/supabase.service';
+import { PassageService } from './services/passage.service';
 
 
 
@@ -65,7 +67,9 @@ import { CapsPipe } from './pipes/caps.pipe';
     AuthService,
     FireAuthService,
     ThemeService,
-    DeviceOsService
+    DeviceOsService,
+    SupabaseService,
+    PassageService
   ],
   bootstrap: [AppComponent]
 })

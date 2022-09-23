@@ -1,3 +1,4 @@
+import { Timestamp } from "rxjs";
 
 
 /**
@@ -6,39 +7,24 @@
 export interface IPassage {
   id: number;
   body: string;
-  dateCreated: Date;
+  pageNumber?: number;
+  createdAt: Timestamp<any>;
+  bookId?: number;
+  
+
   tags?: IPassageTag[];
   notes?: IPassageNote[];
-  pageNumber?: number;
 }
 
-/**
- * Interface for Ref Table that holds the ID of a {@link Passage} 
- * and the ID of a corresponding {@link PassageTag}
- * Relationship is one-to-many
- */
-export interface IPassageTagsRelation {
-  id: number;
-  passage: number;
-  passageTag: number;
-}
 
-/**
- * Interface for Ref Table that holds the ID of a {@link Passage} 
- * and the ID of a corresponding {@link PassageNote}
- * Relationship is one-to-many
- */
-export interface IPassageNotesRelation {
-  id: number;
-  passage: number;
-  passageNote: number;
-}
 
 /**
  * Interface that defines the {@link PassageTag}'s data types
  */
 export interface IPassageTag {
   id: number;
+  passageId?: number;
+  createdAt?: Timestamp<any>;
   label: string;
   target?: string;
   description?: string;
@@ -48,8 +34,9 @@ export interface IPassageTag {
  */
 export interface IPassageNote {
   id: number;
+  passageId?: number;
   body: string;
-  dateCreated: Date;
+  createdAt: Date;
   target?: string;
   description?: string;
 }

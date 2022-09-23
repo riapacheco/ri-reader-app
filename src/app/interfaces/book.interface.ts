@@ -1,3 +1,4 @@
+import { Timestamp } from "rxjs";
 import { IPassage } from "./passage.interface";
 
 /**
@@ -6,6 +7,12 @@ import { IPassage } from "./passage.interface";
 export interface IBook {
   id: number;
   title: string;
+  author?: string;
+  description?: string;
+  createdAt?: Timestamp<any>;
+
+
+  // Not "stored" in database
   passages?: IPassage[];
   genres?: IBookGenre[];
   bookScores?: IBookScoreCategory[];
@@ -48,6 +55,7 @@ export interface IBookScoreCategoriesRelation {
  */
 export interface IBookGenre {
   id: number;
+  createdAt?: Timestamp<any>;
   label: string;
   target?: string;
   description?: string;
@@ -58,6 +66,7 @@ export interface IBookGenre {
  */
 export interface IBookScoreCategory {
   id: number;
+  createdAt?: Timestamp<any>;
   label: string;
   potentialPoints: number;
   value?: number;
