@@ -47,7 +47,7 @@
   <li>Interfaces</li>
   <li
   >
-  IPassage</li>
+  IPassageTagsRelation</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -73,7 +73,9 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Interface that defines the <a href="Passage">Passage</a>&#39;s data types</p>
+                <p>Interface for Ref Table that holds the ID of a <a href="Passage">Passage</a>
+and the ID of a corresponding <a href="PassageTag">PassageTag</a>
+Relationship is one-to-many</p>
 
             </p>
 
@@ -91,42 +93,21 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#body" 
->
-                                            body
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#dateCreated" 
->
-                                            dateCreated
-                                        </a>
-                                </li>
-                                <li>
                                         <a href="#id" 
 >
                                             id
                                         </a>
                                 </li>
                                 <li>
-                                            <span class="modifier">Optional</span>
-                                        <a href="#notes" 
+                                        <a href="#passage" 
 >
-                                            notes
+                                            passage
                                         </a>
                                 </li>
                                 <li>
-                                            <span class="modifier">Optional</span>
-                                        <a href="#pageNumber" 
+                                        <a href="#passageTag" 
 >
-                                            pageNumber
-                                        </a>
-                                </li>
-                                <li>
-                                            <span class="modifier">Optional</span>
-                                        <a href="#tags" 
->
-                                            tags
+                                            passageTag
                                         </a>
                                 </li>
                             </ul>
@@ -140,72 +121,6 @@
 
             <section>
                 <h3 id="inputs">Properties</h3>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="body"></a>
-                                        <span class="name "><b>body</b>
-                                            <a href="#body">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>body:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="dateCreated"></a>
-                                        <span class="name "><b>dateCreated</b>
-                                            <a href="#dateCreated">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>dateCreated:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                                 <tr>
@@ -243,9 +158,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="notes"></a>
-                                        <span class="name "><b>notes</b>
-                                            <a href="#notes">
+                                        <a name="passage"></a>
+                                        <span class="name "><b>passage</b>
+                                            <a href="#passage">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -253,45 +168,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>notes:     <code>IPassageNote[]</code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>    <code>IPassageNote[]</code>
-
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Optional</i>
-                                        </td>
-                                    </tr>
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="pageNumber"></a>
-                                        <span class="name "><b>pageNumber</b>
-                                            <a href="#pageNumber">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>pageNumber:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                        <code>passage:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -304,11 +181,6 @@
                                         </td>
                                     </tr>
 
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Optional</i>
-                                        </td>
-                                    </tr>
 
 
 
@@ -319,9 +191,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="tags"></a>
-                                        <span class="name "><b>tags</b>
-                                            <a href="#tags">
+                                        <a name="passageTag"></a>
+                                        <span class="name "><b>passageTag</b>
+                                            <a href="#passageTag">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -329,7 +201,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>tags:     <code>IPassageTag[]</code>
+                                        <code>passageTag:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -337,16 +209,11 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>IPassageTag[]</code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
                                         </td>
                                     </tr>
 
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Optional</i>
-                                        </td>
-                                    </tr>
 
 
 
@@ -444,7 +311,7 @@ export interface IPassageNote {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'IPassage.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'IPassageTagsRelation.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

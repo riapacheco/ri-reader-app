@@ -47,7 +47,7 @@
   <li>Interfaces</li>
   <li
   >
-  IPassage</li>
+  IBook</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -65,7 +65,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/interfaces/passage.interface.ts</code>
+            <code>src/app/interfaces/book.interface.ts</code>
         </p>
 
 
@@ -73,7 +73,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Interface that defines the <a href="Passage">Passage</a>&#39;s data types</p>
+                <p>Interface that defines the <a href="Book">Book</a> object&#39;s data types</p>
 
             </p>
 
@@ -91,15 +91,9 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#body" 
+                                        <a href="#bookScores" 
 >
-                                            body
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#dateCreated" 
->
-                                            dateCreated
+                                            bookScores
                                         </a>
                                 </li>
                                 <li>
@@ -109,24 +103,15 @@
                                         </a>
                                 </li>
                                 <li>
-                                            <span class="modifier">Optional</span>
-                                        <a href="#notes" 
+                                        <a href="#passages" 
 >
-                                            notes
+                                            passages
                                         </a>
                                 </li>
                                 <li>
-                                            <span class="modifier">Optional</span>
-                                        <a href="#pageNumber" 
+                                        <a href="#title" 
 >
-                                            pageNumber
-                                        </a>
-                                </li>
-                                <li>
-                                            <span class="modifier">Optional</span>
-                                        <a href="#tags" 
->
-                                            tags
+                                            title
                                         </a>
                                 </li>
                             </ul>
@@ -144,9 +129,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="body"></a>
-                                        <span class="name "><b>body</b>
-                                            <a href="#body">
+                                        <a name="bookScores"></a>
+                                        <span class="name "><b>bookScores</b>
+                                            <a href="#bookScores">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -154,7 +139,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>body:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>bookScores:     <code>IBookScoreCategory[]</code>
 </code>
                                     </td>
                                 </tr>
@@ -162,40 +147,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="dateCreated"></a>
-                                        <span class="name "><b>dateCreated</b>
-                                            <a href="#dateCreated">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>dateCreated:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                            <i>Type : </i>    <code>IBookScoreCategory[]</code>
 
                                         </td>
                                     </tr>
@@ -243,9 +195,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="notes"></a>
-                                        <span class="name "><b>notes</b>
-                                            <a href="#notes">
+                                        <a name="passages"></a>
+                                        <span class="name "><b>passages</b>
+                                            <a href="#passages">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -253,7 +205,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>notes:     <code>IPassageNote[]</code>
+                                        <code>passages:         <code><a href="../interfaces/IPassage.html" target="_self" >IPassage[]</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -261,16 +213,11 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>IPassageNote[]</code>
+                                            <i>Type : </i>        <code><a href="../interfaces/IPassage.html" target="_self" >IPassage[]</a></code>
 
                                         </td>
                                     </tr>
 
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Optional</i>
-                                        </td>
-                                    </tr>
 
 
 
@@ -281,9 +228,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="pageNumber"></a>
-                                        <span class="name "><b>pageNumber</b>
-                                            <a href="#pageNumber">
+                                        <a name="title"></a>
+                                        <span class="name "><b>title</b>
+                                            <a href="#title">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -291,7 +238,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>pageNumber:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                        <code>title:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -299,54 +246,11 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
 
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Optional</i>
-                                        </td>
-                                    </tr>
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="tags"></a>
-                                        <span class="name "><b>tags</b>
-                                            <a href="#tags">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>tags:     <code>IPassageTag[]</code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>    <code>IPassageTag[]</code>
-
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Optional</i>
-                                        </td>
-                                    </tr>
 
 
 
@@ -358,53 +262,68 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface IPassage {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IPassage } from &quot;./passage.interface&quot;;
+
+/**
+ * Interface that defines the {@link Book} object&#x27;s data types
+ */
+export interface IBook {
   id: number;
-  body: string;
-  dateCreated: Date;
-  tags?: IPassageTag[];
-  notes?: IPassageNote[];
-  pageNumber?: number;
+  title: string;
+  passages: IPassage[];
+  bookScores: IBookScoreCategory[];
 }
 
 /**
- * Interface for Ref Table that holds the ID of a {@link Passage} 
- * and the ID of a corresponding {@link PassageTag}
- * Relationship is one-to-many
+ * Interface for Ref Table that holds the ID of a {@link Book} 
+ * and the ID of an associated {@link Passage}
+ * Relationship is 1-to-many
  */
-export interface IPassageTagsRelation {
+export interface IBookPassagesRelation {
   id: number;
+  book: number;
   passage: number;
-  passageTag: number;
 }
 
 /**
- * Interface for Ref Table that holds the ID of a {@link Passage} 
- * and the ID of a corresponding {@link PassageNote}
- * Relationship is one-to-many
+ * Interface for Ref Table that holds the ID of a {@link Book} 
+ * and the ID of a related {@link BookGenre}
+ * Relationship is 1-to-many
  */
-export interface IPassageNotesRelation {
+export interface IBookGenresRelation {
   id: number;
-  passage: number;
-  passageNote: number;
+  book: number;
+  genre: number;
+}
+/**
+ * Interface for Ref Table that holds the ID of a {@link Book} 
+ * and the ID of a related {@link BookScoreCategory}
+ * Relationship is 1-to-5
+ */
+export interface IBookScoreCategoriesRelation {
+  id: number;
+  book: number;
+  scoreCategory: number;
 }
 
 /**
- * Interface that defines the {@link PassageTag}&#x27;s data types
+ * Interface that defines the {@link BookGenre} &#x27;s data types
  */
-export interface IPassageTag {
+export interface IBookGenre {
   id: number;
   label: string;
   target?: string;
   description?: string;
 }
+
 /**
- * Interface that defines the {@link PassageNote}&#x27;s data
+ * Interface that defines the {@link BookScoreCategory} &#x27;s data types
  */
-export interface IPassageNote {
+export interface IBookScoreCategory {
   id: number;
-  body: string;
-  dateCreated: Date;
+  label: string;
+  potentialPoints: number;
+  value?: number;
   target?: string;
   description?: string;
 }</code></pre>
@@ -444,7 +363,7 @@ export interface IPassageNote {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'IPassage.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'IBook.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
