@@ -43,32 +43,43 @@ export class BookService {
     return data;
   }
 
+  /**
+   *  
+   * @param bookId The ID of the book that holds errything
+   * @returns Observable<IBook>
+   *          Also populates observables with passages etc. from querying
+   */
   async getBook(bookId: number) {
+    let returnData = [];
+
     const { data, error } = await this.supabase
       .from(SUPABASE_TABLE.books)
       .select('*')
       .match({ id: bookId });
 
-    if (data) {
-      this._book$.next(data);
-      const passagesData = await this.getPassages(bookId);
-      const genresData = await this.getBookGenres(bookId);
-      const bookScoreData = await this.getScoreCategories(bookId);
-    }
+    this._book$.next(data);
+    const passagesData = await this.getPassages(bookId);
+    const genresData = await this.getBookGenres(bookId);
+    const bookScoreData = await this.getScoreCategories(bookId);
 
-    return this.book$;
-  }
+    if (passagesData) { returnData.push(passagesData); }
+    if (genresData) { returnData.push(genresData); }
+    if (bookScoreData) { returnData.push(bookScoreData); }
 
-  private getPassages(bookId: number): IPassage[] {
-    const { data, error } = this.supabase
-      .from(SUPABASE_TABLE.passages)
-      .select('*')
-      .eq('bookId', bookId)
-      this._passages$.next(data);
+    console.log(returnData);
     return data;
   }
 
-  private getBookGenres(bookId: number): IBookGenre[] {
+  private async getPassages(bookIdData: number) {
+    const { data, error } = await this.supabase
+      .from(SUPABASE_TABLE.passages)
+      .select('*')
+      .eq('bookId', bookIdData);
+      
+    return data;
+  }
+
+  private async getBookGenres(bookId: number) {
     const { data, error } = this.supabase
       .from(SUPABASE_TABLE.bookGenres)
       .select('*')
@@ -77,8 +88,8 @@ export class BookService {
     return data;
   }
 
-  private getScoreCategories(bookId: number): IBookScoreCategory[] {
-    const { data, error } = this.supabase
+  private async getScoreCategories(bookId: number) {
+    const { data, error } = await this.supabase
       .from(SUPABASE_TABLE.bookScoreCategories)
       .select('*')
       .eq('bookId', bookId);

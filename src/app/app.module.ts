@@ -30,6 +30,7 @@ import { StatusBarComponent } from './components/status-bar/status-bar.component
 import { CapsPipe } from './pipes/caps.pipe';
 import { SupabaseService } from './services/supabase.service';
 import { PassageService } from './services/passage.service';
+import { BookService } from './services/book.service';
 
 
 
@@ -69,7 +70,8 @@ import { PassageService } from './services/passage.service';
     ThemeService,
     DeviceOsService,
     SupabaseService,
-    PassageService
+    PassageService,
+    BookService
   ],
   bootstrap: [AppComponent]
 })
