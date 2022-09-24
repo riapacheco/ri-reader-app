@@ -8,7 +8,6 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ThemeService } from '../services/theme.service';
 import { DeviceOsService } from '../services/device-os.service';
 import { FireAuthService } from '../services/fire-auth.service';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { SupabaseService } from '../services/supabase.service';
 import { AuthService } from '../services/auth.service';
 import { OutsideClickDirective } from '../directives/outside-click.directive';
@@ -45,10 +44,7 @@ import { CapsPipe } from '../pipes/caps.pipe';
     ThemeService,
     DeviceOsService,
     FireAuthService,
-    { 
-      provide: LocationStrategy,
-      useClass: HashLocationStrategy
-    },
+
     SupabaseService,
     AuthService
   ]

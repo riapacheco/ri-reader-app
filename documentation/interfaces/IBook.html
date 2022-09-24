@@ -98,6 +98,13 @@
                                         </a>
                                 </li>
                                 <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#coverImage" 
+>
+                                            coverImage
+                                        </a>
+                                </li>
+                                <li>
                                         <a href="#createdAt" 
 >
                                             createdAt
@@ -114,6 +121,13 @@
                                         <a href="#id" 
 >
                                             id
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#passageCount" 
+>
+                                            passageCount
                                         </a>
                                 </li>
                                 <li>
@@ -179,6 +193,50 @@
                             <tr>
                                 <td class="col-md-4">
                                     <div class="io-description"><p>Optional book detail naming who wrote the book</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="coverImage"></a>
+                                        <span class="name "><b>coverImage</b>
+                                            <a href="#coverImage">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>coverImage:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>String that represents the URL of the book&#39;s cover image</p>
 </div>
                                 </td>
                             </tr>
@@ -310,6 +368,44 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
+                                        <a name="passageCount"></a>
+                                        <span class="name "><b>passageCount</b>
+                                            <a href="#passageCount">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>passageCount:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
                                         <a name="target"></a>
                                         <span class="name "><b>target</b>
                                             <a href="#target">
@@ -399,6 +495,8 @@
   id: number;
   /** Title of the work, of which the user will rely on for cataloging and searching */
   title: string;
+  /** String that represents the URL of the book&#x27;s cover image */
+  coverImage?: string;
   /** Date and time the book was created in the app */
   createdAt: Date;
   /** Optional book detail naming who wrote the book */
@@ -407,6 +505,19 @@
   target?: string;
   /** Extra potential body text */
   description?: string;
+  passageCount?: number;
+}
+
+
+export interface IBookGenreRef {
+  /** Lookup table item&#x27;s PK */
+  id: number;
+  /** Date the ref row was created */
+  createdAt: Date;
+  /** Reference to Book Genre&#x27;s PK */
+  bookGenreId: number;
+  /** REference to the Book&#x27;s PK */
+  bookId: number;
 }
 
 
@@ -416,8 +527,6 @@
 export interface IBookGenre {
   /** The primary key */
   id: number;
-  /** Foreign key related to the {@link Book}&#x27;s PK */
-  bookId: number;
   /** Date and time the genre was created in the app */
   createdAt: Date;
   /** The text label that defines the genre */
@@ -426,6 +535,8 @@ export interface IBookGenre {
   target?: string;
   /** Extra body text string */
   description?: string;
+  /** Ref for BookGenreRefTable */
+  bookGenreRefId?: number;
 }
 
 /**

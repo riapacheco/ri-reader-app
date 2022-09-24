@@ -1,1 +1,10 @@
-<!-- <p>books works!</p> -->
+<div class="wrapper">
+  <app-book-card
+    *ngFor="let book of books"
+    [cardTitle]="book.title"
+    [cardCoverImage]="book.coverImage"
+    [passageCount]="book.passageCount">
+  </app-book-card>
+</div>
+
+

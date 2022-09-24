@@ -20,7 +20,7 @@ export class BottomNavComponent implements OnInit {
       label: 'books',
       target: '',
       routerLink: '/books',
-      isActive: false
+      isActive: true
     },
     {
       icon: 'bookmarks',
@@ -34,7 +34,7 @@ export class BottomNavComponent implements OnInit {
       label: 'insights',
       target: '',
       routerLink: '/dashboard',
-      isActive: true
+      isActive: false
     },
     {
       icon: 'settings',

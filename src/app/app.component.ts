@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { FireAuthService } from './services/fire-auth.service';
 import { ThemeService } from './services/theme.service';
 import { DeviceOsService } from './services/device-os.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -26,12 +27,16 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     public theme: ThemeService,
     public auth: FireAuthService,
-    public device: DeviceOsService
+    public device: DeviceOsService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.checkTheme();
     this.device.runPlatformMonitor();
+
+    /* --------------------------- DELETE THESE LATER --------------------------- */
+    this.router.navigateByUrl('/books');
   }
 
   ngOnDestroy(): void {

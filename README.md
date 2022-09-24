@@ -88,6 +88,7 @@ erDiagram
         Date createdAt
         number pageNumber "OPTIONAL"
         string target "OPTIONAL"
+        number passageCount "OPTIONAL"
     }
 
     Book ||--o{ Passage : allows

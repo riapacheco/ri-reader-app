@@ -17,6 +17,7 @@ export interface IBook {
   target?: string;
   /** Extra potential body text */
   description?: string;
+  passageCount?: number;
 }
 
 

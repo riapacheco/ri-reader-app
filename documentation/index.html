@@ -100,6 +100,7 @@ their use of examples, and much more. </p>
         string target       &quot;OPTIONAL&quot;
         string author       &quot;OPTIONAL&quot;
         string description  &quot;OPTIONAL&quot;
+        string coverImage   &quot;OPTIONAL&quot;
     }
 
     Passage {
@@ -108,20 +109,31 @@ their use of examples, and much more. </p>
         string body 
         Date createdAt
         number pageNumber &quot;OPTIONAL&quot;
+        string target &quot;OPTIONAL&quot;
+        number passageCount &quot;OPTIONAL&quot;
     }
 
     Book ||--o{ Passage : allows
 
+    BookGenreRef {
+        number id PK
+        Date createdAt
+        number bookGenreId FK &quot;FK that references BookGenre&#39;s PK&quot;
+        number bookId FK &quot;FK that references Books PK&quot;
+    }
+
     BookGenre {
         number id PK
-        number bookId FK &quot;PK from Book table&quot;
         Date createdAt
         string label
         string target &quot;OPTIONAL&quot;
-        string description &quot;OPTIONAL&quot;    
+        string description &quot;OPTIONAL&quot;
+        number bookGenreRefId FK &quot;FK that References BookGenrRef PK&quot;
     }
 
-    Book ||--o{ BookGenre : allows
+    Book ||--|| BookGenreRef : has
+    BookGenreRef }|--|| BookGenre : has
+    
 
     BookScoreTotal {
         number id PK

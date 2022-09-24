@@ -1,0 +1,18 @@
+@import 'node_modules/@riapacheco/yutes/season/two.scss';
+@import '../../../scss/colors.scss';
+@import '../../../scss/mixins.scss';
+@import '../../../scss/variables.scss';
+
+:host {
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.book-card-wrapper {
+  // border: 1px solid red;
+  display: inline-block;
+  width: 100%;
+  min-height: 100px;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 6px 6px 12px #00000020;
+}
