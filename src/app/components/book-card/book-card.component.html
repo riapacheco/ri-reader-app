@@ -1,9 +1,18 @@
 <div class="book-card-wrapper">
   <div class="book-card">
     <div class="book-card-content">
-      <div class="book-cover">
-        <img [src]="cardCoverImage" alt="">
-      </div>
+      <ng-container *ngIf="cardCoverImage;else noImageBlock">
+        <div class="book-cover">
+          <img [src]="cardCoverImage" alt="">
+        </div>
+      </ng-container>
+      <ng-template #noImageBlock>
+        <div class="book-cover placeholder">
+          <img
+            *ngFor="let image of placeholderImages; let i = index;"
+            [src]="image[i]" alt="">
+        </div>
+      </ng-template>
 
       <div class="book-title">
         {{ cardTitle }}

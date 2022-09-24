@@ -14,10 +14,22 @@ export class BookCardComponent implements OnInit {
   @Input() description: string = '';
   @Input() passageCount: any = 7;
 
+  placeholderImages = [
+    '../../../assets/backgrounds/paint/background_BOB.png',
+    '../../../assets/backgrounds/paint/background_BP.png',
+    '../../../assets/backgrounds/paint/background_PinkR.png',
+    '../../../assets/backgrounds/paint/background_PR.png',
+    '../../../assets/backgrounds/paint/background_YB.png',
+    '../../../assets/backgrounds/paint/background_YGR.png'
+  ];
+
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  private addPlaceholder() {
+    
+  }
 }
