@@ -3,6 +3,7 @@
     <div class="buttons-wrapper">
       <div *ngFor="let button of buttons" class="button-wrapper">
         <a
+          (click)="!button.target ? onButtonClick(button) : onButtonClick(button) "
           [ngClass]="button.isActive ? 'is-active' : '' "
           >
           <i class="material-icons">
@@ -15,7 +16,6 @@
           </ng-container>
         </a>
       </div>
-      
     </div>
   </div>
 </div>

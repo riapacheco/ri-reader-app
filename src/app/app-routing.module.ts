@@ -21,6 +21,11 @@ const routes: Routes = [
     path: 'passages',
     loadChildren: () => import('./modules/passages/passages.module')
       .then(m => m.PassagesModule)
+  },
+  {
+    path: 'capture',
+    loadChildren: () => import('./modules/capture/capture.module')
+      .then(m => m.CaptureModule)
   }
 ];
 

@@ -3,6 +3,9 @@
 <div [ngClass]="(theme.isDark$ | async) ? 'wrapper is-dark' : 'wrapper'">
   <app-top-nav></app-top-nav>
   <router-outlet (activate)="onRouteActivation()"></router-outlet>
-  <app-bottom-nav></app-bottom-nav>
+  <app-bottom-nav
+    [buttons]="routerLinks"
+    (buttonClick)="onMobileBottomBarClick($event)">
+  </app-bottom-nav>
 </div>
 

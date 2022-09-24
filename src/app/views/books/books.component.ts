@@ -1,5 +1,6 @@
 import { Component,  OnInit } from '@angular/core';
 import { IBook } from 'src/app/interfaces/book.interface';
+import { SupabaseService } from 'src/app/services/supabase.service';
 
 @Component({
   selector: 'app-books',
@@ -20,11 +21,15 @@ export class BooksComponent implements OnInit {
     }
   ]
 
-
-
-  constructor() { }
+  constructor(private supabaseService: SupabaseService) { }
 
   ngOnInit(): void {
+    this.getBooks();
   }
 
+  getBooks(){
+    this.supabaseService.getAll('books', 'id', false).subscribe((res: any) => {
+      this.books = res;
+    })
+  }
 }

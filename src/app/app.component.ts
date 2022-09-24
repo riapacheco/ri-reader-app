@@ -4,6 +4,7 @@ import { FireAuthService } from './services/fire-auth.service';
 import { ThemeService } from './services/theme.service';
 import { DeviceOsService } from './services/device-os.service';
 import { Router } from '@angular/router';
+import { INavButton } from './components/bottom-nav/bottom-nav.component';
 
 
 @Component({
@@ -13,7 +14,36 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit, OnDestroy {
 
-
+  routerLinks: INavButton[] = [
+    {
+      icon: 'auto_stories',
+      label: 'books',
+      target: '',
+      routerLink: '/books',
+      isActive: true
+    },
+    {
+      icon: 'bookmarks',
+      label: 'passages',
+      target: '',
+      routerLink: '/passages',
+      isActive: false
+    },
+    {
+      icon: 'auto_graph',
+      label: 'insights',
+      target: '',
+      routerLink: '/dashboard',
+      isActive: false
+    },
+    {
+      icon: 'bookmark_add',
+      label: 'Add',
+      target: '',
+      routerLink: '/capture',
+      isActive: false
+    }
+  ];
   // States
   lightTheme = true;
   isMobile!: boolean;
@@ -48,6 +78,11 @@ export class AppComponent implements OnInit, OnDestroy {
    */
   onRouteActivation() {
     this.scrollToTopDiv.nativeElement.scrollIntoView();
+    this.routerLinks.map((each: any) => {
+      if (each.routerLink == this.router.url) {
+        each.isActive = true;
+      }
+    })
   }
 
   /**
@@ -61,5 +96,39 @@ export class AppComponent implements OnInit, OnDestroy {
     } else if (themeState == 'darkTheme') {
       this.lightTheme = false;
     } else { console.log('Duno'); }
+  }
+
+
+  // MOBILE BOTTOM BAR
+  onMobileBottomBarClick(val: any) {
+    const {
+      icon,
+      label,
+      target,
+      routerLink,
+      isActive
+    } = val;
+    
+    if (routerLink) {
+      this.routerLinks.map((obj: any) => {
+        if (obj.routerLink == routerLink) {
+          this.resetActivations();
+          obj.isActive = true;
+          this.router.navigateByUrl(obj.routerLink);
+        }
+      })
+    } else if (!routerLink && target) {
+      this.routerLinks.map((obj: any) => {
+        this.resetActivations();
+        obj.isActive = true;
+
+      })
+    } else {
+      console.log('missing data => ', val);
+    }
+  }
+
+  private resetActivations() {
+    this.routerLinks.map((each: any) => Object.assign(each, { isActive: false }));
   }
 }

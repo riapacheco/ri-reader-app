@@ -14,36 +14,7 @@ export interface INavButton {
 })
 export class BottomNavComponent implements OnInit {
   @Output() buttonClick: EventEmitter<any> = new EventEmitter<any>();
-  @Input() buttons: INavButton[] = [
-    {
-      icon: 'auto_stories',
-      label: 'books',
-      target: '',
-      routerLink: '/books',
-      isActive: true
-    },
-    {
-      icon: 'bookmarks',
-      label: 'passages',
-      target: '',
-      routerLink: '/passages',
-      isActive: false
-    },
-    {
-      icon: 'auto_graph',
-      label: 'insights',
-      target: '',
-      routerLink: '/dashboard',
-      isActive: false
-    },
-    {
-      icon: 'settings',
-      label: 'settings',
-      target: '',
-      routerLink: '/settings',
-      isActive: false
-    }
-  ];
+  @Input() buttons: INavButton[] = [];
 
   
   constructor() { }
@@ -51,7 +22,7 @@ export class BottomNavComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onButtonClick(event: any, targetString: any) {
-    if (event) { this.buttonClick.emit(targetString); }
+  onButtonClick(data: any) {
+    this.buttonClick.emit(data);
   }
 }
