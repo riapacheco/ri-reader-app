@@ -13,6 +13,7 @@ export interface IPassage {
   createdAt: Date;
   /** Optional associated page number */
   pageNumber?: number;
+  target?: string;
 }
 
 /**

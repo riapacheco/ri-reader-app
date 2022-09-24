@@ -78,6 +78,7 @@ erDiagram
         string target       "OPTIONAL"
         string author       "OPTIONAL"
         string description  "OPTIONAL"
+        string coverImage   "OPTIONAL"
     }
 
     Passage {
@@ -86,20 +87,30 @@ erDiagram
         string body 
         Date createdAt
         number pageNumber "OPTIONAL"
+        string target "OPTIONAL"
     }
 
     Book ||--o{ Passage : allows
 
+    BookGenreRef {
+        number id PK
+        Date createdAt
+        number bookGenreId FK "FK that references BookGenre's PK"
+        number bookId FK "FK that references Books PK"
+    }
+
     BookGenre {
         number id PK
-        number bookId FK "PK from Book table"
         Date createdAt
         string label
         string target "OPTIONAL"
-        string description "OPTIONAL"    
+        string description "OPTIONAL"
+        number bookGenreRefId FK "FK that References BookGenrRef PK"
     }
 
-    Book ||--o{ BookGenre : allows
+    Book ||--|| BookGenreRef : has
+    BookGenreRef }|--|| BookGenre : has
+    
 
     BookScoreTotal {
         number id PK

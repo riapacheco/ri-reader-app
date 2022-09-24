@@ -7,6 +7,8 @@ export interface IBook {
   id: number;
   /** Title of the work, of which the user will rely on for cataloging and searching */
   title: string;
+  /** String that represents the URL of the book's cover image */
+  coverImage?: string;
   /** Date and time the book was created in the app */
   createdAt: Date;
   /** Optional book detail naming who wrote the book */
@@ -18,14 +20,24 @@ export interface IBook {
 }
 
 
+export interface IBookGenreRef {
+  /** Lookup table item's PK */
+  id: number;
+  /** Date the ref row was created */
+  createdAt: Date;
+  /** Reference to Book Genre's PK */
+  bookGenreId: number;
+  /** REference to the Book's PK */
+  bookId: number;
+}
+
+
 /**
  * A {@link IBookGenre} is more or less just a category (or tag) that the user can attach to a {@link Book} for better cataloging
  */
 export interface IBookGenre {
   /** The primary key */
   id: number;
-  /** Foreign key related to the {@link Book}'s PK */
-  bookId: number;
   /** Date and time the genre was created in the app */
   createdAt: Date;
   /** The text label that defines the genre */
@@ -34,6 +46,8 @@ export interface IBookGenre {
   target?: string;
   /** Extra body text string */
   description?: string;
+  /** Ref for BookGenreRefTable */
+  bookGenreRefId?: number;
 }
 
 /**
