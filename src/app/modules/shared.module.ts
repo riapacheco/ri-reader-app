@@ -7,8 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ThemeService } from '../services/theme.service';
 import { DeviceOsService } from '../services/device-os.service';
-import { FireAuthService } from '../services/fire-auth.service';
-import { SupabaseService } from '../services/supabase.service';
+
 import { AuthService } from '../services/auth.service';
 import { OutsideClickDirective } from '../directives/outside-click.directive';
 import { FilterAllPipe } from '../pipes/filter-all.pipe';
@@ -43,9 +42,6 @@ import { CapsPipe } from '../pipes/caps.pipe';
   providers: [
     ThemeService,
     DeviceOsService,
-    FireAuthService,
-
-    SupabaseService,
     AuthService
   ]
 })

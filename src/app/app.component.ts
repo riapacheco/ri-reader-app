@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { FireAuthService } from './services/fire-auth.service';
+
 import { ThemeService } from './services/theme.service';
 import { DeviceOsService } from './services/device-os.service';
 import { Router } from '@angular/router';
@@ -56,7 +56,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     public theme: ThemeService,
-    public auth: FireAuthService,
+    
     public device: DeviceOsService,
     private router: Router
   ) {}

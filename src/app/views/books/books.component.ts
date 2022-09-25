@@ -1,6 +1,7 @@
 import { Component,  OnInit } from '@angular/core';
 import { IBook } from 'src/app/interfaces/book.interface';
-import { SupabaseService } from 'src/app/services/supabase.service';
+import { BookService } from 'src/app/services/book.service';
+
 
 @Component({
   selector: 'app-books',
@@ -8,28 +9,19 @@ import { SupabaseService } from 'src/app/services/supabase.service';
   styleUrls: ['./books.component.scss']
 })
 export class BooksComponent implements OnInit {
-  books: IBook[] = [
-    {
-      id: 0,
-      title: 'Misbehaving',
-      coverImage: 'https://ik.imagekit.io/fuc9k9ckt2b/misbehaving_kPREseu0O.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1663983750357',
-      createdAt: new Date(),
-      author: 'Richard H Thaler',
-      target: '',
-      description: '',
-      passageCount: 6
-    }
-  ]
+  books: IBook[] = [];
 
-  constructor(private supabaseService: SupabaseService) { }
+  constructor(
+    private bookService: BookService
+    ) { }
 
   ngOnInit(): void {
-    this.getBooks();
+    // this.getBooksSummaries();
   }
 
-  getBooks(){
-    this.supabaseService.getAll('books', 'id', false).subscribe((res: any) => {
-      this.books = res;
+  getBooksSummaries() {
+    this.bookService.getBookSummaryData().then((res: any) => {
+      console.log(res);
     })
   }
 }

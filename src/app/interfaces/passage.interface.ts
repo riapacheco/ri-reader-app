@@ -3,16 +3,11 @@
  * Defines the data types for the {@link Passage} class
  */
 export interface IPassage {
-  /** Primary Key */
-  id: number;
-  /** Foreign Key - References the {@link Book} class' Primary Key */
-  bookId: number;
-  /** The actual text body that holds information [brought in from the camera] */
-  body: string;
-  /** Date/Time the passage was created */
-  createdAt: Date;
-  /** Optional associated page number */
-  pageNumber?: number;
+  id?: number;
+  book_id?: number;
+  body?: string;
+  created_at?: Date;
+  page_number?: number;
   target?: string;
 }
 
@@ -22,17 +17,11 @@ export interface IPassage {
  * Enables user filtering / sorting later
  */
 export interface IPassageTag {
-  /** Primary Key */
-  id: number;
-  /** Foreign Key - References the {@link Passage} class' Primary Key */
-  passageId: number;
-  /** Date/Time the tag was created */
-  createdAt: Date;
-  /** The actual user-facing label that defines the 'tag' visually */
-  label: string;
-  /** Optional extra string */
+  id?: number;
+  passage_id?: number;
+  created_at?: Date;
+  label?: string;
   target?: string;
-  /** Optional body string */
   description?: string;
 }
 
@@ -42,16 +31,10 @@ export interface IPassageTag {
  * Enables the leaving of a longer text string for added context when reviewing a passage in the future
  */
 export interface IPassageNote {
-  /** Primary Key */
-  id: number;
-  /** Foreign Key - references the {@link Passage} class' Primary Key */
-  passageId: number;
-  /** Date/Time the note was created */
-  createdAt: Date;
-  /** Body text that actually makes up the note itself conceptually */
-  body: string;
-  /** Optional additional string */
+  id?: number;
+  passage_id?: number;
+  created_at?: Date;
+  body?: string;
   target?: string;
-  /** Optional additional body string */
   description?: string;
 }

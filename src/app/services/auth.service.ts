@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { createClient, Session, SupabaseClient, User } from '@supabase/supabase-js';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { SUPABASE } from '../constants/supabase.constants';
 import { IUser } from '../interfaces/user.interface';
 
@@ -8,9 +9,13 @@ import { IUser } from '../interfaces/user.interface';
 })
 export class AuthService {
   private _supabaseClient!: SupabaseClient;
+  public _user$ = new BehaviorSubject<any>({});
+  public user$: Observable<any> = this._user$.asObservable();
+  something!: Observable<any>
 
   constructor() {
     this._supabaseClient = createClient(SUPABASE.projectUrl, SUPABASE.anonKey);
+    
   }
 
   // Sign In
