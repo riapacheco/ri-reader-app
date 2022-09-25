@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, ComponentFactoryResolver, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ThemeService } from './services/theme.service';
 import { DeviceOsService } from './services/device-os.service';
@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { INavButton } from './components/bottom-nav/bottom-nav.component';
 import { OcrService } from './services/ocr.service';
 import { LoadingOverlayService } from './services/loading-overlay.service';
+import { CameraService } from './services/camera.service';
 
 
 
@@ -16,7 +17,11 @@ import { LoadingOverlayService } from './services/loading-overlay.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
 
+  // BOOKS LIST
+  queryText = [''];
+
   /* --------------------------- OCR ENGINE TRIGGERS -------------------------- */
+  capturedText = '';
   captureButton = {
     icon: 'bookmark_add',
     target: 'passage'
@@ -57,6 +62,9 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   ];
   
+  // TOP NAV
+  titleText = '';
+
   /* --------------------------- GENERAL VIEW STATES -------------------------- */
   lightTheme = true;
   isMobile!: boolean;
@@ -73,12 +81,14 @@ export class AppComponent implements OnInit, OnDestroy {
     public device: DeviceOsService,
     private router: Router,
     public ocr: OcrService,
-    public loading: LoadingOverlayService
+    public loading: LoadingOverlayService,
+    public camService: CameraService
   ) {}
 
   ngOnInit(): void {
     this.checkTheme();
     this.device.runPlatformMonitor();
+    
   }
 
   ngOnDestroy(): void {
@@ -96,6 +106,7 @@ export class AppComponent implements OnInit, OnDestroy {
         each.isActive = true;
       }
     })
+
   }
 
   /**
@@ -111,6 +122,15 @@ export class AppComponent implements OnInit, OnDestroy {
     } else { console.log('Duno'); }
   }
 
+  // TOP BAR
+  onInputType(data: any) {
+    if (typeof data == 'string' && data.length == 1) {
+      this.queryText.push(data.toLowerCase())
+    }
+  }
+  onSearchEnter(data: any) {
+    console.log(data);
+  }
 
   /* -------------------------------------------------------------------------- */
   /*                              MOBILE BOTTOM BAR                             */

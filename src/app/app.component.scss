@@ -1,12 +1,8 @@
 @import 'node_modules/@riapacheco/yutes/season/two.scss';
-.wrapper {
-  min-height: 100vh;
-  min-width: 100vw;
-  width: 100%;
-  height: 100%;
-  display: block;
-  overflow-x: hidden;
-  overflow-y: scroll;
+@import '../scss/variables.scss';
+
+:host {
+  padding-bottom: $bottom-bar-height;
 }
 
 .hidden-input {

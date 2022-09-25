@@ -14,6 +14,10 @@ export class BookService {
   private _bookCardPreview$ = new BehaviorSubject<IBook[]>([]);
   public bookCardPreview$ = this._bookCardPreview$.asObservable();
 
+  coverImages = [
+    '../assets/backgrounds/paint/background_BOB.png',
+
+  ];
 
   constructor() { this.supabase = createClient(SUPABASE.projectUrl, SUPABASE.anonKey); }
 
@@ -48,6 +52,7 @@ export class BookService {
         .select(`
           title,
           passage_count,
+          cover_image,
           passages (
             body
           )

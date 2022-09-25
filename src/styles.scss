@@ -13,11 +13,11 @@ html, body {
   font-family: "Inter", sans-serif;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased !important;
-
 }
 
 html {
   font-size: 10px;
+  @include style-bg('light');
 }
 
 body {
@@ -89,7 +89,25 @@ input::placeholder {
   border-radius: 4px;
 }
 
+textarea {
+  width: 100%;
+  font-size: 100%;
+  font-family: "Inter", sans-serif;
+  // @include mobile-text('body');
+}
 
+
+.bg-wrapper {
+  height: 100%;
+  width: 100vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  @include style-bg('light');
+
+  &.is-dark {
+    @include style-bg('dark');
+  }
+}
 
 
 /* -------------------------------------------------------------------------- */
@@ -110,7 +128,8 @@ app-bottom-nav,
 }
 
 app-drawer-menu,
-.drawer-wrapper {
+.drawer-wrapper,
+.search-prefix {
   z-index: calc($base-index * 5);
 }
 

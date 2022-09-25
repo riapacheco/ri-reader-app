@@ -11,6 +11,12 @@ $avatar-height: 40px;
 $action-button-height: 50px;
 $badge-height: 12px;
 $search-field-height: 46px;
+%action-button {
+  width: $action-button-height;
+  height: $action-button-height;
+  border-radius: $action-button-height;
+  background-image: linear-gradient(to bottom left, $canary-regular, $canary-medium);
+}
 .top-nav {
   padding-top: 20px;
   position: sticky;
@@ -60,14 +66,7 @@ $search-field-height: 46px;
 
       // ACTION BUTTON
       .action-button {
-        width: $action-button-height;
-        height: $action-button-height;
-        border-radius: $action-button-height;
-        background-image: linear-gradient(to bottom left, $canary-regular, $canary-medium);
-        // background-color: black;
-        // background-color: $steel-light;
-        // border: 1px solid black;
-        // border: 3px solid $canary-dark;
+        @extend %action-button;
 
         
         a {
@@ -82,9 +81,6 @@ $search-field-height: 46px;
           .material-icons {
             font-size: 2rem;
             color: white;
-            // color: black;
-            // color: black;
-            // opacity: 0.6;
           }
         }
       }
@@ -148,6 +144,52 @@ $search-field-height: 46px;
               }
             }
 
+          }
+        }
+      }
+    }
+  }
+
+  .short-nav {
+    @include style-bg('light');
+    .short-nav-content {
+      @include auto-width-mobile;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+
+      .user-image {
+        img {
+          width: $avatar-height;
+          border-radius: $avatar-height;
+        }
+      }
+      .form-group {
+        width: 100%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        input {
+          height: calc($avatar-height + 1rem);
+          border-radius: $avatar-height;
+        }
+      }
+
+      .action-button {
+        @extend %action-button;
+
+        a {
+          display: inline-block;
+          width: $action-button-height;
+          height: $action-button-height;
+          display: flex;
+          flex-flow: column nowrap;
+          align-items: center;
+          justify-content: center;
+
+          .material-icons {
+            font-size: 2rem;
+            color: white;
           }
         }
       }

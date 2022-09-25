@@ -8,12 +8,16 @@
   (change)="onFileSelect($event)"
   type="file"
   id="fileUploader"
-  #addPassageElement>
+  #addPassageElement
+  >
 
 <div [ngClass]="(theme.isDark$ | async) ? 'wrapper is-dark' : 'wrapper'">
   <app-top-nav
     [actionButton]="captureButton"
     (actionButtonClick)="onReaderTrigger($event)"
+    [titleText]="titleText"
+    (keydown)="onInputType($event)"
+    (enterDown)="onSearchEnter($event)"
     >
   </app-top-nav>
   <router-outlet (activate)="onRouteActivation()"></router-outlet>

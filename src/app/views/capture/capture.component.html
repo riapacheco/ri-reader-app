@@ -1,8 +1,8 @@
-<div class="pt-3">
+<div class="capture-wrapper bg-wrapper">
   <ng-container *ngIf="(ocr.ocrResult$ | async)">
     <div class="flex-row nowrap align-center justify-between pb-2">
       <h6>
-        New Passage
+        Passage Preview
 
         <ng-container *ngIf="(ocr.confirmLength$ | async)">
           <i class="material-icons">checkmark</i>
@@ -17,7 +17,7 @@
   </ng-container>
   <ng-container *ngIf="(ocr.ocrResult$ | async);else placeholderText">
     <span>
-      {{ (ocr.ocrResult$ | async) }}
+      <!-- {{ (ocr.ocrResult$ | async) }} -->
     </span>
   </ng-container>
 
@@ -26,4 +26,14 @@
       Results will appear here...
     </span>
   </ng-template>
+  <br>
+  <br>
+  <textarea
+    [(ngModel)]="passageText"
+    name="passageText" 
+    cols="30" 
+    rows="10">
+  </textarea>
+
 </div>
+

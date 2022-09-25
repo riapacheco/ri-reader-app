@@ -7,12 +7,117 @@
   -webkit-font-smoothing: antialiased !important;
 }
 
+$card-width: calc(100vw - 10%);
+$card-height: 90px;
+$img-width: 40px;
+$corners: 6px;
+$card-details-width: calc($card-width - $img-width - 10px);
 .book-card-wrapper {
-  // border: 1px solid red;
+  height: $card-height;
   display: inline-block;
-  width: 100%;
-  min-height: 100px;
-  border-radius: 3px;
+  width: $card-width;
+  border-radius: $corners;
   background-color: white;
-  box-shadow: 6px 6px 12px #00000020;
+  box-shadow: 2px 4px 12px #00000005;
+  margin: auto;
+  margin-bottom: 2.5rem;
+
+  .book-card {
+    height: $card-height;
+    .book-card-content {
+      position: relative;
+      height: 100%;
+      .book-cover {
+        height: $card-height;
+        position: absolute;
+        left:0;
+        width: $img-width;
+
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        
+        img {
+          // height: 100%;
+          width: $img-width;
+          height: $card-height !important;
+          border-radius: 6px 0px 0px 6px;
+          object-fit: cover;
+          box-shadow: inset 4px 4px 22px #00000070;
+        }
+        &.with-placeholder {
+          background-color: $canary-dark;
+          // background-color: #000000ad;
+          background-image: linear-gradient(to bottom right, $canary-dark, $canary-regular, $canary-medium, $canary-light);
+          border-radius: 6px 0px 0px 6px;
+
+          span {
+            font-size: 2.4rem;
+            font-weight: 600;
+
+            color: #ffffff60;
+
+          }
+        }
+      }
+
+      .book-details {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: $card-details-width;
+        width: $card-details-width;
+        margin-left: auto;
+        height: $card-height;
+        padding: 20px;
+        font-weight: 600;
+
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+
+        margin-right: 10px;
+
+        .book-title {
+          width: $card-details-width;
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          margin-bottom: 0.5rem;
+
+          span {
+            font-weight: 700;
+            text-overflow: ellipsis;
+            overflow-x: hidden;
+          }
+
+          .material-icons {
+            font-size: 1.8rem;
+            margin-right: 1rem;
+            // color: $canary-regular
+          }
+        }
+
+        .passage-count {
+          width: $card-details-width;
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+
+          .material-icons {
+            font-size: 1.4rem;
+            margin-right: 1rem;
+            color: $canary-regular;
+          }
+
+          span {
+            font-size: 1.3rem;
+            font-weight: 400;
+
+          }
+        }
+      }
+    }
+  }
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CaptureComponent } from 'src/app/views/capture/capture.component';
 import { CaptureRoutingModule } from './capture-routing.module';
 import { SharedModule } from '../shared.module';
+import { CameraService } from 'src/app/services/camera.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { SharedModule } from '../shared.module';
   exports: [
   ],
   providers: [
-
+    CameraService
   ]
 })
 export class CaptureModule { }

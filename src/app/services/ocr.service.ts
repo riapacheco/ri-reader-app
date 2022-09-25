@@ -42,7 +42,7 @@ export class OcrService {
       }
     }
 
-    return;
+    return true;
   }
 
   private async initTesseract() {
@@ -77,7 +77,6 @@ export class OcrService {
 
     setTimeout(() => {
       this.loadingOverlayService.dismissSpinner();
-      console.log(this.ocrResult);
       setTimeout(() => {
         this._confirmLength$.next(true);
       }, 100);
@@ -86,6 +85,7 @@ export class OcrService {
     setTimeout(() => {
       this._confirmLength$.next(false);
     }, 2000);
+
     return this.ocrResult;
   }
 

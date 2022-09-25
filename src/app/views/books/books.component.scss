@@ -1,13 +1,10 @@
 @import '../../../scss/mixins.scss';
 
-.wrapper {
-  @include auto-width-mobile;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: flex-start;
+.books-wrapper {
+  overflow-y: scroll;
+  @include style-bg('light');
 
-  app-book-card {
-    width: 47%;
-    margin: 1rem;
+  .books-content {
+    @include auto-width-mobile;
   }
 }
