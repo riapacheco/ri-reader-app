@@ -1,1 +1,14 @@
-<p>capture works!</p>
+<input
+  id="fileInput"
+  (change)="handleUpload($event)"
+  accept="image/*"
+  type="file">
+
+<small>
+  {{ (ocr.loadingStatus$ | async) }}
+</small>
+
+
+<p>
+  {{ (ocr.ocrResult$ | async) }}
+</p>

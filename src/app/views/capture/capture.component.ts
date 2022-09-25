@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OcrService } from 'src/app/services/ocr.service';
+import * as Tesseract from 'tesseract.js';
 
 @Component({
   selector: 'app-capture',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CaptureComponent implements OnInit {
 
-  constructor() { }
+  worker: Tesseract.Worker = Tesseract.createWorker();
+  ocrReady!: boolean;
+  ocrResult!: string;
+  imageChangedEvent!: any;
+  base64Image!: any;
+
+  constructor(
+    public ocr: OcrService
+  ) { }
 
   ngOnInit(): void {
+
+  }
+
+  handleUpload(event: any) {
+    this.ocr.scanImage(event);
   }
 
 }

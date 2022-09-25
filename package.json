@@ -30,6 +30,7 @@
     "@riapacheco/yutes": "^4.1.7",
     "@supabase/supabase-js": "^1.35.6",
     "rxjs": "~7.5.0",
+    "tesseract.js": "^3.0.3",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
@@ -40,6 +41,7 @@
     "@capacitor/cli": "^4.2.0",
     "@compodoc/compodoc": "^1.1.19",
     "@types/jasmine": "~4.0.0",
+    "@types/tesseract.js": "^2.0.0",
     "jasmine-core": "~4.2.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",

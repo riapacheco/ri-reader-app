@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CaptureComponent } from 'src/app/views/capture/capture.component';
 import { CaptureRoutingModule } from './capture-routing.module';
 import { SharedModule } from '../shared.module';
+import { OcrService } from 'src/app/services/ocr.service';
 
 
 
@@ -16,6 +17,9 @@ import { SharedModule } from '../shared.module';
     CaptureRoutingModule
   ],
   exports: [
+  ],
+  providers: [
+    OcrService
   ]
 })
 export class CaptureModule { }
