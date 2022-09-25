@@ -15,6 +15,11 @@ import { SharedModule } from './modules/shared.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { OcrService } from './services/ocr.service';
 
+import { LoadingComponent } from './components/loading/loading.component';
+import { OverlayComponent } from './components/overlay/overlay.component';
+import { LoadingOverlayService } from './services/loading-overlay.service';
+import { LoadingOverlayComponent } from './components/loading-overlay/loading-overlay.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +29,9 @@ import { OcrService } from './services/ocr.service';
     TopNavComponent,
     BottomNavComponent,
     StatusBarComponent,
+    LoadingComponent,
+    OverlayComponent,
+    LoadingOverlayComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +45,8 @@ import { OcrService } from './services/ocr.service';
       provide: LocationStrategy,
       useClass: HashLocationStrategy
     },
-    OcrService
+    OcrService,
+    LoadingOverlayService
   ],
   bootstrap: [AppComponent]
 })

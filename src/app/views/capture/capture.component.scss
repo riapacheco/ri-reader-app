@@ -1,0 +1,42 @@
+@import 'node_modules/@riapacheco/yutes/season/two.scss';
+@import '../../../scss/mixins.scss';
+
+:host {
+  -webkit-font-smoothing: antialiased !important;
+}
+
+div {
+  @include auto-width-mobile;
+  h6 {
+    @include text('h6');
+    position: relative;
+    // border: 1px solid red;
+    width: 100%;
+    .material-icons {
+
+      display: inline-block;
+      font-size: 1.8rem;
+      color: $success;
+      position: absolute;
+      top: -0.5rem;
+      right: 3rem;
+      
+      transition: 200ms ease-in-out;
+    }
+  }
+  span {
+    @include mobile-text('body');
+  }
+}
+
+.edit-button {
+  white-space: nowrap;
+  background-color: $canary-dark;
+  background-color: black;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.3rem;
+  letter-spacing: -0.05rem;
+  font-weight: 500;
+}

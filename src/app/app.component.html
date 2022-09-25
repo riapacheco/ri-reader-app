@@ -1,4 +1,6 @@
-
+<ng-container *ngIf="(loading.isLoading$ | async)">
+  <app-loading-overlay></app-loading-overlay>
+</ng-container>
 <div #scrollToTopDiv></div>
 <input
   class="hidden-input"

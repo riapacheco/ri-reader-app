@@ -8,6 +8,7 @@ import { OcrService } from 'src/app/services/ocr.service';
 })
 export class CaptureComponent implements OnInit {
   
+  showCheck = true;
   constructor(
     public ocr: OcrService
   ) { }
@@ -15,4 +16,11 @@ export class CaptureComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngAfterViewInit() {
+    
+  }
+
+  onClear() {
+    this.ocr.clearText();
+  }
 }

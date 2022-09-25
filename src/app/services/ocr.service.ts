@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, ObservedValueOf } from 'rxjs';
 import * as Tesseract from 'tesseract.js';
+import { LoadingOverlayService } from './loading-overlay.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,17 +11,21 @@ export class OcrService {
   private ocrLoaded!: boolean;
   private ocrResult!: string;
 
-  private _counter$ = new BehaviorSubject<number>(1);
-  public counter$: Observable<number> = this._counter$.asObservable();
-
   private _loadingStatus$ = new BehaviorSubject<string>('');
   public loadingStatus$: Observable<string> = this._loadingStatus$.asObservable();
+
+  private _loadingTimestamp$ = new BehaviorSubject<string>('');
+  public loadingTimestamp$: Observable<string> = this._loadingTimestamp$.asObservable();
 
   private _ocrResult$ = new BehaviorSubject<string>('');
   public ocrResult$: Observable<string> = this._ocrResult$.asObservable();
 
+  private _confirmLength$ = new BehaviorSubject<boolean>(false);
+  public confirmLength$: Observable<boolean> = this._confirmLength$.asObservable();
 
-  constructor() { }
+  constructor(
+    private loadingOverlayService: LoadingOverlayService
+  ) { }
 
   public async scanImage(event: any) {
     
@@ -36,6 +41,8 @@ export class OcrService {
         }
       }
     }
+
+    return;
   }
 
   private async initTesseract() {
@@ -47,6 +54,11 @@ export class OcrService {
 
   private async translateImage(base64Image: string | any) {
     const startTime = new Date().toLocaleTimeString();
+    const startMessage = `Scan start: ${startTime}`;
+
+    this.loadingOverlayService.triggerLoadingSpinner(startMessage);
+
+    this._loadingTimestamp$.next(startMessage);
     this._loadingStatus$.next(`OCR scan started [${startTime}]`)
     
     if (this.ocrLoaded) {
@@ -56,8 +68,32 @@ export class OcrService {
     }
 
     const endTime = new Date().toLocaleTimeString();
+    const endMessage = `Scan end: ${endTime}`;
+    
+    this.loadingOverlayService.updateLoadingSubtitle(endMessage);
+
+    this._loadingTimestamp$.next(endMessage);
     this._loadingStatus$.next(`OCR scan ended [${endTime}]`);
 
+    setTimeout(() => {
+      this.loadingOverlayService.dismissSpinner();
+      console.log(this.ocrResult);
+      setTimeout(() => {
+        this._confirmLength$.next(true);
+      }, 100);
+    }, 280);
+
+    setTimeout(() => {
+      this._confirmLength$.next(false);
+    }, 2000);
     return this.ocrResult;
+  }
+
+  public resetTimestamp() {
+    this._loadingTimestamp$.next('');
+  }
+
+  public clearText() {
+    this._ocrResult$.next('');
   }
 }

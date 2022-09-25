@@ -14,6 +14,9 @@ import { FilterAllPipe } from '../pipes/filter-all.pipe';
 import { FilterPipe } from '../pipes/filter.pipe';
 import { VerticalResizeDirective } from '../directives/vertical-resize.directive';
 import { CapsPipe } from '../pipes/caps.pipe';
+import { LoadingOverlayService } from '../services/loading-overlay.service';
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,7 @@ import { CapsPipe } from '../pipes/caps.pipe';
     FilterAllPipe,
     FilterPipe,
     VerticalResizeDirective,
-    CapsPipe
+    CapsPipe,
   ],
   imports: [
     CommonModule,
@@ -42,7 +45,8 @@ import { CapsPipe } from '../pipes/caps.pipe';
   providers: [
     ThemeService,
     DeviceOsService,
-    AuthService
+    AuthService,
+    LoadingOverlayService
   ]
 })
 export class SharedModule { }

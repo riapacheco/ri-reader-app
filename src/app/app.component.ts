@@ -1,11 +1,12 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
-
 import { ThemeService } from './services/theme.service';
 import { DeviceOsService } from './services/device-os.service';
 import { Router } from '@angular/router';
 import { INavButton } from './components/bottom-nav/bottom-nav.component';
 import { OcrService } from './services/ocr.service';
+import { LoadingOverlayService } from './services/loading-overlay.service';
+
 
 
 @Component({
@@ -15,7 +16,7 @@ import { OcrService } from './services/ocr.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
 
-  // OCR triggers
+  /* --------------------------- OCR ENGINE TRIGGERS -------------------------- */
   captureButton = {
     icon: 'bookmark_add',
     target: 'passage'
@@ -24,7 +25,7 @@ export class AppComponent implements OnInit, OnDestroy {
   @ViewChild('fileUploader') fileUploader!: ElementRef;
   @ViewChild('addPassageElement') addPassageElement!: ElementRef;
 
-  // Router Links
+  /* ----------------------------- APP NAV ROUTING ---------------------------- */
   routerLinks: INavButton[] = [
     {
       icon: 'auto_stories',
@@ -55,9 +56,11 @@ export class AppComponent implements OnInit, OnDestroy {
       isActive: false
     }
   ];
-  // States
+  
+  /* --------------------------- GENERAL VIEW STATES -------------------------- */
   lightTheme = true;
   isMobile!: boolean;
+  isLoading = false; // for overlay spinner combo
 
   // Subscription utility
   private sub = new Subscription();
@@ -69,7 +72,8 @@ export class AppComponent implements OnInit, OnDestroy {
     public theme: ThemeService,
     public device: DeviceOsService,
     private router: Router,
-    public ocr: OcrService
+    public ocr: OcrService,
+    public loading: LoadingOverlayService
   ) {}
 
   ngOnInit(): void {
@@ -108,7 +112,9 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
 
-  // MOBILE BOTTOM BAR
+  /* -------------------------------------------------------------------------- */
+  /*                              MOBILE BOTTOM BAR                             */
+  /* -------------------------------------------------------------------------- */
   onMobileBottomBarClick(val: any) {
     const {
       icon,
@@ -136,13 +142,12 @@ export class AppComponent implements OnInit, OnDestroy {
       console.log('missing data => ', val);
     }
   }
-
   private resetActivations() {
     this.routerLinks.map((each: any) => Object.assign(each, { isActive: false }));
   }
 
   /* -------------------------------------------------------------------------- */
-  /*                                 OCR READER                                 */
+  /*                             TRIGGER OCR READER                             */
   /* -------------------------------------------------------------------------- */
   onReaderTrigger(data: any) {
     if (data == 'passage') {
@@ -154,6 +159,6 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
   onFileSelect(event: any) {
-    console.log(event)
+    this.ocr.scanImage(event);
   }
 }

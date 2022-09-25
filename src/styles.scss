@@ -100,8 +100,7 @@ $base-index: 2;
 
 app-root, 
 app-app-status-bar, 
-.app-status-bar,
-.hidden-input { z-index: calc($base-index / 2); }
+.app-status-bar { z-index: calc($base-index / 2); }
 
 app-top-nav,
 .top-nav,
@@ -113,4 +112,9 @@ app-bottom-nav,
 app-drawer-menu,
 .drawer-wrapper {
   z-index: calc($base-index * 5);
+}
+
+app-overlay,
+.overlay-wrapper {
+  z-index: calc($base-index * 6);
 }
