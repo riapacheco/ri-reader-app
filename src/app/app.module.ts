@@ -13,6 +13,7 @@ import { BottomNavComponent } from './components/bottom-nav/bottom-nav.component
 import { StatusBarComponent } from './components/status-bar/status-bar.component';
 import { SharedModule } from './modules/shared.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { OcrService } from './services/ocr.service';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
       provide: LocationStrategy,
       useClass: HashLocationStrategy
     },
+    OcrService
   ],
   bootstrap: [AppComponent]
 })

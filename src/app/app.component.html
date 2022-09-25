@@ -1,11 +1,22 @@
 
 <div #scrollToTopDiv></div>
+<input
+  class="hidden-input"
+  accept="image/*"
+  (change)="onFileSelect($event)"
+  type="file"
+  id="fileUploader"
+  #addPassageElement>
+
 <div [ngClass]="(theme.isDark$ | async) ? 'wrapper is-dark' : 'wrapper'">
-  <app-top-nav></app-top-nav>
+  <app-top-nav
+    [actionButton]="captureButton"
+    (actionButtonClick)="onReaderTrigger($event)"
+    >
+  </app-top-nav>
   <router-outlet (activate)="onRouteActivation()"></router-outlet>
   <app-bottom-nav
     [buttons]="routerLinks"
     (buttonClick)="onMobileBottomBarClick($event)">
   </app-bottom-nav>
 </div>
-

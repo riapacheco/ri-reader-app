@@ -9,3 +9,8 @@
   overflow-y: scroll;
 }
 
+.hidden-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}

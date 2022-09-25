@@ -5,6 +5,7 @@ import { ThemeService } from './services/theme.service';
 import { DeviceOsService } from './services/device-os.service';
 import { Router } from '@angular/router';
 import { INavButton } from './components/bottom-nav/bottom-nav.component';
+import { OcrService } from './services/ocr.service';
 
 
 @Component({
@@ -14,6 +15,16 @@ import { INavButton } from './components/bottom-nav/bottom-nav.component';
 })
 export class AppComponent implements OnInit, OnDestroy {
 
+  // OCR triggers
+  captureButton = {
+    icon: 'bookmark_add',
+    target: 'passage'
+  };
+  fileElementVisible = false;
+  @ViewChild('fileUploader') fileUploader!: ElementRef;
+  @ViewChild('addPassageElement') addPassageElement!: ElementRef;
+
+  // Router Links
   routerLinks: INavButton[] = [
     {
       icon: 'auto_stories',
@@ -56,17 +67,14 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     public theme: ThemeService,
-    
     public device: DeviceOsService,
-    private router: Router
+    private router: Router,
+    public ocr: OcrService
   ) {}
 
   ngOnInit(): void {
     this.checkTheme();
     this.device.runPlatformMonitor();
-
-    /* --------------------------- DELETE THESE LATER --------------------------- */
-    this.router.navigateByUrl('/books');
   }
 
   ngOnDestroy(): void {
@@ -78,6 +86,7 @@ export class AppComponent implements OnInit, OnDestroy {
    */
   onRouteActivation() {
     this.scrollToTopDiv.nativeElement.scrollIntoView();
+    this.resetActivations();
     this.routerLinks.map((each: any) => {
       if (each.routerLink == this.router.url) {
         each.isActive = true;
@@ -130,5 +139,21 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private resetActivations() {
     this.routerLinks.map((each: any) => Object.assign(each, { isActive: false }));
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                                 OCR READER                                 */
+  /* -------------------------------------------------------------------------- */
+  onReaderTrigger(data: any) {
+    if (data == 'passage') {
+      this.router.navigateByUrl('/capture');
+
+      setTimeout(() => {
+        this.addPassageElement.nativeElement.click();
+      }, 100);
+    }
+  }
+  onFileSelect(event: any) {
+    console.log(event)
   }
 }
