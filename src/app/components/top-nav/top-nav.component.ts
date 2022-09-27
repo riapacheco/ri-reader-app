@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-top-nav',
@@ -15,6 +15,9 @@ export class TopNavComponent implements OnInit {
   @Output() actionButtonClick: EventEmitter<any> = new EventEmitter<any>();
   @Output() enterDown: EventEmitter<any> = new EventEmitter<any>();
   @Output() keydown = new EventEmitter<any>();
+
+
+  @ViewChild('actionButtonRect') actionButtonRect!: ElementRef;
 
   isLargeBar = true;
 
@@ -55,7 +58,13 @@ export class TopNavComponent implements OnInit {
     this.avatarClick.emit(event);
   }
   onActionClick(event: any, data: string) {
-    if (event) { this.actionButtonClick.emit(data); }
+    const rectElement = this.actionButtonRect.nativeElement.getBoundingClientRect();
+    const rectBottom = rectElement.bottom;
+    
+    if (data == 'passage') {
+      const configPacket = { event, data, rectBottom};
+      this.actionButtonClick.emit(configPacket);
+    }
   }
   onEnter() {
     this.enterDown.emit(this.input.boundedString);

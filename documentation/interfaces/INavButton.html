@@ -340,36 +340,7 @@ export interface INavButton {
 })
 export class BottomNavComponent implements OnInit {
   @Output() buttonClick: EventEmitter&lt;any&gt; &#x3D; new EventEmitter&lt;any&gt;();
-  @Input() buttons: INavButton[] &#x3D; [
-    {
-      icon: &#x27;auto_stories&#x27;,
-      label: &#x27;books&#x27;,
-      target: &#x27;&#x27;,
-      routerLink: &#x27;/books&#x27;,
-      isActive: true
-    },
-    {
-      icon: &#x27;bookmarks&#x27;,
-      label: &#x27;passages&#x27;,
-      target: &#x27;&#x27;,
-      routerLink: &#x27;/passages&#x27;,
-      isActive: false
-    },
-    {
-      icon: &#x27;auto_graph&#x27;,
-      label: &#x27;insights&#x27;,
-      target: &#x27;&#x27;,
-      routerLink: &#x27;/dashboard&#x27;,
-      isActive: false
-    },
-    {
-      icon: &#x27;settings&#x27;,
-      label: &#x27;settings&#x27;,
-      target: &#x27;&#x27;,
-      routerLink: &#x27;/settings&#x27;,
-      isActive: false
-    }
-  ];
+  @Input() buttons: INavButton[] &#x3D; [];
 
   
   constructor() { }
@@ -377,8 +348,8 @@ export class BottomNavComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onButtonClick(event: any, targetString: any) {
-    if (event) { this.buttonClick.emit(targetString); }
+  onButtonClick(data: any) {
+    this.buttonClick.emit(data);
   }
 }
 </code></pre>

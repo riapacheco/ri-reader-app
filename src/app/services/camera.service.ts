@@ -16,15 +16,14 @@ export class CameraService {
 
   async captureImage() {
     const image = await Camera.getPhoto({
-      quality: 100,
+      quality: 90,
       allowEditing: true,
       source: CameraSource.Prompt,
       resultType: CameraResultType.Base64
     });
+    this._image$.next(`data:image/jpeg;base64,${image.base64String}`);
+    this._base64Image$.next(image.base64String);
 
-    if (image) {
-      this._image$.next(`data:image/jpeg;base64,${image.base64String}`);
-      this._base64Image$.next(image.base64String);
-    }
+    return image.base64String;
   }
 }

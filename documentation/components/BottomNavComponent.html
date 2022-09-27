@@ -191,7 +191,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/components/bottom-nav/bottom-nav.component.ts:46</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/bottom-nav/bottom-nav.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -217,36 +217,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>[
-    {
-      icon: &#x27;auto_stories&#x27;,
-      label: &#x27;books&#x27;,
-      target: &#x27;&#x27;,
-      routerLink: &#x27;/books&#x27;,
-      isActive: true
-    },
-    {
-      icon: &#x27;bookmarks&#x27;,
-      label: &#x27;passages&#x27;,
-      target: &#x27;&#x27;,
-      routerLink: &#x27;/passages&#x27;,
-      isActive: false
-    },
-    {
-      icon: &#x27;auto_graph&#x27;,
-      label: &#x27;insights&#x27;,
-      target: &#x27;&#x27;,
-      routerLink: &#x27;/dashboard&#x27;,
-      isActive: false
-    },
-    {
-      icon: &#x27;settings&#x27;,
-      label: &#x27;settings&#x27;,
-      target: &#x27;&#x27;,
-      routerLink: &#x27;/settings&#x27;,
-      isActive: false
-    }
-  ]</code>
+                        <i>Default value : </i><code>[]</code>
                     </td>
                 </tr>
                         <tr>
@@ -308,8 +279,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/app/components/bottom-nav/bottom-nav.component.ts:51</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/components/bottom-nav/bottom-nav.component.ts:22</a></div>
                 </td>
             </tr>
 
@@ -338,15 +309,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onButtonClick(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, targetString: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+<code>onButtonClick(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="54"
-                            class="link-to-prism">src/app/components/bottom-nav/bottom-nav.component.ts:54</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/components/bottom-nav/bottom-nav.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -367,19 +338,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>event</td>
-                                    <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>targetString</td>
+                                    <td>data</td>
                                     <td>
                                                 <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                     </td>
@@ -428,36 +387,7 @@ export interface INavButton {
 })
 export class BottomNavComponent implements OnInit {
   @Output() buttonClick: EventEmitter&lt;any&gt; &#x3D; new EventEmitter&lt;any&gt;();
-  @Input() buttons: INavButton[] &#x3D; [
-    {
-      icon: &#x27;auto_stories&#x27;,
-      label: &#x27;books&#x27;,
-      target: &#x27;&#x27;,
-      routerLink: &#x27;/books&#x27;,
-      isActive: true
-    },
-    {
-      icon: &#x27;bookmarks&#x27;,
-      label: &#x27;passages&#x27;,
-      target: &#x27;&#x27;,
-      routerLink: &#x27;/passages&#x27;,
-      isActive: false
-    },
-    {
-      icon: &#x27;auto_graph&#x27;,
-      label: &#x27;insights&#x27;,
-      target: &#x27;&#x27;,
-      routerLink: &#x27;/dashboard&#x27;,
-      isActive: false
-    },
-    {
-      icon: &#x27;settings&#x27;,
-      label: &#x27;settings&#x27;,
-      target: &#x27;&#x27;,
-      routerLink: &#x27;/settings&#x27;,
-      isActive: false
-    }
-  ];
+  @Input() buttons: INavButton[] &#x3D; [];
 
   
   constructor() { }
@@ -465,8 +395,8 @@ export class BottomNavComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onButtonClick(event: any, targetString: any) {
-    if (event) { this.buttonClick.emit(targetString); }
+  onButtonClick(data: any) {
+    this.buttonClick.emit(data);
   }
 }
 </code></pre>
@@ -478,6 +408,7 @@ export class BottomNavComponent implements OnInit {
     &lt;div class&#x3D;&quot;buttons-wrapper&quot;&gt;
       &lt;div *ngFor&#x3D;&quot;let button of buttons&quot; class&#x3D;&quot;button-wrapper&quot;&gt;
         &lt;a
+          (click)&#x3D;&quot;!button.target ? onButtonClick(button) : onButtonClick(button) &quot;
           [ngClass]&#x3D;&quot;button.isActive ? &#x27;is-active&#x27; : &#x27;&#x27; &quot;
           &gt;
           &lt;i class&#x3D;&quot;material-icons&quot;&gt;
@@ -490,10 +421,10 @@ export class BottomNavComponent implements OnInit {
           &lt;/ng-container&gt;
         &lt;/a&gt;
       &lt;/div&gt;
-      
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -525,6 +456,7 @@ $active-pill-height: 5rem;
   box-shadow: 0px -20px 55px rgba(1, 4, 27, 0.079);
   background-color: white;
   border-radius: 25px 25px 0px 0px;
+  background-image: linear-gradient(to bottom, white, #F5F5F5, #eeeeee);
 
   display: flex;
   flex-flow: row nowrap;
@@ -623,8 +555,8 @@ $active-pill-height: 5rem;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="bottom-nav">  <div class="bottom-nav-content">    <div class="buttons-wrapper">      <div *ngFor="let button of buttons" class="button-wrapper">        <a          [ngClass]="button.isActive ? \'is-active\' : \'\' "          >          <i class="material-icons">            {{ button.icon }}          </i>          <ng-container *ngIf="button.isActive">            <span>              {{ button.label | titlecase }}            </span>          </ng-container>        </a>      </div>          </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookCardComponent', 'selector': 'app-book-card'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'StatusBarComponent', 'selector': 'app-status-bar'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
+        var COMPONENT_TEMPLATE = '<div><div class="bottom-nav">  <div class="bottom-nav-content">    <div class="buttons-wrapper">      <div *ngFor="let button of buttons" class="button-wrapper">        <a          (click)="!button.target ? onButtonClick(button) : onButtonClick(button) "          [ngClass]="button.isActive ? \'is-active\' : \'\' "          >          <i class="material-icons">            {{ button.icon }}          </i>          <ng-container *ngIf="button.isActive">            <span>              {{ button.label | titlecase }}            </span>          </ng-container>        </a>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookCardComponent', 'selector': 'app-book-card'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'CaptureComponent', 'selector': 'app-capture'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FloatingMenuComponent', 'selector': 'app-floating-menu'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoadingOverlayComponent', 'selector': 'app-loading-overlay'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'OverlayComponent', 'selector': 'app-overlay'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'StatusBarComponent', 'selector': 'app-status-bar'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
     var DIRECTIVES = [{'name': 'OutsideClickDirective', 'selector': '[appOutsideClick]'},{'name': 'VerticalResizeDirective', 'selector': '[appVerticalResize]'}];
     var ACTUAL_COMPONENT = {'name': 'BottomNavComponent'};
 </script>

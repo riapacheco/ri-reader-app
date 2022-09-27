@@ -1,0 +1,22 @@
+<ng-container *ngIf="(menu.showsMenu$ | async)">
+  <ul
+    class="floating-menu"
+    [style.top.px]="(menu.topDistance$ | async)"
+    [class.float-left]="!(menu.styleConfig$ | async)?.floatsRight"
+    [class.float-right]="(menu.styleConfig$ | async)?.floatsRight"
+    [ngStyle]="(menu.styleConfig$ | async)?.floatsRight ? {'margin-right': (menu.styleConfig$ | async)?.marginWidth + '%'} : {'margin-left': (menu.styleConfig$ | async)?.marginWidth + '%'}"
+    class="list-unstyled floating-menu">
+    <li *ngFor="let option of (menu.menuOptions$ | async)">
+      <a (click)="onOptionClick(option.target)">
+        <ng-container *ngIf="option.icon">
+          <i class="material-icons">
+            {{ option.icon }}
+          </i>
+        </ng-container>
+        <span>
+          {{ option.label | titlecase }}
+        </span>
+      </a>
+    </li>
+  </ul>
+</ng-container>

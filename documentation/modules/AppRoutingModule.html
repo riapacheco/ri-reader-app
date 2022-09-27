@@ -95,6 +95,11 @@ const routes: Routes &#x3D; [
     path: &#x27;passages&#x27;,
     loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modules/passages/passages.module&#x27;)\
       .then(m &#x3D;&gt; m.PassagesModule)&quot;
+  },
+  {
+    path: &#x27;capture&#x27;,
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modules/capture/capture.module&#x27;)\
+      .then(m &#x3D;&gt; m.CaptureModule)&quot;
   }
 ];
 

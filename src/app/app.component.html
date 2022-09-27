@@ -1,26 +1,38 @@
+<!-- ------------------ Hidden Service-Triggered Elements ------------------ -->
+<app-floating-menu
+  (optionClick)="onOptionClick($event)">
+</app-floating-menu>
+
 <ng-container *ngIf="(loading.isLoading$ | async)">
   <app-loading-overlay></app-loading-overlay>
 </ng-container>
+
 <div #scrollToTopDiv></div>
+
+<!-- ------------------ Permanently Hidden Input Element ------------------- -->
+<!-- ------ Triggered programmatically directly inside component file ------ -->
 <input
   class="hidden-input"
   accept="image/*"
   (change)="onFileSelect($event)"
   type="file"
   id="fileUploader"
-  #addPassageElement
-  >
+  #addPassageElement>
 
+<!-- ------------------------- ACTUAL STYLED VIEW -------------------------- -->
 <div [ngClass]="(theme.isDark$ | async) ? 'wrapper is-dark' : 'wrapper'">
+  <!-- -------------------------- TOP-NAV COMPONENT -------------------------- -->
   <app-top-nav
     [actionButton]="captureButton"
-    (actionButtonClick)="onReaderTrigger($event)"
+    (actionButtonClick)="onAddPassage($event)"
     [titleText]="titleText"
-    (keydown)="onInputType($event)"
     (enterDown)="onSearchEnter($event)"
     >
   </app-top-nav>
+  <!-- ---------------------------- ROUTER OUTLET ---------------------------- -->
   <router-outlet (activate)="onRouteActivation()"></router-outlet>
+
+  <!-- ----------------- BOTTOM NAV / MOBILE VIEW NAVIGATION ----------------- -->
   <app-bottom-nav
     [buttons]="routerLinks"
     (buttonClick)="onMobileBottomBarClick($event)">

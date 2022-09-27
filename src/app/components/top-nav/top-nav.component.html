@@ -13,7 +13,7 @@
           </ng-container>
         </a>
   
-        <div class="action-button">
+        <div class="action-button" #actionButtonRect>
           <a (click)="onActionClick($event, actionButton.target)">
             <i class="material-icons">
               {{ actionButton.icon }}

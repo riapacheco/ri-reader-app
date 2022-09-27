@@ -1,0 +1,57 @@
+@import 'node_modules/@riapacheco/yutes/season/two.scss';
+
+
+.floating-menu {
+  position: absolute;
+  background-image: linear-gradient(to right, white, #F5F5F5);
+  box-shadow: 4px 8px 22px #00000015;
+  border-radius: 10px;
+  &.float-left {
+    left: 0;
+  }
+  &.float-right {
+    right: 0;
+  }
+
+  li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+
+    &:last-child {
+      border-bottom: 0px;
+    }
+
+    a {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      .material-icons {
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        width: 2rem;
+        height: 2rem;
+        color: $canary-regular;
+        display: inline-flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+
+        margin-left: -0.6rem;
+        margin-right: 0.5rem;
+      }
+
+      span {
+        // font-size: 1.4rem;
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+    }
+
+    &:hover {
+      a {
+        .material-icons { color: black; }
+      }
+    }
+  }
+}

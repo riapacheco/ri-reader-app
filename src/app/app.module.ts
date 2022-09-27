@@ -19,6 +19,8 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { OverlayComponent } from './components/overlay/overlay.component';
 import { LoadingOverlayService } from './services/loading-overlay.service';
 import { LoadingOverlayComponent } from './components/loading-overlay/loading-overlay.component';
+import { FloatingMenuComponent } from './components/floating-menu/floating-menu.component';
+import { FloatingMenuService } from './services/floating-menu.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { LoadingOverlayComponent } from './components/loading-overlay/loading-ov
     StatusBarComponent,
     LoadingComponent,
     OverlayComponent,
-    LoadingOverlayComponent
+    LoadingOverlayComponent,
+    FloatingMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { LoadingOverlayComponent } from './components/loading-overlay/loading-ov
       useClass: HashLocationStrategy
     },
     OcrService,
-    LoadingOverlayService
+    LoadingOverlayService,
+    FloatingMenuService
   ],
   bootstrap: [AppComponent]
 })

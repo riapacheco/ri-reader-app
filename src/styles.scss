@@ -137,3 +137,9 @@ app-overlay,
 .overlay-wrapper {
   z-index: calc($base-index * 6);
 }
+
+app-floating-menu,
+.floating-menu {
+  z-index: calc($base-index * 7);
+}
+

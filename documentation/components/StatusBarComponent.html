@@ -239,8 +239,7 @@ export class StatusBarComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;status-bar works!&lt;/p&gt;
-</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;status-bar&quot;&gt;&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -248,6 +247,12 @@ export class StatusBarComponent implements OnInit {
                     <code>./status-bar.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">@import &#x27;../../../scss/mixins.scss&#x27;;
+
+.status-bar {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+}
 
 </code></pre>
     </div>
@@ -277,8 +282,8 @@ export class StatusBarComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>status-bar works!</p></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookCardComponent', 'selector': 'app-book-card'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'StatusBarComponent', 'selector': 'app-status-bar'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
+        var COMPONENT_TEMPLATE = '<div><div class="status-bar"></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookCardComponent', 'selector': 'app-book-card'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'CaptureComponent', 'selector': 'app-capture'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FloatingMenuComponent', 'selector': 'app-floating-menu'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoadingOverlayComponent', 'selector': 'app-loading-overlay'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'OverlayComponent', 'selector': 'app-overlay'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'StatusBarComponent', 'selector': 'app-status-bar'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
     var DIRECTIVES = [{'name': 'OutsideClickDirective', 'selector': '[appOutsideClick]'},{'name': 'VerticalResizeDirective', 'selector': '[appVerticalResize]'}];
     var ACTUAL_COMPONENT = {'name': 'StatusBarComponent'};
 </script>
