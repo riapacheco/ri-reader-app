@@ -16,7 +16,6 @@ export class BookService {
 
   coverImages = [
     '../assets/backgrounds/paint/background_BOB.png',
-
   ];
 
   constructor() { this.supabase = createClient(SUPABASE.projectUrl, SUPABASE.anonKey); }
@@ -41,34 +40,20 @@ export class BookService {
 
 
   /* ----------------------------------- GET ---------------------------------- */
-  /**
-   * 
-   * @returns The title of the book, a count of associated passages, and the body of the passage itself just in case the user wants a preview of the text on the card
-   */
-  public async getBookSummaryData(): Promise<any | null | undefined> {
+  public async getBookCardData(): Promise<any | null | undefined> {
     try {
       const { data, error } = await this.supabase
         .from('books')
         .select(`
-          title,
-          passage_count,
-          cover_image,
+          *,
           passages (
             body
           )
-        `)
-
-      // IF the object has passages associated, assign # to passage_count
-      if (data) {
-        data.map((eachObj: any) => {
-          if (eachObj.passages) {
-            eachObj.passage_count = eachObj.passages.length;
-          }
-        })
-      }
-
+        `);
       return data;
-    } 
-    catch (error) { console.log(error); }
+    }
+    catch (err) {
+      console.log(err);
+    }
   }
 }

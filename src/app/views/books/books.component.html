@@ -1,11 +1,7 @@
 <div class="bg-wrapper books-wrapper">
   <div class="books-content">
-    <app-book-card
-        *ngFor="let book of bookSummaries; let i = index;"
-        [cardCount]="cardCount"
-        [passageCount]="book.passage_count"
-        [cardCoverImage]="book.cover_image"
-        [cardTitle]="book.title">
-    </app-book-card>
+    <app-book-cards
+      [bookCards]="bookCards">
+    </app-book-cards>
   </div>
 </div>

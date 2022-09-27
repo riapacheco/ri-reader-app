@@ -1,0 +1,35 @@
+
+:host {
+  -webkit-font-smoothing: antialiased !important;
+}
+
+$wrapper-width: 100%;
+$book-card-width: calc($wrapper-width / 2.1);
+$cover-image-height: 120px;
+.book-cards-wrapper {
+  width: $wrapper-width;
+  .book-cards-row {
+    width: $wrapper-width;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    .book-card {
+      width: $book-card-width;
+      display: inline-flex;
+      flex-flow: column nowrap;
+      align-items: flex-start;
+      
+      .book-cover-image {
+        height: 120px;
+        object-fit: cover;
+        img {
+          width: 100%;
+          height: 120px;
+        }
+      }
+
+    }
+  }
+}

@@ -4,7 +4,7 @@
  */
 export interface IBook {
   id?: number;
-  title: string;
+  title?: string;
   cover_image?: string;
   created_at?: Date;
   author?: string;

@@ -1,0 +1,17 @@
+<div class="book-cards-wrapper">
+  <div class="book-cards-row mb-3">
+    <a
+      class="book-card"
+      *ngFor="let card of bookCards">
+      <div class="book-cover-image">
+        <img [src]="card.cover_image" alt="">
+      </div>
+
+      <div class="book-card-details">
+        <h3>
+          {{ card.title }}
+        </h3>
+      </div>
+    </a>
+  </div>
+</div>
