@@ -19,8 +19,9 @@ $search-field-height: 46px;
 }
 .top-nav {
   padding-top: 20px;
-  position: sticky;
-  position: -webkit-sticky;
+  position: fixed;
+  // position: -webkit-sticky;
+  width: 100%;
   padding-bottom: 2rem;
 
   @include style-bg('light');

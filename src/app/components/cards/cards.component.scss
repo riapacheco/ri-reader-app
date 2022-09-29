@@ -15,7 +15,7 @@
   align-items: flex-start;
   justify-content: space-between;
   &:first-child {
-    padding-top: 2rem;
+    padding-top: 210px;
   }
   .card {
     display: inline-flex;
@@ -24,7 +24,8 @@
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 6%;
-
+    min-height: 180px;
+    max-height: 180px;
     box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.097);
     .card-cover {
       width: 100%;
@@ -39,6 +40,11 @@
         object-fit: cover;
         object-position: center !important;
       }
+    }
+
+    .card-details {
+      @include mobile-text('body');
+      padding: 10px;
     }
   }
 }

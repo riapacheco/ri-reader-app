@@ -38,6 +38,7 @@
   
             <input
               (keydown.enter)="onEnter()"
+              (keyup)="onEnter()"
               [(ngModel)]="searchText"
               [placeholder]="input.placeholder"
               (focus)="onInputFocusToggle('typing')"
