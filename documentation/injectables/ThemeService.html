@@ -89,10 +89,10 @@
                                 <a href="#stateKey" >stateKey</a>
                             </li>
                             <li>
-                                <a href="#valueDarkTheme" >valueDarkTheme</a>
+                                <a href="#valuedark" >valuedark</a>
                             </li>
                             <li>
-                                <a href="#valueLightTheme" >valueLightTheme</a>
+                                <a href="#valuelight" >valuelight</a>
                             </li>
                         </ul>
                     </td>
@@ -620,10 +620,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="valueDarkTheme"></a>
+                    <a name="valuedark"></a>
                     <span class="name">
-                        <span ><b>valueDarkTheme</b></span>
-                        <a href="#valueDarkTheme"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>valuedark</b></span>
+                        <a href="#valuedark"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -635,7 +635,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;darkTheme&#x27;</code>
+                        <i>Default value : </i><code>&#x27;dark&#x27;</code>
                     </td>
                 </tr>
                     <tr>
@@ -651,10 +651,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="valueLightTheme"></a>
+                    <a name="valuelight"></a>
                     <span class="name">
-                        <span ><b>valueLightTheme</b></span>
-                        <a href="#valueLightTheme"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>valuelight</b></span>
+                        <a href="#valuelight"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -666,7 +666,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;lightTheme&#x27;</code>
+                        <i>Default value : </i><code>&#x27;light&#x27;</code>
                     </td>
                 </tr>
                     <tr>
@@ -688,7 +688,7 @@
 import { BehaviorSubject, Observable } from &#x27;rxjs&#x27;;
 import { Meta } from &#x27;@angular/platform-browser&#x27;;
 
-export type TTheme &#x3D; &#x27;lightTheme&#x27; | &#x27;darkTheme&#x27;;
+export type TTheme &#x3D; &#x27;light&#x27; | &#x27;dark&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -699,8 +699,8 @@ export class ThemeService {
 
   /* ------------------------ Local Storage Properties ------------------------ */
   stateKey &#x3D; &#x27;theme&#x27;;
-  valueLightTheme &#x3D; &#x27;lightTheme&#x27;;
-  valueDarkTheme &#x3D; &#x27;darkTheme&#x27;;
+  valuelight &#x3D; &#x27;light&#x27;;
+  valuedark &#x3D; &#x27;dark&#x27;;
 
   constructor(
     private meta: Meta
@@ -710,17 +710,17 @@ export class ThemeService {
   // Check local theme and update service variable to match
   public getInitTheme(): any {
     const localState &#x3D; localStorage.getItem(this.stateKey);
-    if (localState &#x3D;&#x3D; this.valueLightTheme) {
-      this.updateServiceState(&#x27;lightTheme&#x27;);
-      return &#x27;lightTheme&#x27;;
-    } else if (localState &#x3D;&#x3D; this.valueDarkTheme) {
-      this.updateServiceState(&#x27;darkTheme&#x27;);
-      return &#x27;darkTheme&#x27;;
+    if (localState &#x3D;&#x3D; this.valuelight) {
+      this.updateServiceState(&#x27;light&#x27;);
+      return &#x27;light&#x27;;
+    } else if (localState &#x3D;&#x3D; this.valuedark) {
+      this.updateServiceState(&#x27;dark&#x27;);
+      return &#x27;dark&#x27;;
     } else {
       // if no local state
-      this.updateLocalState(&#x27;lightTheme&#x27;);
+      this.updateLocalState(&#x27;light&#x27;);
       this._isDark$.next(false);
-      return &#x27;initial set to light theme&#x27;;
+      return &#x27;light&#x27;;
     }
   }
 
@@ -735,20 +735,20 @@ export class ThemeService {
   /* ----------------------------- PRIVATE HELPERS ---------------------------- */
   // Update service&#x27;s behaviorSubject
   private updateServiceState(themeRequest: TTheme) {
-    if (themeRequest &#x3D;&#x3D; &#x27;darkTheme&#x27;) { this._isDark$.next(true); }
-    else if (themeRequest &#x3D;&#x3D; &#x27;lightTheme&#x27;) { this._isDark$.next(false); }
+    if (themeRequest &#x3D;&#x3D; &#x27;dark&#x27;) { this._isDark$.next(true); }
+    else if (themeRequest &#x3D;&#x3D; &#x27;light&#x27;) { this._isDark$.next(false); }
   }
 
   // Update local storage
   private updateLocalState(themeRequest: TTheme) {
-    if (themeRequest &#x3D;&#x3D; &#x27;darkTheme&#x27;) { localStorage.setItem(this.stateKey, this.valueDarkTheme); }
-    else if (themeRequest &#x3D;&#x3D; &#x27;lightTheme&#x27;) { localStorage.setItem(this.stateKey, this.valueLightTheme); }
+    if (themeRequest &#x3D;&#x3D; &#x27;dark&#x27;) { localStorage.setItem(this.stateKey, this.valuedark); }
+    else if (themeRequest &#x3D;&#x3D; &#x27;light&#x27;) { localStorage.setItem(this.stateKey, this.valuelight); }
   }
 
   // Add meta tag to index.html file to change mobile statusbar
   private updateStatusBar(themeRequest: TTheme) {
-    if (themeRequest &#x3D;&#x3D; &#x27;darkTheme&#x27;) { this.meta.addTag({ name: &#x27;apple-mobile-web-app-status-bar-style&#x27;, content: &#x27;white&#x27; }) }
-    else if (themeRequest &#x3D;&#x3D; &#x27;lightTheme&#x27;) { this.meta.addTag({ name: &#x27;apple-mobile-web-app-status-bar-style&#x27;, content: &#x27;black&#x27; }) }
+    if (themeRequest &#x3D;&#x3D; &#x27;dark&#x27;) { this.meta.addTag({ name: &#x27;apple-mobile-web-app-status-bar-style&#x27;, content: &#x27;white&#x27; }) }
+    else if (themeRequest &#x3D;&#x3D; &#x27;light&#x27;) { this.meta.addTag({ name: &#x27;apple-mobile-web-app-status-bar-style&#x27;, content: &#x27;black&#x27; }) }
     else { this.meta.addTag({ name: &#x27;apple-mobile-web-app-status-bar-style&#x27;, content: &#x27;black&#x27; }) };
   }
 

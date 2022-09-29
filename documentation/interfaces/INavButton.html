@@ -325,6 +325,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, Input, OnInit, Output } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 
 export interface INavButton {
   icon?: string;
@@ -343,7 +344,9 @@ export class BottomNavComponent implements OnInit {
   @Input() buttons: INavButton[] &#x3D; [];
 
   
-  constructor() { }
+  constructor(
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
   }

@@ -35,7 +35,7 @@
 
 <ol class="breadcrumb">
     <li>Modules</li>
-    <li >AppRoutingModule</li>
+    <li >InsightsRoutingModule</li>
 </ol>
 
 
@@ -55,7 +55,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/app-routing.module.ts</code>
+            <code>src/app/modules/insights/insights-routing.module.ts</code>
         </p>
 
 
@@ -72,43 +72,22 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &quot;@angular/core&quot;;
+import { RouterModule, Routes } from &quot;@angular/router&quot;;
+import { InsightsComponent } from &quot;src/app/views/insights/insights.component&quot;;
 
 const routes: Routes &#x3D; [
   {
     path: &#x27;&#x27;,
-    redirectTo: &#x27;books&#x27;,
-    pathMatch: &#x27;full&#x27;,
-  },
-  {
-    path: &#x27;books&#x27;,
-    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modules/book/book.module&#x27;)\
-      .then(m &#x3D;&gt; m.BookModule)&quot;
-  },
-  {
-    path: &#x27;passages&#x27;,
-    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modules/passages/passages.module&#x27;)\
-      .then(m &#x3D;&gt; m.PassagesModule)&quot;
-  },
-  {
-    path: &#x27;insights&#x27;,
-    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modules/insights/insights.module&#x27;)\
-      .then(m &#x3D;&gt; m.InsightsModule)&quot;
-  },
-  {
-    path: &#x27;capture&#x27;,
-    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modules/capture/capture.module&#x27;)\
-      .then(m &#x3D;&gt; m.CaptureModule)&quot;
+    component: InsightsComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
-</code></pre>
+export class InsightsRoutingModule {}</code></pre>
     </div>
 </div>
 
@@ -154,7 +133,7 @@ export class AppRoutingModule { }
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'InsightsRoutingModule.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

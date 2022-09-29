@@ -112,7 +112,7 @@
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#getBookSummaryData" >getBookSummaryData</a>
+                                <a href="#getBookCardData" >getBookCardData</a>
                             </li>
                         </ul>
                     </td>
@@ -137,7 +137,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/services/book.service.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/book.service.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -173,8 +173,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/services/book.service.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/services/book.service.ts:23</a></div>
                 </td>
             </tr>
 
@@ -225,27 +225,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getBookSummaryData"></a>
+                    <a name="getBookCardData"></a>
                     <span class="name">
                         <span class="modifier">Public</span>
                         <span class="modifier">Async</span>
-                        <span ><b>getBookSummaryData</b></span>
-                        <a href="#getBookSummaryData"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getBookCardData</b></span>
+                        <a href="#getBookCardData"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getBookSummaryData()</code>
+                    <code>getBookCardData()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/services/book.service.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/services/book.service.ts:43</a></div>
                 </td>
             </tr>
 
@@ -253,14 +253,8 @@
             <tr>
                 <td class="col-md-4">
 
-                    <div>
-                    </div>
                     <div class="io-description">
                         <b>Returns : </b>    <code>Promise&lt;any | null | undefined&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>The title of the book, a count of associated passages, and the body of the passage itself just in case the user wants a preview of the text on the card</p>
 
                     </div>
                 </td>
@@ -346,7 +340,6 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>[
     &#x27;../assets/backgrounds/paint/background_BOB.png&#x27;,
-
   ]</code>
                     </td>
                 </tr>
@@ -410,7 +403,6 @@ export class BookService {
 
   coverImages &#x3D; [
     &#x27;../assets/backgrounds/paint/background_BOB.png&#x27;,
-
   ];
 
   constructor() { this.supabase &#x3D; createClient(SUPABASE.projectUrl, SUPABASE.anonKey); }
@@ -435,35 +427,21 @@ export class BookService {
 
 
   /* ----------------------------------- GET ---------------------------------- */
-  /**
-   * 
-   * @returns The title of the book, a count of associated passages, and the body of the passage itself just in case the user wants a preview of the text on the card
-   */
-  public async getBookSummaryData(): Promise&lt;any | null | undefined&gt; {
+  public async getBookCardData(): Promise&lt;any | null | undefined&gt; {
     try {
       const { data, error } &#x3D; await this.supabase
         .from(&#x27;books&#x27;)
         .select(&#x60;
-          title,
-          passage_count,
-          cover_image,
+          *,
           passages (
             body
           )
-        &#x60;)
-
-      // IF the object has passages associated, assign # to passage_count
-      if (data) {
-        data.map((eachObj: any) &#x3D;&gt; {
-          if (eachObj.passages) {
-            eachObj.passage_count &#x3D; eachObj.passages.length;
-          }
-        })
-      }
-
+        &#x60;);
       return data;
-    } 
-    catch (error) { console.log(error); }
+    }
+    catch (err) {
+      console.log(err);
+    }
   }
 }
 </code></pre>

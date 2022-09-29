@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  OverlayComponent</li>
+  InsightsComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -64,7 +64,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/components/overlay/overlay.component.ts</code>
+    <code>src/app/views/insights/insights.component.ts</code>
 </p>
 
 
@@ -95,19 +95,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-overlay</code></td>
+                <td class="col-md-9"><code>app-insights</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./overlay.component.scss</code></td>
+                <td class="col-md-9"><code>./insights.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./overlay.component.html</code></td>
+                <td class="col-md-9"><code>./insights.component.html</code></td>
             </tr>
 
 
@@ -160,7 +160,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/components/overlay/overlay.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/views/insights/insights.component.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -198,7 +198,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/components/overlay/overlay.component.ts:12</a></div>
+                            class="link-to-prism">src/app/views/insights/insights.component.ts:12</a></div>
                 </td>
             </tr>
 
@@ -223,11 +223,11 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
 @Component({
-  selector: &#x27;app-overlay&#x27;,
-  templateUrl: &#x27;./overlay.component.html&#x27;,
-  styleUrls: [&#x27;./overlay.component.scss&#x27;]
+  selector: &#x27;app-insights&#x27;,
+  templateUrl: &#x27;./insights.component.html&#x27;,
+  styleUrls: [&#x27;./insights.component.scss&#x27;]
 })
-export class OverlayComponent implements OnInit {
+export class InsightsComponent implements OnInit {
 
   constructor() { }
 
@@ -239,40 +239,15 @@ export class OverlayComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;overlay-wrapper&quot;&gt;
-  &lt;ng-content select&#x3D;&quot;[overlayContent]&quot;&gt;&lt;/ng-content&gt;
-&lt;/div&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;p&gt;insights works!&lt;/p&gt;
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./overlay.component.scss</code>
+                    <code>./insights.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">
-:host {
-  -webkit-font-smoothing: antialiased !important;
-}
-
-.overlay-wrapper {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  background-color: #00000070;
-  backdrop-filter: blur(2px);
-
-  height: 100vh;
-  width: 100vw;
-  // overflow: hidden;
-
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-
-}</code></pre>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -300,10 +275,10 @@ export class OverlayComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="overlay-wrapper">  <ng-content select="[overlayContent]"></ng-content></div></div>'
+        var COMPONENT_TEMPLATE = '<div><p>insights works!</p></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'CaptureComponent', 'selector': 'app-capture'},{'name': 'CardsComponent', 'selector': 'app-cards'},{'name': 'FloatingMenuComponent', 'selector': 'app-floating-menu'},{'name': 'InsightsComponent', 'selector': 'app-insights'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoadingOverlayComponent', 'selector': 'app-loading-overlay'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'OverlayComponent', 'selector': 'app-overlay'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'StatusBarComponent', 'selector': 'app-status-bar'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
     var DIRECTIVES = [{'name': 'OutsideClickDirective', 'selector': '[appOutsideClick]'},{'name': 'VerticalResizeDirective', 'selector': '[appVerticalResize]'}];
-    var ACTUAL_COMPONENT = {'name': 'OverlayComponent'};
+    var ACTUAL_COMPONENT = {'name': 'InsightsComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -349,7 +324,7 @@ export class OverlayComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'OverlayComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'InsightsComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
