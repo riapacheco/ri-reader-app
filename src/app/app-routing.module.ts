@@ -4,13 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'books',
     pathMatch: 'full',
-  },
-  {
-    path: 'dashboard',
-    loadChildren: () => import('./modules/dashboard/dashboard.module')
-      .then(m => m.DashboardModule)
   },
   {
     path: 'books',
@@ -21,6 +16,11 @@ const routes: Routes = [
     path: 'passages',
     loadChildren: () => import('./modules/passages/passages.module')
       .then(m => m.PassagesModule)
+  },
+  {
+    path: 'insights',
+    loadChildren: () => import('./modules/insights/insights.module')
+      .then(m => m.InsightsModule)
   },
   {
     path: 'capture',

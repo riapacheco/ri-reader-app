@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { BehaviorSubject, Observable } from 'rxjs';
 
+/**
+ * for native camera on mobile devices (iOS and Android)
+ */
+
 @Injectable({
   providedIn: 'root'
 })

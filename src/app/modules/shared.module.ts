@@ -6,7 +6,6 @@ import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ThemeService } from '../services/theme.service';
-import { DeviceOsService } from '../services/device-os.service';
 
 import { AuthService } from '../services/auth.service';
 import { OutsideClickDirective } from '../directives/outside-click.directive';
@@ -15,7 +14,7 @@ import { FilterPipe } from '../pipes/filter.pipe';
 import { VerticalResizeDirective } from '../directives/vertical-resize.directive';
 import { CapsPipe } from '../pipes/caps.pipe';
 import { LoadingOverlayService } from '../services/loading-overlay.service';
-
+import { TopNavComponent } from '../components/top-nav/top-nav.component';
 
 
 @NgModule({
@@ -25,6 +24,7 @@ import { LoadingOverlayService } from '../services/loading-overlay.service';
     FilterPipe,
     VerticalResizeDirective,
     CapsPipe,
+    TopNavComponent
   ],
   imports: [
     CommonModule,
@@ -40,11 +40,11 @@ import { LoadingOverlayService } from '../services/loading-overlay.service';
     DragDropModule,
     OutsideClickDirective,
     FilterAllPipe,
-    FilterPipe
+    FilterPipe,
+    TopNavComponent
   ],
   providers: [
     ThemeService,
-    DeviceOsService,
     AuthService,
     LoadingOverlayService
   ]

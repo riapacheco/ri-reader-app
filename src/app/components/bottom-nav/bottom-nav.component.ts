@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 export interface INavButton {
   icon?: string;
@@ -17,7 +18,9 @@ export class BottomNavComponent implements OnInit {
   @Input() buttons: INavButton[] = [];
 
   
-  constructor() { }
+  constructor(
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
   }

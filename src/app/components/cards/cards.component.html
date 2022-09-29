@@ -1,0 +1,21 @@
+<div class="card-row">
+  <div class="card"
+    *ngFor="let card of cards; let index = index;">
+    <div class="card-cover">
+
+      <ng-container *ngIf="card.cover_image">
+        <img [src]="card.cover_image" alt="">
+      </ng-container>
+      
+      <ng-container *ngIf="!card.cover_image">
+        <img [src]="getFallbackImage(index)" alt="">
+      </ng-container>
+    </div>
+
+    <div class="card-details">
+      {{ card.title }}
+
+      passage count: {{ card.passage_count }}
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Meta } from '@angular/platform-browser';
 
-export type TTheme = 'lightTheme' | 'darkTheme';
+export type TTheme = 'light' | 'dark';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +13,8 @@ export class ThemeService {
 
   /* ------------------------ Local Storage Properties ------------------------ */
   stateKey = 'theme';
-  valueLightTheme = 'lightTheme';
-  valueDarkTheme = 'darkTheme';
+  valuelight = 'light';
+  valuedark = 'dark';
 
   constructor(
     private meta: Meta
@@ -24,17 +24,17 @@ export class ThemeService {
   // Check local theme and update service variable to match
   public getInitTheme(): any {
     const localState = localStorage.getItem(this.stateKey);
-    if (localState == this.valueLightTheme) {
-      this.updateServiceState('lightTheme');
-      return 'lightTheme';
-    } else if (localState == this.valueDarkTheme) {
-      this.updateServiceState('darkTheme');
-      return 'darkTheme';
+    if (localState == this.valuelight) {
+      this.updateServiceState('light');
+      return 'light';
+    } else if (localState == this.valuedark) {
+      this.updateServiceState('dark');
+      return 'dark';
     } else {
       // if no local state
-      this.updateLocalState('lightTheme');
+      this.updateLocalState('light');
       this._isDark$.next(false);
-      return 'initial set to light theme';
+      return 'light';
     }
   }
 
@@ -49,20 +49,20 @@ export class ThemeService {
   /* ----------------------------- PRIVATE HELPERS ---------------------------- */
   // Update service's behaviorSubject
   private updateServiceState(themeRequest: TTheme) {
-    if (themeRequest == 'darkTheme') { this._isDark$.next(true); }
-    else if (themeRequest == 'lightTheme') { this._isDark$.next(false); }
+    if (themeRequest == 'dark') { this._isDark$.next(true); }
+    else if (themeRequest == 'light') { this._isDark$.next(false); }
   }
 
   // Update local storage
   private updateLocalState(themeRequest: TTheme) {
-    if (themeRequest == 'darkTheme') { localStorage.setItem(this.stateKey, this.valueDarkTheme); }
-    else if (themeRequest == 'lightTheme') { localStorage.setItem(this.stateKey, this.valueLightTheme); }
+    if (themeRequest == 'dark') { localStorage.setItem(this.stateKey, this.valuedark); }
+    else if (themeRequest == 'light') { localStorage.setItem(this.stateKey, this.valuelight); }
   }
 
   // Add meta tag to index.html file to change mobile statusbar
   private updateStatusBar(themeRequest: TTheme) {
-    if (themeRequest == 'darkTheme') { this.meta.addTag({ name: 'apple-mobile-web-app-status-bar-style', content: 'white' }) }
-    else if (themeRequest == 'lightTheme') { this.meta.addTag({ name: 'apple-mobile-web-app-status-bar-style', content: 'black' }) }
+    if (themeRequest == 'dark') { this.meta.addTag({ name: 'apple-mobile-web-app-status-bar-style', content: 'white' }) }
+    else if (themeRequest == 'light') { this.meta.addTag({ name: 'apple-mobile-web-app-status-bar-style', content: 'black' }) }
     else { this.meta.addTag({ name: 'apple-mobile-web-app-status-bar-style', content: 'black' }) };
   }
 
