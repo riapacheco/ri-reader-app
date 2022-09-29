@@ -21,6 +21,8 @@ export class CardsComponent implements OnInit {
       author: '',
       passage_count: null
     }];
+  @Input() searchText = '';
+  
   constructor() { }
 
   ngOnInit(): void {

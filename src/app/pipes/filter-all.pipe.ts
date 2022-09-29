@@ -15,5 +15,4 @@ export class FilterAllPipe implements PipeTransform {
       return new RegExp(value, 'gi').test(data[key]);
     }).some(result => result);
   }
-
 }

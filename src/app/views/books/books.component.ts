@@ -12,6 +12,8 @@ import { OcrService } from 'src/app/services/ocr.service';
 export class BooksComponent implements OnInit {
 
   bookCards!: any[];
+  searchText = '';
+  
   private sub = new Subscription();
   constructor(
     public ocr: OcrService,
@@ -36,5 +38,9 @@ export class BooksComponent implements OnInit {
       this.bookCards = data;
       console.log(this.bookCards);
     })
+  }
+
+  onSearch(data: any) {
+    this.searchText = data;
   }
 }

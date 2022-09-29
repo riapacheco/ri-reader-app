@@ -1,7 +1,11 @@
-<app-top-nav></app-top-nav>
+<app-top-nav
+  (enterDown)="onSearch($event)"
+  [searchText]="searchText">
+</app-top-nav>
 <div class="bg-wrapper books-wrapper">
   <div class="books-content">
     <app-cards
+      [searchText]="searchText"
       [cards]="bookCards">
     </app-cards>
   </div>

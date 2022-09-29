@@ -38,11 +38,11 @@
   
             <input
               (keydown.enter)="onEnter()"
-              [(ngModel)]="input.boundedString"
+              [(ngModel)]="searchText"
               [placeholder]="input.placeholder"
               (focus)="onInputFocusToggle('typing')"
               (focusout)="onInputFocusToggle('done')"
-              (keydown)="onKeydown($event)"
+              (keydown)="onEnter()"
               type="text"
               >
             <div class="prefix-icon">

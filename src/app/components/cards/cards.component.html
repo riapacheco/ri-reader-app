@@ -1,6 +1,6 @@
 <div class="card-row">
   <div class="card"
-    *ngFor="let card of cards; let index = index;">
+    *ngFor="let card of cards | filterAll: searchText; let index = index;">
     <div class="card-cover">
 
       <ng-container *ngIf="card.cover_image">
