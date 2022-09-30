@@ -1,3 +1,4 @@
+
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,7 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PassagesComponent } from './views/passages/passages.component';
 import { BottomNavComponent } from './components/bottom-nav/bottom-nav.component';
-import { StatusBarComponent } from './components/status-bar/status-bar.component';
 import { SharedModule } from './modules/shared.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { OcrService } from './services/ocr.service';
@@ -20,13 +20,13 @@ import { LoadingOverlayComponent } from './components/loading-overlay/loading-ov
 import { FloatingMenuComponent } from './components/floating-menu/floating-menu.component';
 import { FloatingMenuService } from './services/floating-menu.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginRegisterComponent,
     PassagesComponent,
     BottomNavComponent,
-    StatusBarComponent,
     LoadingComponent,
     OverlayComponent,
     LoadingOverlayComponent,

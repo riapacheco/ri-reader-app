@@ -2,12 +2,13 @@
   (enterDown)="onSearch($event)"
   [searchText]="searchText">
 </app-top-nav>
-<div class="bg-wrapper books-wrapper">
+<div [class]="booksClassList">
   <div class="books-content">
     <app-cards
       [searchText]="searchText"
       [cards]="bookCards">
     </app-cards>
+    skldjf
   </div>
 </div>
 

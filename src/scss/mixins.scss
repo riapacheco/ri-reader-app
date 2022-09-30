@@ -145,7 +145,12 @@ $mobile-content-width: 90%;
           user-select: none; /* Non-prefixed version, currently
                                 supported by Chrome, Edge, Opera and Firefox */
 }
-
+@mixin details {
+  list-style-type: "\1F44D";
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
 /* -------------------------------------------------------------------------- */
 /*                             COLOR-BASED MIXINS                             */
 /* -------------------------------------------------------------------------- */

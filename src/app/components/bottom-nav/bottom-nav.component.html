@@ -3,14 +3,16 @@
     <div class="buttons-wrapper">
       <div class="button-wrapper">
 
+
         <a routerLink="books" routerLinkActive="is-active">
           <i class="material-icons">collections_bookmark</i>
           <ng-container *ngIf="router.isActive('/books', true)">
             <span>
-              By Book
+              Book
             </span>
           </ng-container>
         </a>
+
 
         <a routerLink="passages" routerLinkActive="is-active">
           <i class="material-icons">bookmarks</i>
@@ -21,6 +23,14 @@
           </ng-container>
         </a>
 
+
+        <a routerLink="capture" routerLinkActive="is-active" class="center">
+          <i class="material-icons">bookmark_add</i>
+          <ng-container *ngIf="router.isActive('/capture', true)">
+            <span>Add New</span>
+          </ng-container>
+        </a>
+
         <a routerLink="insights" routerLinkActive="is-active">
           <i class="material-icons">auto_graph</i>
           <ng-container *ngIf="router.isActive('/insights', true)">
@@ -28,12 +38,11 @@
           </ng-container>
         </a>
 
-        <a routerLink="capture" routerLinkActive="is-active">
-          <i class="material-icons">bookmark_add</i>
-          <ng-container *ngIf="router.isActive('/capture', true)">
-            <span>Add New</span>
-          </ng-container>
+        <a >
+          <i class="material-icons">settings</i>
+          <ng-container ></ng-container>
         </a>
+
       </div>
     </div>
   </div>

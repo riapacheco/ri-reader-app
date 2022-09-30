@@ -2,6 +2,10 @@ import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/co
 import { OcrService } from 'src/app/services/ocr.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Subscription } from 'rxjs';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { ThemeService } from 'src/app/services/theme.service';
+import { Platform } from '@angular/cdk/platform';
+import { BREAKPOINT_VALUE } from 'src/app/enums/breakpoint.enums';
 
 
 @Component({
@@ -10,39 +14,47 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./capture.component.scss']
 })
 export class CaptureComponent implements OnInit, OnDestroy {
-  image!: any;
+  // image!: any;
   passageText = '';
-  showCheck = true;
 
+  /* ------------------------- PRESENTATION PROPERTIES ------------------------ */
+  modules = { toolbar: [ ['bold', 'italic', 'underline'], [{'list':'ordered'},{'list':'bullet'}],] }; // Quill editor
+  viewClass: string[] = []; // Wrapper class
+  viewTitle = 'Add New Passage'; // Top Bar
+  isMobile!: boolean;
   private sub = new Subscription();
+
   constructor(
-    public ocr: OcrService 
+    private observer: BreakpointObserver,
+    private theme: ThemeService,
+    private platform: Platform
   ) { }
 
   ngOnInit(): void {
-    this.sub.add(this.ocr.ocrResult$.subscribe((res: any) => {
-      setTimeout(() => {
-        this.passageText = res;
-      }, 100);
-    }))
+    this.viewClass = ['capture'];
+    this.checkDeviceAndTheme();
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-  async captureImage() {
-    const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: true,
-      source: CameraSource.Prompt,
-      resultType: CameraResultType.Base64
-    });
-    
-    if (image) {
-      this.image = `data:image/jpeg;base64,${image.base64String}`!;
-    }
-  }
-  onClear() {
-    this.ocr.clearText();
+
+  private checkDeviceAndTheme() {
+    this.sub.add(this.observer.observe([BREAKPOINT_VALUE.mobile]).subscribe((state: BreakpointState) => {
+      if (state.breakpoints[BREAKPOINT_VALUE.mobile]) {
+        this.isMobile = true;
+        this.viewClass.push('mobile');
+      } else {
+        this.isMobile = false;
+        this.viewClass = this.viewClass.filter((e: any) => e !== 'mobile');
+      }
+    }));
+
+    const theme = this.theme.getInitTheme();
+    if (theme == 'dark') { this.viewClass.push('dark'); }
+    else if (theme == 'light') { this.viewClass = this.viewClass.filter((e: any) => e !== 'dark'); }
+
+    if (this.platform.ANDROID || this.platform.IOS) { this.viewClass.push('platform'); }
+    else { this.viewClass = this.viewClass.filter((e: any) => e !== 'platform'); }
   }
 }

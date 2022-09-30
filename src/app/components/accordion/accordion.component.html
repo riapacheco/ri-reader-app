@@ -1,0 +1,16 @@
+<div [class]="viewClass" (click)="isOpen = !isOpen">
+  <div class="accordion-content">
+    <div [ngClass]="isOpen ? 'summary-block open' : 'summary-block'">
+      <i class="material-icons">
+        {{ isOpen ? 'expand_more' : 'chevron_right' }}
+      </i>
+      <span>{{ summaryTitle }}</span>
+    </div>
+
+    <ng-container *ngIf="isOpen">
+      <div class="details-body">
+        <ng-content select="[accordionContent]"></ng-content>
+      </div>
+    </ng-container>
+  </div>
+</div>

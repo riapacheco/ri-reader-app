@@ -2,6 +2,9 @@
 @import '/node_modules/@riapacheco/yutes/season/two.scss';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import '../src/scss/mixins.scss';
+@import '../src/scss/variables.scss';
+@import '../src/scss/colors.scss';
+@import '~quill/dist/quill.snow.css';
 
 * {
   -webkit-font-smoothing: antialiased !important;
@@ -33,6 +36,20 @@ body {
     color: $steel-light;
   }
 }
+
+p {
+  margin: 0;
+  display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  line-height: 1.5;
+}
+
+.ios-android {
+  padding-top: $status-bar-height;
+}
 /* -------------------------------------------------------------------------- */
 /*                        GLOBAL CHANGES FROM VIEWPORT                        */
 /* -------------------------------------------------------------------------- */
@@ -54,7 +71,6 @@ body {
 .inner-html-wrapper {
   width: 100%;
   -webkit-font-smoothing: antialiased !important;
-
   &.mobile-toolbar-title { // menu component
     color: $blood-orange-regular;
     h1 {
@@ -71,32 +87,26 @@ body {
     }
   }
 }
-
 .form-group {
   input {
-    max-height: 40px;
-    height: 40px;
+    max-height: $input-height;
+    height: $input-height;
   }
 }
 input::placeholder {
   color: $steel-regular;
 }
-
 .divider {
   width: 100%;
   height: 5px;
   box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.294);
   border-radius: 4px;
 }
-
 textarea {
   width: 100%;
   font-size: 100%;
   font-family: "Inter", sans-serif;
-  // @include mobile-text('body');
 }
-
-
 .bg-wrapper {
   height: 100%;
   width: 100vw;
@@ -108,7 +118,73 @@ textarea {
     @include style-bg('dark');
   }
 }
+details > summary {
+  list-style: none;
+  height: 33px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+details > summary::-webkit-details-marker,
+details > summary::marker { display: none; }
 
+
+
+/* -------------------------------------------------------------------------- */
+/*                                PLUGIN STYLES                               */
+/* -------------------------------------------------------------------------- */
+
+/* ------------------------------ QUILL EDITOR ------------------------------ */
+$quill-corner: 8px;
+quill-editor {
+  
+  font-size: 100%;
+  width: 100%;
+
+  .ql-toolbar.ql-snow {
+    border-radius: $quill-corner $quill-corner 0px 0px;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1rem;
+    border: 1px solid transparent;
+    background: white !important;
+    @include style-bg('light');
+    box-shadow: -1px -10px 10px #00000005;
+    color: black;
+  }
+  .ql-toolbar.ql-snow > * {
+    transform: scale(1.15);
+  }
+  .ql-container.ql-snow {
+    font-size: 1.6rem;
+    font-family: "Inter", sans-serif;
+    border-radius: 0px 0px $quill-corner $quill-corner;
+    border: 1px solid transparent;
+    background: white !important;
+    @include style-bg('light');
+
+    box-shadow: 1px 10px 10px #00000005;
+  }
+  &.dark {
+    color: $steel-light;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 COMPONENTS                                 */
+/* -------------------------------------------------------------------------- */
+
+/* --------------------------------- TOP NAV -------------------------------- */
+// Spacer for height
+.top-nav-height {
+  display: block;
+  width: 100%;
+  height: $full-top-nav-height;
+
+  &.md {
+    height: $medium-top-nav-height;
+  }
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                   Z-INDEX                                  */
@@ -116,9 +192,7 @@ textarea {
 
 $base-index: 2;
 
-app-root, 
-app-app-status-bar, 
-.app-status-bar { z-index: calc($base-index / 2); }
+app-root { z-index: calc($base-index / 2); }
 
 app-top-nav,
 .top-nav,
@@ -141,5 +215,10 @@ app-overlay,
 app-floating-menu,
 .floating-menu {
   z-index: calc($base-index * 7);
+}
+
+app-status-bar,
+.status-bar {
+  z-index: calc($base-index * 8);
 }
 

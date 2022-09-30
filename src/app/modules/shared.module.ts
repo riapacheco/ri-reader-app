@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -16,7 +17,6 @@ import { CapsPipe } from '../pipes/caps.pipe';
 import { LoadingOverlayService } from '../services/loading-overlay.service';
 import { TopNavComponent } from '../components/top-nav/top-nav.component';
 
-
 @NgModule({
   declarations: [
     OutsideClickDirective,
@@ -24,7 +24,7 @@ import { TopNavComponent } from '../components/top-nav/top-nav.component';
     FilterPipe,
     VerticalResizeDirective,
     CapsPipe,
-    TopNavComponent
+    TopNavComponent,
   ],
   imports: [
     CommonModule,
@@ -46,7 +46,7 @@ import { TopNavComponent } from '../components/top-nav/top-nav.component';
   providers: [
     ThemeService,
     AuthService,
-    LoadingOverlayService
+    LoadingOverlayService,
   ]
 })
 export class SharedModule { }

@@ -427,7 +427,10 @@ export class CardsComponent implements OnInit {
     &lt;div class&#x3D;&quot;card-details&quot;&gt;
       {{ card.title }}
 
-      passage count: {{ card.passage_count }}
+      &lt;div&gt;
+        &lt;i class&#x3D;&quot;material-icons&quot; style&#x3D;&quot;font-size:1.3rem;&quot;&gt;bookmarks&lt;/i&gt;
+        {{ card.passage_count }}
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -454,7 +457,7 @@ export class CardsComponent implements OnInit {
   align-items: flex-start;
   justify-content: space-between;
   &amp;:first-child {
-    padding-top: 2rem;
+    padding-top: 210px;
   }
   .card {
     display: inline-flex;
@@ -463,7 +466,8 @@ export class CardsComponent implements OnInit {
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 6%;
-
+    min-height: 180px;
+    max-height: 180px;
     box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.097);
     .card-cover {
       width: 100%;
@@ -478,6 +482,11 @@ export class CardsComponent implements OnInit {
         object-fit: cover;
         object-position: center !important;
       }
+    }
+
+    .card-details {
+      @include mobile-text(&#x27;body&#x27;);
+      padding: 10px;
     }
   }
 }</code></pre>
@@ -508,8 +517,8 @@ export class CardsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="card-row">  <div class="card"    *ngFor="let card of cards | filterAll: searchText; let index = index;">    <div class="card-cover">      <ng-container *ngIf="card.cover_image">        <img [src]="card.cover_image" alt="">      </ng-container>            <ng-container *ngIf="!card.cover_image">        <img [src]="getFallbackImage(index)" alt="">      </ng-container>    </div>    <div class="card-details">      {{ card.title }}      passage count: {{ card.passage_count }}    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'CaptureComponent', 'selector': 'app-capture'},{'name': 'CardsComponent', 'selector': 'app-cards'},{'name': 'FloatingMenuComponent', 'selector': 'app-floating-menu'},{'name': 'InsightsComponent', 'selector': 'app-insights'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoadingOverlayComponent', 'selector': 'app-loading-overlay'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'OverlayComponent', 'selector': 'app-overlay'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'StatusBarComponent', 'selector': 'app-status-bar'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
+        var COMPONENT_TEMPLATE = '<div><div class="card-row">  <div class="card"    *ngFor="let card of cards | filterAll: searchText; let index = index;">    <div class="card-cover">      <ng-container *ngIf="card.cover_image">        <img [src]="card.cover_image" alt="">      </ng-container>            <ng-container *ngIf="!card.cover_image">        <img [src]="getFallbackImage(index)" alt="">      </ng-container>    </div>    <div class="card-details">      {{ card.title }}      <div>        <i class="material-icons" style="font-size:1.3rem;">bookmarks</i>        {{ card.passage_count }}      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'app-accordion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'CaptureComponent', 'selector': 'app-capture'},{'name': 'CardsComponent', 'selector': 'app-cards'},{'name': 'FloatingMenuComponent', 'selector': 'app-floating-menu'},{'name': 'InsightsComponent', 'selector': 'app-insights'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoadingOverlayComponent', 'selector': 'app-loading-overlay'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'OverlayComponent', 'selector': 'app-overlay'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
     var DIRECTIVES = [{'name': 'OutsideClickDirective', 'selector': '[appOutsideClick]'},{'name': 'VerticalResizeDirective', 'selector': '[appVerticalResize]'}];
     var ACTUAL_COMPONENT = {'name': 'CardsComponent'};
 </script>

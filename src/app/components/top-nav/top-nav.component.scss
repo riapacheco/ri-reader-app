@@ -15,12 +15,11 @@ $search-field-height: 46px;
   width: $action-button-height;
   height: $action-button-height;
   border-radius: $action-button-height;
-  background-image: linear-gradient(to bottom left, $canary-regular, $canary-medium);
+  background-image: linear-gradient(to bottom left, $canary-dark, $canary-regular, $canary-medium, $canary-light);
 }
 .top-nav {
   padding-top: 20px;
   position: fixed;
-  // position: -webkit-sticky;
   width: 100%;
   padding-bottom: 2rem;
 
@@ -60,8 +59,10 @@ $search-field-height: 46px;
           height: $badge-height;
           width: $badge-height;
           border-radius: $badge-height;
-          background-color: $success;
           border: 2px solid white;
+
+          &.success { background-color: $success; }
+          &.danger { background-color: $danger; }
         }
       }
 
@@ -80,7 +81,7 @@ $search-field-height: 46px;
           justify-content: center;
 
           .material-icons {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: white;
           }
         }
@@ -97,7 +98,6 @@ $search-field-height: 46px;
       align-items: center;
       justify-content: flex-start;
 
-      margin-bottom: 1.5rem;
       h1 {
         @include mobile-text('h1');
         font-weight: 600;
@@ -109,6 +109,7 @@ $search-field-height: 46px;
     .other-actions-block {
       width: 100%;
       .input-field-wrapper {
+        padding-top: 1.5rem;
         width: inherit;
         .form-group {
           position: relative;

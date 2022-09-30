@@ -1,0 +1,68 @@
+@import 'node_modules/@riapacheco/yutes/season/two.scss';
+@import '../../../scss/colors.scss';
+@import '../../../scss/mixins.scss';
+@import '../../../scss/variables.scss';
+
+:host {
+  -webkit-font-smoothing: antialiased !important;
+}
+
+$height: 44px;
+$corner: 8px;
+$open-color: $black;
+$close-color: $black;
+$body-bg: #00000010;
+.accordion {
+  min-height: $input-height;
+  cursor: pointer;
+  border-radius: $corner;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  .accordion-content {
+    width: 100%;
+    .summary-block {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      width: 100%;
+      display: flex;
+      border-radius: $corner;
+      position: relative;
+      height: $input-height;
+      line-height: $input-height;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      font-weight: 500;
+      background-color: $black;
+
+      .material-icons {
+        color: $canary-medium;
+        padding-right: 0.5rem;
+      }
+      span {
+        color: white;
+        font-size: 1.4rem;
+        font-weight: 500;
+        white-space: nowrap;
+        letter-spacing: 0.03rem;
+      }
+      &.open {
+        border-radius: $corner $corner 0px 0px;
+        // background-color: $open-color;
+      }
+    }
+
+    .details-body {
+      padding-bottom:1rem;
+      color: $black;
+      padding: 10px;
+      @include mobile-text('body');
+      border-radius: 0px 0px $corner $corner;
+      border-left: 2px solid $close-color;
+      border-bottom: 2px solid $close-color;
+      border-right: 2px solid $close-color;
+      background-color: $body-bg;
+    }
+  }
+}

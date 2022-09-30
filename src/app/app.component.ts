@@ -4,6 +4,8 @@ import { ThemeService } from './services/theme.service';
 import { OcrService } from './services/ocr.service';
 import { LoadingOverlayService } from './services/loading-overlay.service';
 import { CameraService } from './services/camera.service';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { BREAKPOINT_VALUE } from './enums/breakpoint.enums';
 
 
 
@@ -25,6 +27,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     public theme: ThemeService,
+    private observer: BreakpointObserver,
     public ocr: OcrService,
     public loading: LoadingOverlayService,
     public camService: CameraService,
@@ -32,7 +35,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   /** @ignore */
   ngOnInit(): void {
-    this.checkTheme();
+    this.theme.getInitTheme();
+    this.checkDeviceAndTheme();
   }
 
   /** @ignore */
@@ -40,16 +44,21 @@ export class AppComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
+  /* ------------------------- CHECK DEVICE AND THEME ------------------------- */
+  private checkDeviceAndTheme() {
+    this.sub.add(this.observer.observe([BREAKPOINT_VALUE.mobile]).subscribe((state: BreakpointState) => {
+      if (state.breakpoints[BREAKPOINT_VALUE.mobile]) {
+        this.isMobile = true;
+      } else { this.isMobile = false; }
+    }))
+
+    const theme = this.theme.getInitTheme();
+    if (theme == 'dark') { console.log('Dark theme ON'); }
+    else if (theme == 'light') { console.log('Dark theme OFF'); }
+  }
 
   onRouteActivation() {
     this.scrollToTopDiv.nativeElement.scrollIntoView();
   }
-  private checkTheme() {
-    const themeState = this.theme.getInitTheme();
-    if (themeState == 'lightTheme') {
-      this.lightTheme = true;
-    } else if (themeState == 'darkTheme') {
-      this.lightTheme = false;
-    } else { console.log('Duno'); }
-  }
+
 }

@@ -489,14 +489,16 @@ export class BottomNavComponent implements OnInit {
     &lt;div class&#x3D;&quot;buttons-wrapper&quot;&gt;
       &lt;div class&#x3D;&quot;button-wrapper&quot;&gt;
 
+
         &lt;a routerLink&#x3D;&quot;books&quot; routerLinkActive&#x3D;&quot;is-active&quot;&gt;
           &lt;i class&#x3D;&quot;material-icons&quot;&gt;collections_bookmark&lt;/i&gt;
           &lt;ng-container *ngIf&#x3D;&quot;router.isActive(&#x27;/books&#x27;, true)&quot;&gt;
             &lt;span&gt;
-              By Book
+              Book
             &lt;/span&gt;
           &lt;/ng-container&gt;
         &lt;/a&gt;
+
 
         &lt;a routerLink&#x3D;&quot;passages&quot; routerLinkActive&#x3D;&quot;is-active&quot;&gt;
           &lt;i class&#x3D;&quot;material-icons&quot;&gt;bookmarks&lt;/i&gt;
@@ -507,6 +509,14 @@ export class BottomNavComponent implements OnInit {
           &lt;/ng-container&gt;
         &lt;/a&gt;
 
+
+        &lt;a routerLink&#x3D;&quot;capture&quot; routerLinkActive&#x3D;&quot;is-active&quot; class&#x3D;&quot;center&quot;&gt;
+          &lt;i class&#x3D;&quot;material-icons&quot;&gt;bookmark_add&lt;/i&gt;
+          &lt;ng-container *ngIf&#x3D;&quot;router.isActive(&#x27;/capture&#x27;, true)&quot;&gt;
+            &lt;span&gt;Add New&lt;/span&gt;
+          &lt;/ng-container&gt;
+        &lt;/a&gt;
+
         &lt;a routerLink&#x3D;&quot;insights&quot; routerLinkActive&#x3D;&quot;is-active&quot;&gt;
           &lt;i class&#x3D;&quot;material-icons&quot;&gt;auto_graph&lt;/i&gt;
           &lt;ng-container *ngIf&#x3D;&quot;router.isActive(&#x27;/insights&#x27;, true)&quot;&gt;
@@ -514,12 +524,11 @@ export class BottomNavComponent implements OnInit {
           &lt;/ng-container&gt;
         &lt;/a&gt;
 
-        &lt;a routerLink&#x3D;&quot;capture&quot; routerLinkActive&#x3D;&quot;is-active&quot;&gt;
-          &lt;i class&#x3D;&quot;material-icons&quot;&gt;bookmark_add&lt;/i&gt;
-          &lt;ng-container *ngIf&#x3D;&quot;router.isActive(&#x27;/capture&#x27;, true)&quot;&gt;
-            &lt;span&gt;Add New&lt;/span&gt;
-          &lt;/ng-container&gt;
+        &lt;a &gt;
+          &lt;i class&#x3D;&quot;material-icons&quot;&gt;settings&lt;/i&gt;
+          &lt;ng-container &gt;&lt;/ng-container&gt;
         &lt;/a&gt;
+
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -539,7 +548,7 @@ export class BottomNavComponent implements OnInit {
 
 $nav-height: 9rem;
 $nav-width: 100vw;
-$LR-padding: 2rem;
+$LR-padding: 1.5rem;
 $content-width: calc($nav-width - ($LR-padding * 2 ));
 $active-pill-height: 5rem;
 
@@ -561,13 +570,15 @@ $active-pill-height: 5rem;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  // border: 1px solid blue;
+  justify-content: space-around;
+  color: $black;
+
   .bottom-nav-content {
-    width: 100%;
     height: 100%;
+    width: 100%;
     margin-left: $LR-padding;
     margin-right: $LR-padding;
-    // border: 1px solid red;
+    margin: auto;
     
     display: flex;
     flex-flow: row nowrap;
@@ -580,7 +591,7 @@ $active-pill-height: 5rem;
       flex-flow: row nowrap;
       align-items: center;
       justify-content: space-between;
-      
+
       .button-wrapper {
         width: 100%;
         // height: $nav-height !important;
@@ -591,6 +602,7 @@ $active-pill-height: 5rem;
         justify-content: center;
 
         a {
+          width: calc($nav-width / 7);
           -webkit-font-smoothing: antialiased !important;
           display: flex;
           height: $active-pill-height;
@@ -603,10 +615,13 @@ $active-pill-height: 5rem;
           padding-right: 1.8rem;
           .material-icons {
             font-size: 2.3rem;
+            color: $black;
           }
 
           &amp;.is-active {
-            background-color: black;
+            // width: 100%;
+            width: fit-content;
+            background-color: $black;
             color: white;
             margin-left: 1rem;
             margin-right: 1rem;
@@ -621,6 +636,7 @@ $active-pill-height: 5rem;
             span {
               font-size: 1.4rem;
               font-weight: 500;
+              white-space: nowrap;
             }
           }
         }
@@ -655,8 +671,8 @@ $active-pill-height: 5rem;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="bottom-nav">  <div class="bottom-nav-content">    <div class="buttons-wrapper">      <div class="button-wrapper">        <a routerLink="books" routerLinkActive="is-active">          <i class="material-icons">collections_bookmark</i>          <ng-container *ngIf="router.isActive(\'/books\', true)">            <span>              By Book            </span>          </ng-container>        </a>        <a routerLink="passages" routerLinkActive="is-active">          <i class="material-icons">bookmarks</i>          <ng-container *ngIf="router.isActive(\'/passages\', true)">            <span>              Passages            </span>          </ng-container>        </a>        <a routerLink="insights" routerLinkActive="is-active">          <i class="material-icons">auto_graph</i>          <ng-container *ngIf="router.isActive(\'/insights\', true)">            <span>Insights</span>          </ng-container>        </a>        <a routerLink="capture" routerLinkActive="is-active">          <i class="material-icons">bookmark_add</i>          <ng-container *ngIf="router.isActive(\'/capture\', true)">            <span>Add New</span>          </ng-container>        </a>      </div>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'CaptureComponent', 'selector': 'app-capture'},{'name': 'CardsComponent', 'selector': 'app-cards'},{'name': 'FloatingMenuComponent', 'selector': 'app-floating-menu'},{'name': 'InsightsComponent', 'selector': 'app-insights'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoadingOverlayComponent', 'selector': 'app-loading-overlay'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'OverlayComponent', 'selector': 'app-overlay'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'StatusBarComponent', 'selector': 'app-status-bar'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
+        var COMPONENT_TEMPLATE = '<div><div class="bottom-nav">  <div class="bottom-nav-content">    <div class="buttons-wrapper">      <div class="button-wrapper">        <a routerLink="books" routerLinkActive="is-active">          <i class="material-icons">collections_bookmark</i>          <ng-container *ngIf="router.isActive(\'/books\', true)">            <span>              Book            </span>          </ng-container>        </a>        <a routerLink="passages" routerLinkActive="is-active">          <i class="material-icons">bookmarks</i>          <ng-container *ngIf="router.isActive(\'/passages\', true)">            <span>              Passages            </span>          </ng-container>        </a>        <a routerLink="capture" routerLinkActive="is-active" class="center">          <i class="material-icons">bookmark_add</i>          <ng-container *ngIf="router.isActive(\'/capture\', true)">            <span>Add New</span>          </ng-container>        </a>        <a routerLink="insights" routerLinkActive="is-active">          <i class="material-icons">auto_graph</i>          <ng-container *ngIf="router.isActive(\'/insights\', true)">            <span>Insights</span>          </ng-container>        </a>        <a >          <i class="material-icons">settings</i>          <ng-container ></ng-container>        </a>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'app-accordion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'CaptureComponent', 'selector': 'app-capture'},{'name': 'CardsComponent', 'selector': 'app-cards'},{'name': 'FloatingMenuComponent', 'selector': 'app-floating-menu'},{'name': 'InsightsComponent', 'selector': 'app-insights'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoadingOverlayComponent', 'selector': 'app-loading-overlay'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'OverlayComponent', 'selector': 'app-overlay'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
     var DIRECTIVES = [{'name': 'OutsideClickDirective', 'selector': '[appOutsideClick]'},{'name': 'VerticalResizeDirective', 'selector': '[appVerticalResize]'}];
     var ACTUAL_COMPONENT = {'name': 'BottomNavComponent'};
 </script>
