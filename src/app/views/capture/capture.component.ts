@@ -1,6 +1,4 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { OcrService } from 'src/app/services/ocr.service';
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { ThemeService } from 'src/app/services/theme.service';

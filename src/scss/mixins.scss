@@ -161,7 +161,7 @@ $mobile-content-width: 90%;
     background-attachment: fixed;
   } 
   @if $mode == 'dark' {
-    background-image: linear-gradient(to bottom right, black, $midnight-dark);
+    background-image: linear-gradient(to bottom right, rgb(11, 11, 12), $black, $midnight-dark);
     background-attachment: fixed;
   }
 }

@@ -17,9 +17,7 @@ import { ThemeService } from 'src/app/services/theme.service';
 export class BooksComponent implements OnInit {
 
   bookCards!: any[];
-
   searchText = '';
-
   booksClassList: string[] = [];
   isMobile!: boolean;
   private sub = new Subscription();

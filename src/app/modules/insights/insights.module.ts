@@ -6,6 +6,7 @@ import { InsightsRoutingModule } from './insights-routing.module';
 
 
 
+
 @NgModule({
   declarations: [
     InsightsComponent
@@ -13,7 +14,11 @@ import { InsightsRoutingModule } from './insights-routing.module';
   imports: [
     CommonModule,
     SharedModule,
-    InsightsRoutingModule
+    InsightsRoutingModule,
+    
+  ],
+  exports: [
+    
   ]
 })
 export class InsightsModule { }

@@ -20,7 +20,6 @@ import { LoadingOverlayComponent } from './components/loading-overlay/loading-ov
 import { FloatingMenuComponent } from './components/floating-menu/floating-menu.component';
 import { FloatingMenuService } from './services/floating-menu.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,

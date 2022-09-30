@@ -20,7 +20,6 @@ $active-pill-height: 5rem;
   left: 0;
   right: 0;
   height: $nav-height;
-  box-shadow: 0px -20px 55px rgba(1, 4, 27, 0.313);
   background-color: white;
   border-radius: 25px 25px 0px 0px;
   background-image: linear-gradient(to bottom, white, #F5F5F5, #eeeeee);
@@ -95,6 +94,34 @@ $active-pill-height: 5rem;
               font-size: 1.4rem;
               font-weight: 500;
               white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    DARK                                    */
+/* -------------------------------------------------------------------------- */
+.bottom-nav.dark {
+  background-image: linear-gradient(to bottom right, #0e0e11, $black, $midnight-dark);
+  // background-attachment: fixed;
+  
+  .bottom-nav-content {
+    .buttons-wrapper {
+      .button-wrapper {
+        a {
+          .material-icons {
+            color: $canary-medium;
+            filter:brightness(0.5);
+          }
+          &.is-active {
+            background-color: black;
+
+            .material-icons {
+              filter: brightness(0.9);
             }
           }
         }

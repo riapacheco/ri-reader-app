@@ -1,0 +1,18 @@
+@import 'node_modules/@riapacheco/yutes/season/two.scss';
+@import '../../../scss/colors.scss';
+@import '../../../scss/mixins.scss';
+@import '../../../scss/variables.scss';
+
+:host {
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.insights {
+  width: 100%;
+  height: 100vh;
+  overflow-y:scroll;
+  /* -------------------------------- DARK MODE ------------------------------- */
+  &.dark {
+    @include style-bg('dark');
+  }
+}

@@ -145,7 +145,6 @@ $search-field-height: 46px;
                 color: $canary-regular;
               }
             }
-
           }
         }
       }
@@ -197,12 +196,49 @@ $search-field-height: 46px;
       }
     }
   }
+
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                  DARK MODE                                 */
-/* -------------------------------------------------------------------------- */
-
-.top-nav.is-dark {
+.top-nav.dark {
+  background-image: unset;
+  // color: red;
+  color: $steel-regular;
   @include style-bg('dark');
+  .top-nav-content {
+    .user-action-block {
+      .user-avatar {
+        .badge {
+          border: 2px solid $black;
+        }
+      }
+      .action-button {
+        filter: brightness(0.75);
+        a {
+          .material-icons {
+            color: $canary-dark;
+            filter: brightness(0.6);
+          }
+        }
+      }
+    }
+
+    .other-actions-block {
+      .input-field-wrapper {
+        .form-group {
+          input {
+            background-color: $black;
+            color: $steel-light;
+            &::placeholder {
+              color: $soot-grey-dark;
+            }
+          }
+          .prefix-icon {
+            .material-icons {
+              color: $soot-grey-dark;
+            }
+          }
+        }
+      }
+    }
+  }
 }

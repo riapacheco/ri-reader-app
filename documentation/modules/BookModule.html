@@ -223,20 +223,17 @@ import { BookService } from &#x27;src/app/services/book.service&#x27;;
 import { CardsComponent } from &#x27;src/app/components/cards/cards.component&#x27;;
 
 
-
 @NgModule({
-  imports: [
-    SharedModule,
-    CommonModule,
-    BookRoutingModule
-  ],
   declarations: [
     BooksComponent,
     CardsComponent,
   ],
-
+  imports: [
+    SharedModule,
+    CommonModule,
+    BookRoutingModule,
+  ],
   exports: [
-    
   ],
   providers: [
     BookService

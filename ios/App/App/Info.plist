@@ -43,6 +43,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>To capture images of text that will be recognized by an OCR engine for note-taking</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>To add images of text that will be recognized by an OCR engine for note-taking</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To provide the app with pre-captured images of text, which will be recognized by an OCR engine for note-taking</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 </dict>

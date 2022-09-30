@@ -4,16 +4,15 @@ import { SharedModule } from '../shared.module';
 import { PassagesRoutingModule } from './passages-routing.module';
 
 
-
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     SharedModule,
-    PassagesRoutingModule
+    PassagesRoutingModule,
+    
   ],
   exports: [
-    
   ]
 })
 export class PassagesModule { }

@@ -13,14 +13,14 @@ export type TBadgeState = 'success' | 'danger';
   styleUrls: ['./top-nav.component.scss']
 })
 export class TopNavComponent implements OnInit, OnDestroy {
-  
+  @Input() viewClass!: string[];
   @Input() userImage = 'https://ik.imagekit.io/fuc9k9ckt2b/IMG_0632_copy_a_RDINYPh.JPG?ik-sdk-version=javascript-1.4.3&updatedAt=1657595086839';
   @Input() titleText = ''; // if left blank, will use greeting
   @Input() actionButtonIcon = 'add';
   @Input() searchText = '';
   @Input() input = { placeholder: 'Search + Enter', boundedString: '', prefixIcon: 'search' };
   @Input() showsInputField = true;
-  @Input() badge = { state: '' }
+  @Input() badge = { state: 'success' }
 
   @Output() avatarClick: EventEmitter<any> = new EventEmitter<any>();
   @Output() actionButtonClick: EventEmitter<any> = new EventEmitter<any>();
@@ -31,7 +31,8 @@ export class TopNavComponent implements OnInit, OnDestroy {
 
 
   /* ------------------------- PRESENTATION PROPERTIES ------------------------ */
-  topNavClass: string[] = [];
+
+  // viewClass = ['top-nav', 'dark'];
   isMobile!: boolean;
   isLargeBar = true;
   inputFocused!: boolean;
@@ -44,9 +45,10 @@ export class TopNavComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this.topNavClass = ['top-nav'];
+    this.viewClass = ['top-nav'];
     this.updateGreeting();
     this.checkDeviceAndTheme();
+    // this.theme.updateTheme('dark');
   }
   
   ngOnDestroy() { this.sub.unsubscribe(); }
@@ -58,19 +60,18 @@ export class TopNavComponent implements OnInit, OnDestroy {
     this.sub.add(this.observer.observe([BREAKPOINT_VALUE.mobile]).subscribe((state: BreakpointState) => {
       if (state.breakpoints[BREAKPOINT_VALUE.mobile]) {
         this.isMobile = true;
-        this.topNavClass.push('mobile');
+        this.viewClass.push('mobile');
       } else {
         this.isMobile = false;
-        this.topNavClass = this.topNavClass.filter((s: any) => s !== 'mobile');
+        this.viewClass = this.viewClass.filter((x: any) => x !== 'mobile');
       }
     }));
 
-    const themeState = this.theme.getInitTheme();
-    if (themeState == 'dark') { this.topNavClass.push('dark'); }
-    else if (themeState == 'light') { this.topNavClass = this.topNavClass.filter((s: any) => s !== 'dark'); }
 
-    if (this.platform.ANDROID || this.platform.IOS) { this.topNavClass.push('ios-android'); }
-    else { this.topNavClass = this.topNavClass.filter((s: any) => s !== 'ios-android'); }
+    const theme = this.theme.getInitTheme();
+    if (theme == 'dark') { this.viewClass.push('dark'); }
+    else if (theme == 'light') { this.viewClass = this.viewClass.filter((x: any) => x !== 'dark'); }
+    console.log(this.viewClass)
   }
 
   // Greeting based on time of day

@@ -45,5 +45,6 @@ export class PassagesComponent implements OnInit, OnDestroy {
 
     if (this.platform.ANDROID || this.platform.IOS) { this.passagesClassList.push('platform'); }
     else { this.passagesClassList = this.passagesClassList.filter((e: any) => e !== 'platform'); }
+    
   }
 }

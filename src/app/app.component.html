@@ -14,4 +14,7 @@
 <!-- ----------------------------------------------------------------------- -->
 <router-outlet (activate)="onRouteActivation()"></router-outlet>
 <!-- ----------------- BOTTOM NAV / MOBILE VIEW NAVIGATION ----------------- -->
-<app-bottom-nav></app-bottom-nav>
+<app-bottom-nav
+  [shadowStyle]="bottomNavShadow"
+  >
+</app-bottom-nav>

@@ -153,22 +153,24 @@ quill-editor {
     color: black;
   }
   .ql-toolbar.ql-snow > * {
-    transform: scale(1.15);
+    transform: scale(1.18);
   }
   .ql-container.ql-snow {
+    transform: scale(1);
     font-size: 1.6rem;
     font-family: "Inter", sans-serif;
     border-radius: 0px 0px $quill-corner $quill-corner;
     border: 1px solid transparent;
     background: white !important;
     @include style-bg('light');
-
+    font-weight: 500;
     box-shadow: 1px 10px 10px #00000005;
   }
   &.dark {
     color: $steel-light;
   }
 }
+
 
 /* -------------------------------------------------------------------------- */
 /*                                 COMPONENTS                                 */
@@ -205,6 +207,10 @@ app-drawer-menu,
 .drawer-wrapper,
 .search-prefix {
   z-index: calc($base-index * 5);
+}
+
+.ql-picker-options.ql-snow {
+  z-index: calc($base-index * 5.5);
 }
 
 app-overlay,

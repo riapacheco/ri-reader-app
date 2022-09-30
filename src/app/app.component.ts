@@ -6,6 +6,8 @@ import { LoadingOverlayService } from './services/loading-overlay.service';
 import { CameraService } from './services/camera.service';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { BREAKPOINT_VALUE } from './enums/breakpoint.enums';
+import { TShadowStyle } from './components/bottom-nav/bottom-nav.component';
+import { Router } from '@angular/router';
 
 
 
@@ -22,21 +24,23 @@ export class AppComponent implements OnInit, OnDestroy {
   lightTheme = true;
   isMobile!: boolean;
   isLoading = false; // for overlay spinner combo
+  bottomNavShadow: TShadowStyle = 'faint';
   private sub = new Subscription();
   @ViewChild('scrollToTopDiv') scrollToTopDiv!: ElementRef;
 
   constructor(
     public theme: ThemeService,
     private observer: BreakpointObserver,
-    public ocr: OcrService,
     public loading: LoadingOverlayService,
-    public camService: CameraService,
+    private router: Router
   ) {}
 
   /** @ignore */
   ngOnInit(): void {
     this.theme.getInitTheme();
     this.checkDeviceAndTheme();
+    // this.theme.updateTheme('dark');
+    this.theme.updateTheme('light');
   }
 
   /** @ignore */
@@ -59,6 +63,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   onRouteActivation() {
     this.scrollToTopDiv.nativeElement.scrollIntoView();
+    if (this.router.url == '/books') { this.bottomNavShadow = 'dark'; }
+    else { this.bottomNavShadow = 'faint'; }
   }
 
 }

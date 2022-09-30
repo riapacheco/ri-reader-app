@@ -515,15 +515,17 @@ export class PassagesComponent implements OnInit, OnDestroy {
 
     if (this.platform.ANDROID || this.platform.IOS) { this.passagesClassList.push(&#x27;platform&#x27;); }
     else { this.passagesClassList &#x3D; this.passagesClassList.filter((e: any) &#x3D;&gt; e !&#x3D;&#x3D; &#x27;platform&#x27;); }
+    
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div [class]&#x3D;&quot;passagesClassList&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">
+&lt;div [class]&#x3D;&quot;passagesClassList&quot;&gt;
   &lt;div class&#x3D;&quot;passages-content&quot;&gt;
-    Hello
+    
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
@@ -532,7 +534,25 @@ export class PassagesComponent implements OnInit, OnDestroy {
                 <p class="comment">
                     <code>./passages.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;node_modules/@riapacheco/yutes/season/two.scss&#x27;;
+@import &#x27;../../../scss/colors.scss&#x27;;
+@import &#x27;../../../scss/mixins.scss&#x27;;
+@import &#x27;../../../scss/variables.scss&#x27;;
+
+:host {
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.passages {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  /* ---------------------------------- DARK ---------------------------------- */
+  &amp;.dark {
+    @include style-bg(&#x27;dark&#x27;);
+    color: $steel-light;
+  }
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -560,8 +580,8 @@ export class PassagesComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div [class]="passagesClassList">  <div class="passages-content">    Hello  </div></div></div>'
-    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'app-accordion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'CaptureComponent', 'selector': 'app-capture'},{'name': 'CardsComponent', 'selector': 'app-cards'},{'name': 'FloatingMenuComponent', 'selector': 'app-floating-menu'},{'name': 'InsightsComponent', 'selector': 'app-insights'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoadingOverlayComponent', 'selector': 'app-loading-overlay'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'OverlayComponent', 'selector': 'app-overlay'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
+        var COMPONENT_TEMPLATE = '<div><div [class]="passagesClassList">  <div class="passages-content">      </div></div></div>'
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'app-accordion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'CaptureComponent', 'selector': 'app-capture'},{'name': 'CardsComponent', 'selector': 'app-cards'},{'name': 'EditorComponent', 'selector': 'app-editor'},{'name': 'FloatingMenuComponent', 'selector': 'app-floating-menu'},{'name': 'InsightsComponent', 'selector': 'app-insights'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoadingOverlayComponent', 'selector': 'app-loading-overlay'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'OverlayComponent', 'selector': 'app-overlay'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
     var DIRECTIVES = [{'name': 'OutsideClickDirective', 'selector': '[appOutsideClick]'},{'name': 'VerticalResizeDirective', 'selector': '[appVerticalResize]'}];
     var ACTUAL_COMPONENT = {'name': 'PassagesComponent'};
 </script>

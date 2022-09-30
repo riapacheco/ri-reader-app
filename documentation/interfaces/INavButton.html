@@ -326,6 +326,8 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, Input, OnInit, Output } from &#x27;@angular/core&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { ThemeService } from &#x27;src/app/services/theme.service&#x27;;
 
 export interface INavButton {
   icon?: string;
@@ -334,6 +336,8 @@ export interface INavButton {
   routerLink?: string;
   isActive?: boolean;
 }
+export type TShadowStyle &#x3D; &#x27;dark&#x27; | &#x27;medium&#x27; | &#x27;faint&#x27; ;
+
 @Component({
   selector: &#x27;app-bottom-nav&#x27;,
   templateUrl: &#x27;./bottom-nav.component.html&#x27;,
@@ -342,13 +346,35 @@ export interface INavButton {
 export class BottomNavComponent implements OnInit {
   @Output() buttonClick: EventEmitter&lt;any&gt; &#x3D; new EventEmitter&lt;any&gt;();
   @Input() buttons: INavButton[] &#x3D; [];
+  @Input() shadowStyle: TShadowStyle &#x3D; &#x27;faint&#x27;;
+  @Input() componentClass!: string[];
 
-  
+  private sub &#x3D; new Subscription();
   constructor(
-    public router: Router
+    public router: Router,
+    private theme: ThemeService
   ) { }
 
   ngOnInit(): void {
+    this.componentClass &#x3D; [&#x27;bottom-nav&#x27;];
+    this.checkTheme();
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
+  private checkTheme() {
+    const theme &#x3D; this.theme.getInitTheme();
+    if (theme &#x3D;&#x3D; &#x27;dark&#x27;) { this.componentClass.push(&#x27;dark&#x27;); }
+    else if (theme &#x3D;&#x3D; &#x27;light&#x27;) { this.componentClass &#x3D; this.componentClass.filter((x: any) &#x3D;&gt; x !&#x3D;&#x3D; &#x27;dark&#x27;); }
+    
+  }
+
+  drawShadow(shadowStyle: TShadowStyle): string {
+    if (shadowStyle &#x3D;&#x3D; &#x27;dark&#x27;) { return &#x27;0px -20px 55px #01041b50&#x27;; }
+    else if (shadowStyle &#x3D;&#x3D; &#x27;medium&#x27;) { return &#x27;0px -20px 55px #01041b2b&#x27;; }
+    else { return &#x27;0px -20px 55px #01041b12&#x27;; }
   }
 
   onButtonClick(data: any) {
