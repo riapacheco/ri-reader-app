@@ -47,7 +47,7 @@
   <li>Interfaces</li>
   <li
   >
-  IBookGenreRef</li>
+  IBookListItem</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -65,11 +65,17 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/interfaces/book.interface.ts</code>
+            <code>src/app/models/book.model.ts</code>
         </p>
 
 
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../interfaces/IBook.html" target="_self" >IBook</a></code>
+            </p>
 
         <section>
             <h3 id="index">Index</h3>
@@ -84,29 +90,24 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#book_genre_id" 
+                                            <span class="modifier">Optional</span>
+                                        <a href="#book" 
 >
-                                            book_genre_id
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#book_id" 
->
-                                            book_id
+                                            book
                                         </a>
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#created_at" 
+                                        <a href="#passage_count" 
 >
-                                            created_at
+                                            passage_count
                                         </a>
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#id" 
+                                        <a href="#passages" 
 >
-                                            id
+                                            passages
                                         </a>
                                 </li>
                             </ul>
@@ -124,9 +125,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="book_genre_id"></a>
-                                        <span class="name "><b>book_genre_id</b>
-                                            <a href="#book_genre_id">
+                                        <a name="book"></a>
+                                        <span class="name "><b>book</b>
+                                            <a href="#book">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -134,7 +135,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>book_genre_id:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                        <code>book:         <code><a href="../interfaces/IBook.html" target="_self" >IBook</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -142,73 +143,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="book_id"></a>
-                                        <span class="name "><b>book_id</b>
-                                            <a href="#book_id">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>book_id:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="created_at"></a>
-                                        <span class="name "><b>created_at</b>
-                                            <a href="#created_at">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>created_at:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                            <i>Type : </i>        <code><a href="../interfaces/IBook.html" target="_self" >IBook</a></code>
 
                                         </td>
                                     </tr>
@@ -228,9 +163,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="id"></a>
-                                        <span class="name "><b>id</b>
-                                            <a href="#id">
+                                        <a name="passage_count"></a>
+                                        <span class="name "><b>passage_count</b>
+                                            <a href="#passage_count">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -238,7 +173,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>id:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                        <code>passage_count:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -247,6 +182,44 @@
                                     <tr>
                                         <td class="col-md-4">
                                             <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="passages"></a>
+                                        <span class="name "><b>passages</b>
+                                            <a href="#passages">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>passages:         <code><a href="../interfaces/IPassage.html" target="_self" >IPassage[]</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../interfaces/IPassage.html" target="_self" >IPassage[]</a></code>
 
                                         </td>
                                     </tr>
@@ -267,63 +240,33 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface IBook {
-  id?: number;
-  title?: string;
-  cover_image?: string;
-  created_at?: Date;
-  author?: string;
-  target?: string;
-  description?: string;
-  passages?: any;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IBook } from &quot;../interfaces/book.interface&quot;;
+import { IPassage } from &quot;../interfaces/passage.interface&quot;;
+
+export interface IBookListItem extends IBook {
+  book?: IBook;
+  passages?: IPassage[];
+  passage_count?: number;
 }
 
+export class BookList {
+  private _bookListItems: IBookListItem[] &#x3D; [];
 
-export interface IBookGenreRef {
-  id?: number;
-  created_at?: Date;
-  book_genre_id: number;
-  book_id: number;
-}
+  constructor(bookListItems: IBookListItem[]) {
+    bookListItems.map((eachItem: IBookListItem) &#x3D;&gt; {
+      if (eachItem.passages) {
+        eachItem.passage_count &#x3D; eachItem.passages.length;
+      }
+    });
+    this._bookListItems &#x3D; bookListItems;
+  }
 
-
-/**
- * A {@link IBookGenre} is more or less just a category (or tag) that the user can attach to a {@link Book} for better cataloging
- */
-export interface IBookGenre {
-  id?: number;
-  created_at: Date;
-  label: string;
-  target?: string;
-  description?: string;
-  book_genre_ref_id?: number;
-}
-
-/**
- * A {@link IBookScoreTotal} is the total of 5 different {@link IBookScoreCategory}ies combined. It also tracks a pool of (for now) 100 points that the user can distribute among those 5 categories
- */
-export interface IBookScoreTotal {
-  id?: number;
-  book_id?: number;
-  created_at?: any;
-  updated_at?: any;
-  point_pool?: number;
-  total_point_capacity?: number;
-  total_point_value?: number;
-  percentage_score?: number;
-}
-
-
-/**
- * A {@link IBookScoreCategory} one of 5 categories (labelled by the user) which is related to a single book. The user is able to apply scores to each categories, but also apply weighting since all scores must total a sum of 100 points
- */
-export interface IBookScoreCategory {
-  id?: number;
-  book_score_total_id?: number;
-  created_at?: Date;
-  updated_at?: Date;
-  point_capacity?: number;
-  point_value?: number;
+  set bookList(bookItems: IBookListItem[]) {
+    this._bookListItems &#x3D; bookItems;
+  }
+  get bookList() {
+    return this._bookListItems;
+  }
 }
 </code></pre>
     </div>
@@ -362,7 +305,7 @@ export interface IBookScoreCategory {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'IBookGenreRef.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'IBookListItem.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

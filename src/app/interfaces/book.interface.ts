@@ -10,7 +10,6 @@ export interface IBook {
   author?: string;
   target?: string;
   description?: string;
-  passage_count?: number;
   passages?: any;
 }
 

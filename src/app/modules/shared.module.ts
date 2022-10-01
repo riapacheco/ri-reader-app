@@ -18,6 +18,7 @@ import { LoadingOverlayService } from '../services/loading-overlay.service';
 import { TopNavComponent } from '../components/top-nav/top-nav.component';
 import { EditorComponent } from '../components/editor/editor.component';
 import { QuillModule } from 'ngx-quill';
+import { PassageService } from '../services/passage.service';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { QuillModule } from 'ngx-quill';
     ThemeService,
     AuthService,
     LoadingOverlayService,
+    PassageService
   ]
 })
 export class SharedModule { }

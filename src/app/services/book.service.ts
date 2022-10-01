@@ -1,36 +1,46 @@
 import { Injectable } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
-import { BehaviorSubject } from 'rxjs';
 import { SUPABASE } from '../constants/supabase.constants';
 import { IBook } from '../interfaces/book.interface';
-import { Passage } from '../models/passage.model';
+import { IPassage } from '../interfaces/passage.interface';
+import { BookList, IBookListItem } from '../models/book.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
   private supabase!: SupabaseClient;
-  
-  private _bookCardPreview$ = new BehaviorSubject<IBook[]>([]);
-  public bookCardPreview$ = this._bookCardPreview$.asObservable();
-
-  coverImages = [
-    '../assets/backgrounds/paint/background_BOB.png',
-  ];
+  private bookList!: IBookListItem[];
 
   constructor() { this.supabase = createClient(SUPABASE.projectUrl, SUPABASE.anonKey); }
 
-  public async addBookAndPassage({
-    book,
-    passage
-  }:{
-    book: Partial<IBook>,
-    passage: Partial<Passage>
-  }) {
+  /* ----------------------------------- GET ---------------------------------- */
+  public async getBookListData(): Promise<IBookListItem[] | null | undefined> {
+    // IF local obj has nothing in it, THEN call Database
+    if (!this.bookList) {
+      try {
+        const { data, error } = await this.supabase.from('books').select('*, passages(body)');
+        // BookList model: insantiates + assigns passages.length (FK) to each's `passage_count`
+        if (data) { this.bookList = new BookList(data).bookList; }
+        return this.bookList;
+      }
+      catch(error) {
+        console.warn(error);
+        return;
+      }
+    } else { // ELSE: return what was stored the first time
+      console.log('Returning service stored data!'); 
+      return this.bookList; 
+    }
+  }
+
+
+  /* --------------------------------- CREATE --------------------------------- */
+  public async addBookAndPassage({ book, passage }:{ book: Partial<IBook>, passage: Partial<IPassage>}) {
     const { data, error } = await this.supabase
       .from<IBook>('books')
       .insert(book)
-
     if (data) {
       const { data: passageData, error: passageError } = await this.supabase
         .from('passages')
@@ -38,22 +48,16 @@ export class BookService {
     }
   }
 
-
-  /* ----------------------------------- GET ---------------------------------- */
-  public async getBookCardData(): Promise<any | null | undefined> {
+  public async addBook(book: IBook) {
     try {
       const { data, error } = await this.supabase
-        .from('books')
-        .select(`
-          *,
-          passages (
-            body
-          )
-        `);
+        .from<IBook>('books')
+        .insert(book);
       return data;
     }
-    catch (err) {
-      console.log(err);
+    catch (error) {
+      console.warn(error);
+      return;
     }
   }
 }

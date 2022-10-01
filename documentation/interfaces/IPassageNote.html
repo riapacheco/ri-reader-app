@@ -377,13 +377,20 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface IPassage {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IBook } from &quot;./book.interface&quot;;
+
+/**
+ * Defines the data types for the {@link Passage} class
+ */
+export interface IPassage {
   id?: number;
   book_id?: number;
   body?: string;
   created_at?: Date;
   page_number?: number;
   target?: string;
+
+  books?: IBook[]; // FK returns
 }
 
 /**

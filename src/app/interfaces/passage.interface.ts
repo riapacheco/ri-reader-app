@@ -1,3 +1,4 @@
+import { IBook } from "./book.interface";
 
 /**
  * Defines the data types for the {@link Passage} class
@@ -9,6 +10,8 @@ export interface IPassage {
   created_at?: Date;
   page_number?: number;
   target?: string;
+
+  books?: IBook[]; // FK returns
 }
 
 /**

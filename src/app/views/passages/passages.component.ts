@@ -3,6 +3,8 @@ import { Platform } from '@angular/cdk/platform';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { BREAKPOINT_VALUE } from 'src/app/enums/breakpoint.enums';
+import { IPassage } from 'src/app/interfaces/passage.interface';
+import { PassageService } from 'src/app/services/passage.service';
 import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
@@ -18,12 +20,14 @@ export class PassagesComponent implements OnInit, OnDestroy {
   constructor(
     private observer: BreakpointObserver,
     private theme: ThemeService,
-    private platform: Platform
+    private platform: Platform,
+    private passage: PassageService
   ) { }
 
   ngOnInit(): void {
     this.passagesClassList = ['passages'];
     this.checkDeviceAndTheme();
+    this.getPassages();
   }
   ngOnDestroy() { this.sub.unsubscribe(); }
 
@@ -46,5 +50,15 @@ export class PassagesComponent implements OnInit, OnDestroy {
     if (this.platform.ANDROID || this.platform.IOS) { this.passagesClassList.push('platform'); }
     else { this.passagesClassList = this.passagesClassList.filter((e: any) => e !== 'platform'); }
     
+  }
+
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  DATABASE                                  */
+  /* -------------------------------------------------------------------------- */
+  getPassages() {
+    this.passage.getPassages().then((res: any) => {
+      console.log(res);
+    })
   }
 }

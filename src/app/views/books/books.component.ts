@@ -3,6 +3,7 @@ import { Platform } from '@angular/cdk/platform';
 import { Component,  OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { BREAKPOINT_VALUE } from 'src/app/enums/breakpoint.enums';
+import { BookList } from 'src/app/models/book.model';
 import { BookService } from 'src/app/services/book.service';
 
 import { OcrService } from 'src/app/services/ocr.service';
@@ -35,6 +36,7 @@ export class BooksComponent implements OnInit {
   ngOnInit(): void {
     this.booksClassList = ['books'];
     this.sub.add(this.platformThemeState());
+    this.getBooks();
   }
   ngOnDestroy(): void { this.sub.unsubscribe(); }
 
@@ -65,15 +67,7 @@ export class BooksComponent implements OnInit {
   /*                               DATABASE STUFF                               */
   /* -------------------------------------------------------------------------- */
   getBooks() {
-    this.book.getBookCardData().then((data: any[]) => {
-      data.map((book: any) => {
-        if (book.passages) {
-          book.passage_count = book.passages.length;
-        }
-      })
-      this.bookCards = data;
-      console.log(this.bookCards);
-    })
+    this.book.getBookListData().then((data: any) => { this.bookCards = data; });
   }
 
   onSearch(data: any) {

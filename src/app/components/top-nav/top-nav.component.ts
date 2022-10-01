@@ -71,7 +71,6 @@ export class TopNavComponent implements OnInit, OnDestroy {
     const theme = this.theme.getInitTheme();
     if (theme == 'dark') { this.viewClass.push('dark'); }
     else if (theme == 'light') { this.viewClass = this.viewClass.filter((x: any) => x !== 'dark'); }
-    console.log(this.viewClass)
   }
 
   // Greeting based on time of day
