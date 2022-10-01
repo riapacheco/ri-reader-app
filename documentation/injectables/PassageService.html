@@ -234,7 +234,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>unknown</code>
 
                     </div>
                     <div class="io-description">
@@ -277,7 +277,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;[] | null | undefined&gt;</code>
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
 
                     </div>
                 </td>
@@ -370,16 +370,16 @@ export class PassageService {
   ) { this.supabase &#x3D; createClient(SUPABASE.projectUrl, SUPABASE.anonKey); }
 
   // Trying with more succinct call
-  public async getPassages(): Promise&lt;IPassage[] | null | undefined&gt; {
+  public async getPassages(): Promise&lt;any&gt; {
     if (!this.passages) {
       try {
-        const { data, error } &#x3D; await this.supabase.from(&#x27;passages&#x27;).select(&#x27;*, books(*)&#x27;);
-        if (data) { this.passages &#x3D; new Passages(data).passages }
+        const { data, error } &#x3D; await this.supabase.from(&#x27;passages&#x27;).select(&#x27;*, books( * )&#x27;);
+        if (data) { this.passages &#x3D; await new Passages(data).passages }
         return this.passages;
       } catch (error) { console.warn(error); return; }
     }
     else {
-      console.log(&#x27;Did not call DB&#x27;);
+      console.log(&#x60;Didn&#x27;t call &#x27;passages&#x27; database&#x60;);
       return this.passages;
     }
   }
@@ -392,6 +392,7 @@ export class PassageService {
       .from&lt;IPassage&gt;(&#x27;passages&#x27;)
       .insert({ book_id: data[0].id, ...passage});
     }
+    return data;
   }
 }
 </code></pre>

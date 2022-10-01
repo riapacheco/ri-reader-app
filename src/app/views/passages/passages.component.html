@@ -1,6 +1,12 @@
 
 <div [class]="passagesClassList">
   <div class="passages-content">
-    
+    <ul class="list-unstyled">
+      <li *ngFor="let p of passages">
+        {{ p.body }}
+
+        {{ p.book?.title }}
+      </li>
+    </ul>
   </div>
 </div>

@@ -430,8 +430,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="73"
-                            class="link-to-prism">src/app/views/books/books.component.ts:73</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/views/books/books.component.ts:76</a></div>
                 </td>
             </tr>
 
@@ -766,7 +766,10 @@ export class BooksComponent implements OnInit {
   /*                               DATABASE STUFF                               */
   /* -------------------------------------------------------------------------- */
   getBooks() {
-    this.book.getBookListData().then((data: any) &#x3D;&gt; { this.bookCards &#x3D; data; });
+    this.book.getBookListData().then((data: any) &#x3D;&gt; {
+      this.bookCards &#x3D; data;
+      console.log(data);
+    });
   }
 
   onSearch(data: any) {
@@ -789,9 +792,6 @@ export class BooksComponent implements OnInit {
     &lt;/app-cards&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-
-
-
 
 </code></pre>
     </div>

@@ -12,6 +12,7 @@ export interface IPassage {
   target?: string;
 
   books?: IBook[]; // FK returns
+  book?: IBook; // assigns to this object
 }
 
 /**

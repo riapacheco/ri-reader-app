@@ -30,7 +30,7 @@ export class BookService {
         return;
       }
     } else { // ELSE: return what was stored the first time
-      console.log('Returning service stored data!'); 
+      console.log(`Didn't call 'books' database`); 
       return this.bookList; 
     }
   }

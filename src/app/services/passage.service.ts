@@ -18,16 +18,16 @@ export class PassageService {
   ) { this.supabase = createClient(SUPABASE.projectUrl, SUPABASE.anonKey); }
 
   // Trying with more succinct call
-  public async getPassages(): Promise<IPassage[] | null | undefined> {
+  public async getPassages(): Promise<any> {
     if (!this.passages) {
       try {
-        const { data, error } = await this.supabase.from('passages').select('*, books(*)');
-        if (data) { this.passages = new Passages(data).passages }
+        const { data, error } = await this.supabase.from('passages').select('*, books( * )');
+        if (data) { this.passages = await new Passages(data).passages }
         return this.passages;
       } catch (error) { console.warn(error); return; }
     }
     else {
-      console.log('Did not call DB');
+      console.log(`Didn't call 'passages' database`);
       return this.passages;
     }
   }
@@ -40,5 +40,6 @@ export class PassageService {
       .from<IPassage>('passages')
       .insert({ book_id: data[0].id, ...passage});
     }
+    return data;
   }
 }

@@ -67,7 +67,10 @@ export class BooksComponent implements OnInit {
   /*                               DATABASE STUFF                               */
   /* -------------------------------------------------------------------------- */
   getBooks() {
-    this.book.getBookListData().then((data: any) => { this.bookCards = data; });
+    this.book.getBookListData().then((data: any) => {
+      this.bookCards = data;
+      console.log(data);
+    });
   }
 
   onSearch(data: any) {

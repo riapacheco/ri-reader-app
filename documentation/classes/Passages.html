@@ -185,11 +185,6 @@
 
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>[]</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
                                 <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/app/models/passage.model.ts:5</a></div>
@@ -227,7 +222,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/models/passage.model.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/models/passage.model.ts:15</a></div>
                                 </td>
                             </tr>
 
@@ -242,9 +237,13 @@
 
 
 export class Passages {
-  private _passages: IPassage[] &#x3D; [];
+  private _passages: IPassage[];
 
   constructor(passagesData: IPassage[]) {
+    passagesData.map((passage: any) &#x3D;&gt; {
+      if (passage.books) { passage.book &#x3D; passage.books; }
+    })
+
     this._passages &#x3D; passagesData;
   }
 

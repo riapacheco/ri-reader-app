@@ -14,6 +14,10 @@ import { ThemeService } from 'src/app/services/theme.service';
 })
 export class PassagesComponent implements OnInit, OnDestroy {
 
+  /* ---------------------------------- DATA ---------------------------------- */
+  passages!: IPassage[];
+
+  /* ------------------------- PRESENTATION PROPERTIES ------------------------ */
   passagesClassList: string[] = [];
   isMobile!: boolean;
   private sub = new Subscription();
@@ -57,8 +61,8 @@ export class PassagesComponent implements OnInit, OnDestroy {
   /*                                  DATABASE                                  */
   /* -------------------------------------------------------------------------- */
   getPassages() {
-    this.passage.getPassages().then((res: any) => {
-      console.log(res);
+    this.passage.getPassages().then((data: IPassage[]) => {
+      if (data) { this.passages = data; }
     })
   }
 }
