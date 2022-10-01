@@ -19,6 +19,8 @@ import { LoadingOverlayService } from './services/loading-overlay.service';
 import { LoadingOverlayComponent } from './components/loading-overlay/loading-overlay.component';
 import { FloatingMenuComponent } from './components/floating-menu/floating-menu.component';
 import { FloatingMenuService } from './services/floating-menu.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,12 @@ import { FloatingMenuService } from './services/floating-menu.service';
     AppRoutingModule,
     CommonModule,
     BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [
     { 
