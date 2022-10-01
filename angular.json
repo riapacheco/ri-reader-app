@@ -42,7 +42,9 @@
             "allowedCommonJsDependencies": [
               "rxjs-compat",
               "cross-fetch",
-              "websocket"
+              "websocket",
+              "quill",
+              "tesseract.js"
             ],
             "outputPath": "dist/ri-reader",
             "index": "src/index.html",
