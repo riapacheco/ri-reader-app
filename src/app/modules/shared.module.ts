@@ -21,6 +21,7 @@ import { QuillModule } from 'ngx-quill';
 import { PassageService } from '../services/passage.service';
 
 
+
 @NgModule({
   declarations: [
     OutsideClickDirective,
@@ -29,7 +30,7 @@ import { PassageService } from '../services/passage.service';
     VerticalResizeDirective,
     CapsPipe,
     TopNavComponent,
-    EditorComponent
+    EditorComponent,
   ],
   imports: [
     CommonModule,

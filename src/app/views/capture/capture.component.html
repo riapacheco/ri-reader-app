@@ -6,7 +6,9 @@
 
 <div [class]="viewClass">
   <div class="capture-content">
-
+    <input
+      type="text"
+      [(ngModel)]="passageText">
     <br><br>
     <app-accordion
       [summaryTitle]="'Preview Passage'"

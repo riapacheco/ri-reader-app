@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.theme.getInitTheme();
     this.checkDeviceAndTheme();
     // this.theme.updateTheme('dark');
-    this.theme.updateTheme('light');
+    // this.theme.updateTheme('light');
   }
 
   /** @ignore */

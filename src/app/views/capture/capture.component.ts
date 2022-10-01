@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { ThemeService } from 'src/app/services/theme.service';
@@ -13,7 +13,10 @@ import { BREAKPOINT_VALUE } from 'src/app/enums/breakpoint.enums';
 })
 export class CaptureComponent implements OnInit, OnDestroy {
   // image!: any;
-  passageText = '';
+  passageText = 'Passage text';
+
+  /* --------------------------- EDITING PROPERTIES --------------------------- */
+  highlightedText!: any;
 
   /* ------------------------- PRESENTATION PROPERTIES ------------------------ */
   modules = { toolbar: [ ['bold', 'italic', 'underline'], [{'list':'ordered'},{'list':'bullet'}],] }; // Quill editor
@@ -31,6 +34,7 @@ export class CaptureComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.viewClass = ['capture'];
     this.checkDeviceAndTheme();
+
   }
 
   ngOnDestroy() {
@@ -54,5 +58,32 @@ export class CaptureComponent implements OnInit, OnDestroy {
 
     if (this.platform.ANDROID || this.platform.IOS) { this.viewClass.push('platform'); }
     else { this.viewClass = this.viewClass.filter((e: any) => e !== 'platform'); }
+  }
+
+  onSelect(textData: any){
+    console.log(textData);
+  }
+
+  @HostListener('mouseup', ['$event']) public onTextSelect() {
+    const text = this.getSelectedText();
+    console.log(text);
+  }
+  @HostListener('touchend', ['$event']) public onTextTouch() {
+    const text = this.getSelectedText();
+    console.log('touch => ', text);
+  }
+
+  private getSelectedText(): string | undefined {
+    const selectedTextExists = window.getSelection()?.toString().length;
+    const selectedText = window.getSelection()?.toString();
+
+    if (selectedTextExists) { return selectedText; }
+    return selectedText;
+  }
+
+  private clearSelectedText() {
+    window.getSelection()?.empty(); // Chrome
+    window.getSelection()?.removeAllRanges(); // Firefox
+    document.getSelection()?.removeAllRanges(); // IE
   }
 }
