@@ -1,6 +1,6 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { Platform } from '@angular/cdk/platform';
 import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BREAKPOINT_VALUE } from 'src/app/enums/breakpoint.enums';
 import { ThemeService } from 'src/app/services/theme.service';
@@ -41,7 +41,7 @@ export class TopNavComponent implements OnInit, OnDestroy {
   constructor(
     private observer: BreakpointObserver,
     private theme: ThemeService,
-    private platform: Platform
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -90,7 +90,9 @@ export class TopNavComponent implements OnInit, OnDestroy {
   }
 
   // Methods
-  onAvatarClick(event: any) { this.avatarClick.emit(event); }
+  onAvatarClick(event: any) {
+    if (event) { this.router.navigateByUrl('/account'); }
+  }
   onActionClick(event: any) { this.actionButtonClick.emit(event); }
   onEnter() { this.enterDown.emit(this.searchText); }
 }

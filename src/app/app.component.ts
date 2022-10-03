@@ -8,6 +8,7 @@ import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { BREAKPOINT_VALUE } from './enums/breakpoint.enums';
 import { TShadowStyle } from './components/bottom-nav/bottom-nav.component';
 import { Router } from '@angular/router';
+import { SupabaseService } from './services/supabase.service';
 
 
 
@@ -18,6 +19,9 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit, OnDestroy {
 
+  /* ---------------------------------- AUTH ---------------------------------- */
+  session = this.supabase.session;
+
   /* -------------------------------------------------------------------------- */
   /*                       GENERAL APP AND VIEW PROPERTIES                      */
   /* -------------------------------------------------------------------------- */
@@ -25,10 +29,12 @@ export class AppComponent implements OnInit, OnDestroy {
   isMobile!: boolean;
   isLoading = false; // for overlay spinner combo
   bottomNavShadow: TShadowStyle = 'faint';
+  showsBottomNav = true;
   private sub = new Subscription();
   @ViewChild('scrollToTopDiv') scrollToTopDiv!: ElementRef;
 
   constructor(
+    private readonly supabase: SupabaseService,
     public theme: ThemeService,
     private observer: BreakpointObserver,
     public loading: LoadingOverlayService,
@@ -63,7 +69,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   onRouteActivation() {
     this.scrollToTopDiv.nativeElement.scrollIntoView();
+    const accountView = this.router.url == '/account';
     if (this.router.url == '/books') { this.bottomNavShadow = 'dark'; }
+    else if (accountView) { this.showsBottomNav = false; }
     else { this.bottomNavShadow = 'faint'; }
   }
 

@@ -74,6 +74,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+import { AccountProfileComponent } from &#x27;./views/account-profile/account-profile.component&#x27;;
 
 const routes: Routes &#x3D; [
   {
@@ -100,6 +101,10 @@ const routes: Routes &#x3D; [
     path: &#x27;capture&#x27;,
     loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modules/capture/capture.module&#x27;)\
       .then(m &#x3D;&gt; m.CaptureModule)&quot;
+  },
+  {
+    path: &#x27;account&#x27;,
+    component: AccountProfileComponent
   }
 ];
 

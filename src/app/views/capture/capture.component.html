@@ -6,18 +6,13 @@
 
 <div [class]="viewClass">
   <div class="capture-content">
-    <input
-      type="text"
-      [(ngModel)]="passageText">
-    <br><br>
-    <app-accordion
-      [summaryTitle]="'Preview Passage'"
-      [isOpen]="true">
-      <div class="accordion-content" accordionContent>
-        <div class="inner-html-wrapper">
-          <div [innerHTML]="passageText"></div>
-        </div>
-      </div>
-    </app-accordion>
+    <div (appOutsideClick)="onOutsideClick($event)"></div>
+    <quill-editor
+      [modules]="modules"
+      [styles]="style"
+      [(ngModel)]="passageText"
+      #passageEditor>
+    </quill-editor>
+    {{ passageText }}
   </div>
 </div>

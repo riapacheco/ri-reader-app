@@ -49,7 +49,7 @@ $mobile-content-width: 90%;
   @if $textEl == 'h3' {
     font-size: 2.8rem;
     line-height: 2.8rem;
-    letter-spacing: -0.07rem;
+    letter-spacing: -0.1rem;
     margin-block-start: -1px;
     margin-block-end: 3px;
     margin-inline-start: 0px;
@@ -60,7 +60,7 @@ $mobile-content-width: 90%;
   @if $textEl == 'h4' {
     font-size: 2.3rem;
     line-height: 2.3rem;
-    letter-spacing: -0.05rem;
+    letter-spacing: -0.08rem;
     font-weight: 600;
     margin-block-start: -1px;
     margin-block-end: 2px;
@@ -71,7 +71,8 @@ $mobile-content-width: 90%;
   @if $textEl == 'h5' {
     font-size: 1.9rem;
     line-height: 1.9rem;
-    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: -0.08rem;
     margin-block-start: -1px;
     margin-block-end: 2px;
     margin-inline-start: 0px;
@@ -162,6 +163,15 @@ $mobile-content-width: 90%;
   } 
   @if $mode == 'dark' {
     background-image: linear-gradient(to bottom right, rgb(11, 11, 12), $black, $midnight-dark);
+    background-attachment: fixed;
+  }
+
+  @if $mode == 'color-mix' {
+    background-image: linear-gradient(to bottom right, $bondi-medium, $canary-medium);
+    background-attachment: fixed;
+  }
+  @if $mode == 'color-mix reversed' {
+    background-image: linear-gradient(to top left, $bondi-medium, $canary-medium);
     background-attachment: fixed;
   }
 }

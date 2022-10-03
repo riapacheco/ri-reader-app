@@ -129,7 +129,19 @@ details > summary {
 details > summary::-webkit-details-marker,
 details > summary::marker { display: none; }
 
-
+.error-message {
+  color: $danger;
+  font-weight: 500;
+}
+/* -------------------------------------------------------------------------- */
+/*                                   HEADERS                                  */
+/* -------------------------------------------------------------------------- */
+h1 { @include text('h1'); }
+h2 { @include text('h2'); }
+h3 { @include text('h3'); }
+h4 { @include text('h4'); }
+h5 { @include text('h5'); }
+h6 { @include text('h6'); }
 
 /* -------------------------------------------------------------------------- */
 /*                                PLUGIN STYLES                               */

@@ -217,7 +217,7 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>{ toolbar: [ 
     [&#x27;bold&#x27;, &#x27;italic&#x27;],
-    [&#x27;sanitize&#x27;],
+    [],
     [&#x27;blockquote&#x27;, &#x27;code-block&#x27;],
     [{&#x27;list&#x27;:&#x27;ordered&#x27;},{&#x27;list&#x27;:&#x27;bullet&#x27;}],
     [&#x27;image&#x27;, &#x27;video&#x27;],
@@ -306,7 +306,7 @@ export class EditorComponent {
   @Input() placeholder &#x3D; &#x27;Edit passages here...&#x27;
   @Input() modules &#x3D; { toolbar: [ 
     [&#x27;bold&#x27;, &#x27;italic&#x27;],
-    [&#x27;sanitize&#x27;],
+    [],
     [&#x27;blockquote&#x27;, &#x27;code-block&#x27;],
     [{&#x27;list&#x27;:&#x27;ordered&#x27;},{&#x27;list&#x27;:&#x27;bullet&#x27;}],
     [&#x27;image&#x27;, &#x27;video&#x27;],
@@ -360,7 +360,7 @@ export class EditorComponent {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><quill-editor  [modules]="modules"  [styles]="styles"  ></quill-editor></div>'
-    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'app-accordion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'CaptureComponent', 'selector': 'app-capture'},{'name': 'CardsComponent', 'selector': 'app-cards'},{'name': 'EditorComponent', 'selector': 'app-editor'},{'name': 'FloatingMenuComponent', 'selector': 'app-floating-menu'},{'name': 'InsightsComponent', 'selector': 'app-insights'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoadingOverlayComponent', 'selector': 'app-loading-overlay'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'OverlayComponent', 'selector': 'app-overlay'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'app-accordion'},{'name': 'AccountProfileComponent', 'selector': 'app-account-profile'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'CaptureComponent', 'selector': 'app-capture'},{'name': 'CardsComponent', 'selector': 'app-cards'},{'name': 'EditorComponent', 'selector': 'app-editor'},{'name': 'FloatingMenuComponent', 'selector': 'app-floating-menu'},{'name': 'InsightsComponent', 'selector': 'app-insights'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoadingOverlayComponent', 'selector': 'app-loading-overlay'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'OverlayComponent', 'selector': 'app-overlay'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'ToggleTabsComponent', 'selector': 'app-toggle-tabs'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
     var DIRECTIVES = [{'name': 'OutsideClickDirective', 'selector': '[appOutsideClick]'},{'name': 'VerticalResizeDirective', 'selector': '[appVerticalResize]'}];
     var ACTUAL_COMPONENT = {'name': 'EditorComponent'};
 </script>

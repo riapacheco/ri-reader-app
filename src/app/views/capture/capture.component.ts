@@ -4,6 +4,7 @@ import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { ThemeService } from 'src/app/services/theme.service';
 import { Platform } from '@angular/cdk/platform';
 import { BREAKPOINT_VALUE } from 'src/app/enums/breakpoint.enums';
+import { QUILL_MODULES, QUILL_STYLES } from 'src/app/constants/quill.constants';
 
 
 @Component({
@@ -13,13 +14,19 @@ import { BREAKPOINT_VALUE } from 'src/app/enums/breakpoint.enums';
 })
 export class CaptureComponent implements OnInit, OnDestroy {
   // image!: any;
-  passageText = 'Passage text';
+  passageText = '';
 
   /* --------------------------- EDITING PROPERTIES --------------------------- */
   highlightedText!: any;
+  @ViewChild('passageEditor') passageEditor!: ElementRef;
+
 
   /* ------------------------- PRESENTATION PROPERTIES ------------------------ */
-  modules = { toolbar: [ ['bold', 'italic', 'underline'], [{'list':'ordered'},{'list':'bullet'}],] }; // Quill editor
+  // QUILL EDITOR
+  modules = QUILL_MODULES;
+  style = QUILL_STYLES;
+
+  // MAIN PRESENTATION PROPS
   viewClass: string[] = []; // Wrapper class
   viewTitle = 'Add New Passage'; // Top Bar
   isMobile!: boolean;
@@ -64,26 +71,30 @@ export class CaptureComponent implements OnInit, OnDestroy {
     console.log(textData);
   }
 
-  @HostListener('mouseup', ['$event']) public onTextSelect() {
-    const text = this.getSelectedText();
-    console.log(text);
-  }
-  @HostListener('touchend', ['$event']) public onTextTouch() {
-    const text = this.getSelectedText();
-    console.log('touch => ', text);
-  }
-
-  private getSelectedText(): string | undefined {
-    const selectedTextExists = window.getSelection()?.toString().length;
+  @HostListener('mouseup', ['$event']) public onMouseTextSelect() {
+    const textExists = window.getSelection()?.toString().length;
     const selectedText = window.getSelection()?.toString();
+    const editor = this.passageEditor.nativeElement;
 
-    if (selectedTextExists) { return selectedText; }
-    return selectedText;
+    if (textExists) {
+      this.highlightedText = selectedText;
+      console.log(`User mouse-highlighted "${selectedText}" from within the rich text editor`)
+    }    
   }
 
-  private clearSelectedText() {
-    window.getSelection()?.empty(); // Chrome
-    window.getSelection()?.removeAllRanges(); // Firefox
-    document.getSelection()?.removeAllRanges(); // IE
+  @HostListener('touchend', ['$event']) public onTouchTextSelect() {
+    const textExists = window.getSelection()?.toString().length;
+    const selectedText = window.getSelection()?.toString();
+    const editor = this.passageEditor.nativeElement;
+
+    if (textExists) {
+      this.highlightedText = selectedText;
+      console.log(`User touch-highlighted "${selectedText}" from within the rich text editor`);
+    }
+
+  }
+
+  onOutsideClick(e: any) {
+    console.log(e);
   }
 }

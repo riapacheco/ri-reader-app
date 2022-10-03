@@ -36,7 +36,7 @@ export class BooksComponent implements OnInit {
   ngOnInit(): void {
     this.booksClassList = ['books'];
     this.sub.add(this.platformThemeState());
-    this.getBooks();
+    // this.getBooks();
   }
   ngOnDestroy(): void { this.sub.unsubscribe(); }
 

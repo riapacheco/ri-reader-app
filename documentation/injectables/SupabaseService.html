@@ -79,7 +79,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#_supabase" >_supabase</a>
+                                <a href="#supabase" >supabase</a>
                             </li>
                         </ul>
                     </td>
@@ -94,11 +94,26 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getAll" >getAll</a>
+                                <a href="#authChanges" >authChanges</a>
+                            </li>
+                            <li>
+                                <a href="#downloadImage" >downloadImage</a>
+                            </li>
+                            <li>
+                                <a href="#signIn" >signIn</a>
+                            </li>
+                            <li>
+                                <a href="#signOut" >signOut</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#update" >update</a>
+                                <a href="#signUp" >signUp</a>
+                            </li>
+                            <li>
+                                <a href="#updateProfile" >updateProfile</a>
+                            </li>
+                            <li>
+                                <a href="#uploadAvatar" >uploadAvatar</a>
                             </li>
                         </ul>
                     </td>
@@ -108,6 +123,26 @@
 
 
 
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#user" >user</a>
+                                </li>
+                                <li>
+                                    <a href="#session" >session</a>
+                                </li>
+                                <li>
+                                    <a href="#profile" >profile</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
         </tbody>
     </table>
 </section>
@@ -123,7 +158,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/services/supabase.service.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/supabase.service.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -140,125 +175,16 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getAll"></a>
+                    <a name="authChanges"></a>
                     <span class="name">
-                        <span ><b>getAll</b></span>
-                        <a href="#getAll"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>authChanges</b></span>
+                        <a href="#authChanges"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getAll(tableName: <a href="../undefineds/TSupabaseTable.html" target="_self">TSupabaseTable</a>, fieldName?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, isAscending?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/services/supabase.service.ts:28</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>tableName</td>
-                                    <td>
-                                                <code><a href="../miscellaneous/typealiases.html#TSupabaseTable" target="_self" >TSupabaseTable</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>Name of table to query from supabase</p>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>fieldName</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        Yes
-                                    </td>
-
-
-                                    <td>
-                                        <p>IF not undefined, defines the column to apply order() to</p>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>isAscending</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                    </td>
-
-                                    <td>
-                                        Yes
-                                    </td>
-
-
-                                    <td>
-                                        <p>IF not undefined, defines direction of order</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>Table as observable in order specified (if specified)</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="update"></a>
-                    <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>update</b></span>
-                        <a href="#update"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>update(tableName: <a href="../undefineds/TSupabaseTable.html" target="_self">TSupabaseTable</a>, object: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank">object</a>)</code>
+<code>authChanges(callback: (event: AuthChangeEvent,session: Session | null) => void)</code>
                 </td>
             </tr>
 
@@ -273,8 +199,6 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Only should be</p>
-</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -285,14 +209,13 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
-                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>tableName</td>
+                                    <td>callback</td>
                                     <td>
-                                                <code><a href="../miscellaneous/typealiases.html#TSupabaseTable" target="_self" >TSupabaseTable</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
                                     </td>
 
                                     <td>
@@ -300,26 +223,6 @@
                                     </td>
 
 
-                                    <td>
-                                        <p>Name of table to insert data into</p>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>object</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>Actual data to be passed through with { column_name: &#39;value&#39; }</p>
-
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -327,12 +230,419 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>unknown</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
-                        <p>whatever data was inserted if successful</p>
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="downloadImage"></a>
+                    <span class="name">
+                        <span ><b>downloadImage</b></span>
+                        <a href="#downloadImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>downloadImage(path: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
 
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/services/supabase.service.ts:79</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>path</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="signIn"></a>
+                    <span class="name">
+                        <span ><b>signIn</b></span>
+                        <a href="#signIn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>signIn(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/services/supabase.service.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>email</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="signOut"></a>
+                    <span class="name">
+                        <span ><b>signOut</b></span>
+                        <a href="#signOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>signOut()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/services/supabase.service.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="signUp"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>signUp</b></span>
+                        <a href="#signUp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>signUp(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/app/services/supabase.service.ts:47</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>email</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>password</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateProfile"></a>
+                    <span class="name">
+                        <span ><b>updateProfile</b></span>
+                        <a href="#updateProfile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateProfile(profile: <a href="../interfaces/IProfile.html" target="_self">IProfile</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/services/supabase.service.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>profile</td>
+                                    <td>
+                                                <code><a href="../interfaces/IProfile.html" target="_self" >IProfile</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadAvatar"></a>
+                    <span class="name">
+                        <span ><b>uploadAvatar</b></span>
+                        <a href="#uploadAvatar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>uploadAvatar(filePath: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, file: File)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/services/supabase.service.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filePath</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>file</td>
+                                    <td>
+                                            <code>File</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -348,23 +658,23 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="_supabase"></a>
+                    <a name="supabase"></a>
                     <span class="name">
                             <span class="modifier">Private</span>
-                        <span ><b>_supabase</b></span>
-                        <a href="#_supabase"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>supabase</b></span>
+                        <a href="#supabase"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <i>Type : </i>    <code>SupabaseClient</code>
 
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/services/supabase.service.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/supabase.service.ts:10</a></div>
                         </td>
                     </tr>
 
@@ -373,59 +683,166 @@
     </table>
 </section>
 
+            <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <span class="name"><b>user</b><a href="#user"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>user()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/services/supabase.service.ts:24</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="session"></a>
+                        <span class="name"><b>session</b><a href="#session"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>session()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/services/supabase.service.ts:27</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="profile"></a>
+                        <span class="name"><b>profile</b><a href="#profile"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>profile()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/services/supabase.service.ts:30</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { createClient } from &#x27;@supabase/supabase-js&#x27;;
-import { from, Observable } from &#x27;rxjs&#x27;;
+import { AuthChangeEvent, createClient, Session, SupabaseClient } from &#x27;@supabase/supabase-js&#x27;;
 import { SUPABASE } from &#x27;../constants/supabase.constants&#x27;;
-import { TSupabaseTable } from &#x27;../types/supabase.types&#x27;;
-import { map } from &#x27;rxjs&#x27;;
+import { IProfile } from &#x27;../interfaces/user-profile.interface&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
-/**
- * This service is more or less a one-size fits all for flexible querying.
- */
 export class SupabaseService {
-  private _supabase!: any;
+  private supabase!: SupabaseClient;
 
   constructor() {
-    this._supabase &#x3D; createClient(SUPABASE.projectUrl, SUPABASE.anonKey);
+    this.supabase &#x3D; createClient(
+      SUPABASE.projectUrl,
+      SUPABASE.anonKey
+    )
   }
 
-  /**
-   * 
-   * @param tableName Name of table to query from supabase
-   * @param fieldName IF not undefined, defines the column to apply order() to
-   * @param isAscending IF not undefined, defines direction of order
-   * @returns Table as observable in order specified (if specified)
-   */
-  getAll(tableName: TSupabaseTable, fieldName?: string, isAscending?: boolean): Observable&lt;any&gt; {
-    const query &#x3D; this._supabase.from(tableName).select(&#x27;*&#x27;)
-    if (fieldName !&#x3D;&#x3D; undefined &amp;&amp; isAscending !&#x3D;&#x3D; undefined) {
-      query.order(fieldName, { ascending: isAscending });
+  /* -------------------------------------------------------------------------- */
+  /*                                   GETTERS                                  */
+  /* -------------------------------------------------------------------------- */
+
+  /* ---------------------------------- USER ---------------------------------- */
+  get user() { return this.supabase.auth.user(); }
+
+  /* --------------------------------- SESSION -------------------------------- */
+  get session() { return this.supabase.auth.session(); }
+
+  /* --------------------------------- PROFILE -------------------------------- */
+  get profile() {
+    return this.supabase
+      .from(&#x27;profiles&#x27;)
+      .select(&#x27;username, website, avatar_url, screen_name&#x27;)
+      .eq(&#x27;id&#x27;, this.user?.id)
+      .single();
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                                   METHODS                                  */
+  /* -------------------------------------------------------------------------- */
+  /* ------------------------------ TRACK CHANGES ----------------------------- */
+  authChanges(
+    callback: (event: AuthChangeEvent, session: Session | null) &#x3D;&gt; void
+  ) { return this.supabase.auth.onAuthStateChange(callback) }
+
+  /* --------------------------- SIGN UP / IN / OUT --------------------------- */
+  async signUp(email: string, password: string) {
+    const { user, session, error } &#x3D; await this.supabase.auth.signUp({
+      email, password
+    });
+
+    console.log(&#x27;user&#x27;, user);
+    console.log(&#x27;session&#x27;, session);
+    console.log(&#x27;error&#x27;, error);
+  }
+  signIn(email: string) {
+    return this.supabase.auth.signIn({ email });
+  }
+
+  signOut() {
+    return this.supabase.auth.signOut();
+  }
+
+  /* --------------------------------- PROFILE -------------------------------- */
+  updateProfile(profile: IProfile) {
+    const update &#x3D; {
+      ...profile,
+      id: this.user?.id,
+      updated_at: new Date()
     }
-    return from(query).pipe(map((res: any) &#x3D;&gt; res[&#x27;body&#x27;]));
+
+    return this.supabase.from(&#x27;profiles&#x27;).upsert(
+      update, {
+        returning: &#x27;minimal&#x27;
+      }
+    )
   }
 
-  /**
-   * Only should be 
-   * @param tableName Name of table to insert data into
-   * @param object Actual data to be passed through with { column_name: &#x27;value&#x27; }
-   * @returns whatever data was inserted if successful
-   */
-  async update(tableName: TSupabaseTable, object: object) {
-    const { data, error } &#x3D; await this._supabase.from(tableName)
-                                                .insert([object]);
-    return data;
+  downloadImage(path: string) {
+    return this.supabase.storage.from(&#x27;avatars&#x27;).download(path);
   }
 
-  
-  
+  uploadAvatar(filePath: string, file: File) {
+    return this.supabase.storage.from(&#x27;avatars&#x27;).upload(filePath, file);
+  }
 }
 </code></pre>
     </div>

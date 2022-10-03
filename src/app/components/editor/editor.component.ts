@@ -11,7 +11,7 @@ export class EditorComponent {
   @Input() placeholder = 'Edit passages here...'
   @Input() modules = { toolbar: [ 
     ['bold', 'italic'],
-    ['sanitize'],
+    [],
     ['blockquote', 'code-block'],
     [{'list':'ordered'},{'list':'bullet'}],
     ['image', 'video'],

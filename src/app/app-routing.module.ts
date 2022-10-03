@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccountProfileComponent } from './views/account-profile/account-profile.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
     path: 'capture',
     loadChildren: () => import('./modules/capture/capture.module')
       .then(m => m.CaptureModule)
+  },
+  {
+    path: 'account',
+    component: AccountProfileComponent
   }
 ];
 

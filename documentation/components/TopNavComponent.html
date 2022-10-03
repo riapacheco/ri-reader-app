@@ -263,7 +263,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(observer: BreakpointObserver, theme: <a href="../injectables/ThemeService.html" target="_self">ThemeService</a>, platform: Platform)</code>
+<code>constructor(observer: BreakpointObserver, theme: <a href="../injectables/ThemeService.html" target="_self">ThemeService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -310,10 +310,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>platform</td>
+                                                        <td>router</td>
                                                   
                                                         <td>
-                                                                    <code>Platform</code>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -744,8 +744,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:96</a></div>
                 </td>
             </tr>
 
@@ -882,8 +882,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="95"
-                            class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:95</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/components/top-nav/top-nav.component.ts:97</a></div>
                 </td>
             </tr>
 
@@ -1187,8 +1187,8 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BreakpointObserver, BreakpointState } from &#x27;@angular/cdk/layout&#x27;;
-import { Platform } from &#x27;@angular/cdk/platform&#x27;;
 import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 import { Subscription } from &#x27;rxjs&#x27;;
 import { BREAKPOINT_VALUE } from &#x27;src/app/enums/breakpoint.enums&#x27;;
 import { ThemeService } from &#x27;src/app/services/theme.service&#x27;;
@@ -1229,7 +1229,7 @@ export class TopNavComponent implements OnInit, OnDestroy {
   constructor(
     private observer: BreakpointObserver,
     private theme: ThemeService,
-    private platform: Platform
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -1278,7 +1278,9 @@ export class TopNavComponent implements OnInit, OnDestroy {
   }
 
   // Methods
-  onAvatarClick(event: any) { this.avatarClick.emit(event); }
+  onAvatarClick(event: any) {
+    if (event) { this.router.navigateByUrl(&#x27;/account&#x27;); }
+  }
   onActionClick(event: any) { this.actionButtonClick.emit(event); }
   onEnter() { this.enterDown.emit(this.searchText); }
 }
@@ -1650,7 +1652,7 @@ $search-field-height: 46px;
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div [class]="viewClass">  <ng-container *ngIf="isLargeBar;else shortNav">    <div class="top-nav-content">      <!-- -------------------- USER AVATAR AND "ADD" BUTTON --------------------- -->      <div class="user-action-block">         <a          (click)="onAvatarClick($event)"          class="user-avatar">          <img [src]="userImage" alt="">            <ng-container *ngIf="badge.state">            <div *ngIf="badge.state == \'success\'" class="badge success"></div>            <div *ngIf="badge.state == \'danger\'" class="badge danger"></div>          </ng-container>        </a>          <div class="action-button" #actionButtonRect>          <a (click)="onActionClick($event)">            <i class="material-icons">              {{ actionButtonIcon }}            </i>          </a>        </div>      </div>        <!-- ------------------------------ GREETINGS ------------------------------ -->      <div class="greeting-block">        <h1>          {{ titleText }}        </h1>      </div>        <!-- ---------------------------- OTHER OPTIONS ---------------------------- -->      <div class="other-actions-block">        <ng-container *ngIf="showsInputField">          <div class="input-field-wrapper">            <!--Search field-->            <div class="form-group">                  <input                (keydown.enter)="onEnter()"                (keyup)="onEnter()"                [(ngModel)]="searchText"                [placeholder]="input.placeholder"                (focus)="onInputFocusToggle(\'typing\')"                (focusout)="onInputFocusToggle(\'done\')"                (keydown)="onEnter()"                type="text"                >              <div class="prefix-icon">                <i                  [ngClass]="inputFocused ? \'material-icons focused\' : \'material-icons\'" id="searchPrefix">                  {{ input.prefixIcon }}                </i>              </div>            </div>          </div>        </ng-container>      </div>    </div>  </ng-container>  <ng-template #shortNav>    <div class="short-nav">      <div class="short-nav-content">        <a class="user-image">          <img [src]="userImage" alt="">        </a>        <div class="form-group">          <input            type="text">        </div>        <div class="action-button">          <a (click)="onActionClick($event)">            <i class="material-icons">              {{ actionButtonIcon }}            </i>          </a>        </div>      </div>    </div>  </ng-template></div></div>'
-    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'app-accordion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'CaptureComponent', 'selector': 'app-capture'},{'name': 'CardsComponent', 'selector': 'app-cards'},{'name': 'EditorComponent', 'selector': 'app-editor'},{'name': 'FloatingMenuComponent', 'selector': 'app-floating-menu'},{'name': 'InsightsComponent', 'selector': 'app-insights'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoadingOverlayComponent', 'selector': 'app-loading-overlay'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'OverlayComponent', 'selector': 'app-overlay'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'app-accordion'},{'name': 'AccountProfileComponent', 'selector': 'app-account-profile'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'CaptureComponent', 'selector': 'app-capture'},{'name': 'CardsComponent', 'selector': 'app-cards'},{'name': 'EditorComponent', 'selector': 'app-editor'},{'name': 'FloatingMenuComponent', 'selector': 'app-floating-menu'},{'name': 'InsightsComponent', 'selector': 'app-insights'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoadingOverlayComponent', 'selector': 'app-loading-overlay'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'OverlayComponent', 'selector': 'app-overlay'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'ToggleTabsComponent', 'selector': 'app-toggle-tabs'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
     var DIRECTIVES = [{'name': 'OutsideClickDirective', 'selector': '[appOutsideClick]'},{'name': 'VerticalResizeDirective', 'selector': '[appVerticalResize]'}];
     var ACTUAL_COMPONENT = {'name': 'TopNavComponent'};
 </script>

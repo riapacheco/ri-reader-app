@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginRegisterComponent } from './views/login-register/login-register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PassagesComponent } from './views/passages/passages.component';
@@ -21,17 +20,20 @@ import { FloatingMenuComponent } from './components/floating-menu/floating-menu.
 import { FloatingMenuService } from './services/floating-menu.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { LoginComponent } from './views/login/login.component';
+import { AccountProfileComponent } from './views/account-profile/account-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginRegisterComponent,
     PassagesComponent,
     BottomNavComponent,
     LoadingComponent,
     OverlayComponent,
     LoadingOverlayComponent,
     FloatingMenuComponent,
+    LoginComponent,
+    AccountProfileComponent,
   ],
   imports: [
     BrowserModule,

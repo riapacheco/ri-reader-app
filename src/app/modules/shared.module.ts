@@ -7,8 +7,6 @@ import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ThemeService } from '../services/theme.service';
-
-import { AuthService } from '../services/auth.service';
 import { OutsideClickDirective } from '../directives/outside-click.directive';
 import { FilterAllPipe } from '../pipes/filter-all.pipe';
 import { FilterPipe } from '../pipes/filter.pipe';
@@ -54,7 +52,6 @@ import { PassageService } from '../services/passage.service';
   ],
   providers: [
     ThemeService,
-    AuthService,
     LoadingOverlayService,
     PassageService
   ]

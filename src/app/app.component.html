@@ -2,7 +2,6 @@
 <!--                        VISUALLY HIDDEN ELEMENTS                         -->
 <!-- ----------------------------------------------------------------------- -->
 <div #scrollToTopDiv></div>
-
 <app-floating-menu></app-floating-menu>
 <ng-container *ngIf="(loading.isLoading$ | async)">
   <app-loading-overlay></app-loading-overlay>
@@ -12,9 +11,20 @@
 <!-- ----------------------------------------------------------------------- -->
 <!--                           ROUTER-OUTLET VIEW                            -->
 <!-- ----------------------------------------------------------------------- -->
-<router-outlet (activate)="onRouteActivation()"></router-outlet>
-<!-- ----------------- BOTTOM NAV / MOBILE VIEW NAVIGATION ----------------- -->
-<app-bottom-nav
-  [shadowStyle]="bottomNavShadow"
-  >
-</app-bottom-nav>
+<ng-container *ngIf="session;else loginView">
+  <router-outlet (activate)="onRouteActivation()"></router-outlet>
+  <!-- ----------------- BOTTOM NAV / MOBILE VIEW NAVIGATION ----------------- -->
+  <ng-container *ngIf="showsBottomNav">
+    <app-bottom-nav
+      [shadowStyle]="bottomNavShadow"
+      >
+    </app-bottom-nav>
+  </ng-container>
+</ng-container>
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                                AUTH VIEW                                -->
+<!-- ----------------------------------------------------------------------- -->
+<ng-template #loginView>
+  <app-login></app-login>
+</ng-template>
