@@ -75,6 +75,10 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 import { AccountProfileComponent } from &#x27;./views/account-profile/account-profile.component&#x27;;
+import { BooksComponent } from &#x27;./views/books/books.component&#x27;;
+import { CaptureComponent } from &#x27;./views/capture/capture.component&#x27;;
+import { InsightsComponent } from &#x27;./views/insights/insights.component&#x27;;
+import { PassagesComponent } from &#x27;./views/passages/passages.component&#x27;;
 
 const routes: Routes &#x3D; [
   {
@@ -84,23 +88,19 @@ const routes: Routes &#x3D; [
   },
   {
     path: &#x27;books&#x27;,
-    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modules/book/book.module&#x27;)\
-      .then(m &#x3D;&gt; m.BookModule)&quot;
+    component: BooksComponent
   },
   {
     path: &#x27;passages&#x27;,
-    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modules/passages/passages.module&#x27;)\
-      .then(m &#x3D;&gt; m.PassagesModule)&quot;
+    component: PassagesComponent
   },
   {
     path: &#x27;insights&#x27;,
-    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modules/insights/insights.module&#x27;)\
-      .then(m &#x3D;&gt; m.InsightsModule)&quot;
+    component: InsightsComponent
   },
   {
     path: &#x27;capture&#x27;,
-    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modules/capture/capture.module&#x27;)\
-      .then(m &#x3D;&gt; m.CaptureModule)&quot;
+    component: CaptureComponent
   },
   {
     path: &#x27;account&#x27;,

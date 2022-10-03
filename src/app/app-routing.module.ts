@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountProfileComponent } from './views/account-profile/account-profile.component';
+import { BooksComponent } from './views/books/books.component';
+import { CaptureComponent } from './views/capture/capture.component';
+import { InsightsComponent } from './views/insights/insights.component';
+import { PassagesComponent } from './views/passages/passages.component';
 
 const routes: Routes = [
   {
@@ -10,23 +14,19 @@ const routes: Routes = [
   },
   {
     path: 'books',
-    loadChildren: () => import('./modules/book/book.module')
-      .then(m => m.BookModule)
+    component: BooksComponent
   },
   {
     path: 'passages',
-    loadChildren: () => import('./modules/passages/passages.module')
-      .then(m => m.PassagesModule)
+    component: PassagesComponent
   },
   {
     path: 'insights',
-    loadChildren: () => import('./modules/insights/insights.module')
-      .then(m => m.InsightsModule)
+    component: InsightsComponent
   },
   {
     path: 'capture',
-    loadChildren: () => import('./modules/capture/capture.module')
-      .then(m => m.CaptureModule)
+    component: CaptureComponent
   },
   {
     path: 'account',

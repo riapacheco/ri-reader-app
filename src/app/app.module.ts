@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PassagesComponent } from './views/passages/passages.component';
 import { BottomNavComponent } from './components/bottom-nav/bottom-nav.component';
-import { SharedModule } from './modules/shared.module';
+import { SharedModule } from './shared.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { OcrService } from './services/ocr.service';
 
@@ -22,6 +22,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './views/login/login.component';
 import { AccountProfileComponent } from './views/account-profile/account-profile.component';
+import { BookService } from './services/book.service';
+import { BooksComponent } from './views/books/books.component';
+import { CardsComponent } from './components/cards/cards.component';
+import { CaptureComponent } from './views/capture/capture.component';
+import { AccordionComponent } from './components/accordion/accordion.component';
+import { CameraService } from './services/camera.service';
+import { InsightsComponent } from './views/insights/insights.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +41,11 @@ import { AccountProfileComponent } from './views/account-profile/account-profile
     FloatingMenuComponent,
     LoginComponent,
     AccountProfileComponent,
+    BooksComponent,
+    CardsComponent,
+    CaptureComponent,
+    AccordionComponent,
+    InsightsComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +67,9 @@ import { AccountProfileComponent } from './views/account-profile/account-profile
     },
     OcrService,
     LoadingOverlayService,
-    FloatingMenuService
+    FloatingMenuService,
+    BookService,
+    CameraService
   ],
   bootstrap: [AppComponent]
 })
