@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, ObservedValueOf } from 'rxjs';
 import * as Tesseract from 'tesseract.js';
-import { LoadingOverlayService } from './loading-overlay.service';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +23,7 @@ export class OcrService {
   public confirmLength$: Observable<boolean> = this._confirmLength$.asObservable();
 
   constructor(
-    private loadingOverlayService: LoadingOverlayService
+    
   ) { }
 
   public async scanImage(event: any) {
@@ -56,7 +55,7 @@ export class OcrService {
     const startTime = new Date().toLocaleTimeString();
     const startMessage = `Scan start: ${startTime}`;
 
-    this.loadingOverlayService.triggerLoadingSpinner(startMessage);
+    // this.loadingOverlayService.triggerLoadingSpinner(startMessage);
 
     this._loadingTimestamp$.next(startMessage);
     this._loadingStatus$.next(`OCR scan started [${startTime}]`)
@@ -70,13 +69,13 @@ export class OcrService {
     const endTime = new Date().toLocaleTimeString();
     const endMessage = `Scan end: ${endTime}`;
     
-    this.loadingOverlayService.updateLoadingSubtitle(endMessage);
+    // this.loadingOverlayService.updateLoadingSubtitle(endMessage);
 
     this._loadingTimestamp$.next(endMessage);
     this._loadingStatus$.next(`OCR scan ended [${endTime}]`);
 
     setTimeout(() => {
-      this.loadingOverlayService.dismissSpinner();
+      // this.loadingOverlayService.dismissSpinner();
       setTimeout(() => {
         this._confirmLength$.next(true);
       }, 100);

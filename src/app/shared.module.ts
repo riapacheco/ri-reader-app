@@ -12,7 +12,7 @@ import { FilterAllPipe } from './pipes/filter-all.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { VerticalResizeDirective } from './directives/vertical-resize.directive';
 import { CapsPipe } from './pipes/caps.pipe';
-import { LoadingOverlayService } from './services/loading-overlay.service';
+
 import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { EditorComponent } from './components/editor/editor.component';
 import { QuillModule } from 'ngx-quill';
@@ -52,7 +52,6 @@ import { PassageService } from './services/passage.service';
   ],
   providers: [
     ThemeService,
-    LoadingOverlayService,
     PassageService
   ]
 })

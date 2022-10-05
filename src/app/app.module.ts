@@ -14,8 +14,8 @@ import { OcrService } from './services/ocr.service';
 
 import { LoadingComponent } from './components/loading/loading.component';
 import { OverlayComponent } from './components/overlay/overlay.component';
-import { LoadingOverlayService } from './services/loading-overlay.service';
-import { LoadingOverlayComponent } from './components/loading-overlay/loading-overlay.component';
+
+
 import { FloatingMenuComponent } from './components/floating-menu/floating-menu.component';
 import { FloatingMenuService } from './services/floating-menu.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -37,7 +37,6 @@ import { InsightsComponent } from './views/insights/insights.component';
     BottomNavComponent,
     LoadingComponent,
     OverlayComponent,
-    LoadingOverlayComponent,
     FloatingMenuComponent,
     LoginComponent,
     AccountProfileComponent,
@@ -66,7 +65,6 @@ import { InsightsComponent } from './views/insights/insights.component';
       useClass: HashLocationStrategy
     },
     OcrService,
-    LoadingOverlayService,
     FloatingMenuService,
     BookService,
     CameraService

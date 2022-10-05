@@ -1104,6 +1104,7 @@ export class CaptureComponent implements OnInit, OnDestroy {
       [modules]&#x3D;&quot;modules&quot;
       [styles]&#x3D;&quot;style&quot;
       [(ngModel)]&#x3D;&quot;passageText&quot;
+      [placeholder]&#x3D;&quot;&#x27;Passage will appear here&#x27;&quot;
       #passageEditor&gt;
     &lt;/quill-editor&gt;
     {{ passageText }}
@@ -1186,8 +1187,8 @@ export class CaptureComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-top-nav  [showsInputField]="false"  [titleText]="viewTitle"  ></app-top-nav><div [class]="viewClass">  <div class="capture-content">    <div (appOutsideClick)="onOutsideClick($event)"></div>    <quill-editor      [modules]="modules"      [styles]="style"      [(ngModel)]="passageText"      #passageEditor>    </quill-editor>    {{ passageText }}  </div></div></div>'
-    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'app-accordion'},{'name': 'AccountProfileComponent', 'selector': 'app-account-profile'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'CaptureComponent', 'selector': 'app-capture'},{'name': 'CardsComponent', 'selector': 'app-cards'},{'name': 'EditorComponent', 'selector': 'app-editor'},{'name': 'FloatingMenuComponent', 'selector': 'app-floating-menu'},{'name': 'InsightsComponent', 'selector': 'app-insights'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoadingOverlayComponent', 'selector': 'app-loading-overlay'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'OverlayComponent', 'selector': 'app-overlay'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'ToggleTabsComponent', 'selector': 'app-toggle-tabs'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
+        var COMPONENT_TEMPLATE = '<div><app-top-nav  [showsInputField]="false"  [titleText]="viewTitle"  ></app-top-nav><div [class]="viewClass">  <div class="capture-content">    <div (appOutsideClick)="onOutsideClick($event)"></div>    <quill-editor      [modules]="modules"      [styles]="style"      [(ngModel)]="passageText"      [placeholder]="\'Passage will appear here\'"      #passageEditor>    </quill-editor>    {{ passageText }}  </div></div></div>'
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'app-accordion'},{'name': 'AccountProfileComponent', 'selector': 'app-account-profile'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'CaptureComponent', 'selector': 'app-capture'},{'name': 'CardsComponent', 'selector': 'app-cards'},{'name': 'EditorComponent', 'selector': 'app-editor'},{'name': 'FloatingMenuComponent', 'selector': 'app-floating-menu'},{'name': 'InsightsComponent', 'selector': 'app-insights'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'OverlayComponent', 'selector': 'app-overlay'},{'name': 'PassagesComponent', 'selector': 'app-passages'},{'name': 'ToggleTabsComponent', 'selector': 'app-toggle-tabs'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
     var DIRECTIVES = [{'name': 'OutsideClickDirective', 'selector': '[appOutsideClick]'},{'name': 'VerticalResizeDirective', 'selector': '[appVerticalResize]'}];
     var ACTUAL_COMPONENT = {'name': 'CaptureComponent'};
 </script>

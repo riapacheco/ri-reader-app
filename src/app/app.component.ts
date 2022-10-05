@@ -1,9 +1,6 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ThemeService } from './services/theme.service';
-import { OcrService } from './services/ocr.service';
-import { LoadingOverlayService } from './services/loading-overlay.service';
-import { CameraService } from './services/camera.service';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { BREAKPOINT_VALUE } from './enums/breakpoint.enums';
 import { TShadowStyle } from './components/bottom-nav/bottom-nav.component';
@@ -27,7 +24,6 @@ export class AppComponent implements OnInit, OnDestroy {
   /* -------------------------------------------------------------------------- */
   lightTheme = true;
   isMobile!: boolean;
-  isLoading = false; // for overlay spinner combo
   bottomNavShadow: TShadowStyle = 'faint';
   showsBottomNav = true;
   private sub = new Subscription();
@@ -37,7 +33,6 @@ export class AppComponent implements OnInit, OnDestroy {
     private readonly supabase: SupabaseService,
     public theme: ThemeService,
     private observer: BreakpointObserver,
-    public loading: LoadingOverlayService,
     private router: Router
   ) {}
 
