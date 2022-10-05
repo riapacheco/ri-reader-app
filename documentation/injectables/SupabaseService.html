@@ -511,7 +511,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>updateProfile(profile: <a href="../interfaces/IProfile.html" target="_self">IProfile</a>)</code>
+<code>updateProfile(profile: <a href="../interfaces/IUser.html" target="_self">IUser</a>)</code>
                 </td>
             </tr>
 
@@ -542,7 +542,7 @@
                                 <tr>
                                     <td>profile</td>
                                     <td>
-                                                <code><a href="../interfaces/IProfile.html" target="_self" >IProfile</a></code>
+                                                <code><a href="../interfaces/IUser.html" target="_self" >IUser</a></code>
                                     </td>
 
                                     <td>
@@ -761,7 +761,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { AuthChangeEvent, createClient, Session, SupabaseClient } from &#x27;@supabase/supabase-js&#x27;;
 import { SUPABASE } from &#x27;../constants/supabase.constants&#x27;;
-import { IProfile } from &#x27;../interfaces/user-profile.interface&#x27;;
+import { IUser } from &#x27;../interfaces/user.interface&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -822,7 +822,7 @@ export class SupabaseService {
   }
 
   /* --------------------------------- PROFILE -------------------------------- */
-  updateProfile(profile: IProfile) {
+  updateProfile(profile: IUser) { 
     const update &#x3D; {
       ...profile,
       id: this.user?.id,

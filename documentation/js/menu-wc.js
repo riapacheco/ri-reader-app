@@ -264,22 +264,22 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
+                                <a href="interfaces/IAuthUser.html" data-type="entity-link" >IAuthUser</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/IBook.html" data-type="entity-link" >IBook</a>
-                            </li>
-                            <li class="link">
-                                <a href="interfaces/IBookGenre.html" data-type="entity-link" >IBookGenre</a>
-                            </li>
-                            <li class="link">
-                                <a href="interfaces/IBookGenreRef.html" data-type="entity-link" >IBookGenreRef</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IBookListItem.html" data-type="entity-link" >IBookListItem</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IBookScoreCategory.html" data-type="entity-link" >IBookScoreCategory</a>
+                                <a href="interfaces/IBookScore.html" data-type="entity-link" >IBookScore</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IBookScoreTotal.html" data-type="entity-link" >IBookScoreTotal</a>
+                                <a href="interfaces/IBookTag.html" data-type="entity-link" >IBookTag</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IBookTagsJunction.html" data-type="entity-link" >IBookTagsJunction</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IFloatingMenuOption.html" data-type="entity-link" >IFloatingMenuOption</a>
@@ -297,10 +297,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IPassageNote.html" data-type="entity-link" >IPassageNote</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IPassageTag.html" data-type="entity-link" >IPassageTag</a>
+                                <a href="interfaces/IScoreCategory.html" data-type="entity-link" >IScoreCategory</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IProfile.html" data-type="entity-link" >IProfile</a>
+                                <a href="interfaces/IUser.html" data-type="entity-link" >IUser</a>
                             </li>
                         </ul>
                     </li>

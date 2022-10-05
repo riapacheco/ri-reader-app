@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AuthChangeEvent, createClient, Session, SupabaseClient } from '@supabase/supabase-js';
 import { SUPABASE } from '../constants/supabase.constants';
-import { IProfile } from '../interfaces/user-profile.interface';
+import { IUser } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -62,7 +62,7 @@ export class SupabaseService {
   }
 
   /* --------------------------------- PROFILE -------------------------------- */
-  updateProfile(profile: IProfile) {
+  updateProfile(profile: IUser) { 
     const update = {
       ...profile,
       id: this.user?.id,
